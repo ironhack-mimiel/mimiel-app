@@ -13,8 +13,8 @@ passport.use(
     usernameField: 'email',
     passwordField: 'password'
   },
-(email, password, next) => {
-    User.findOne({ email }, (err, user) => {
+(username, password, next) => {
+    User.findOne({ email: username }, (err, user) => {
       if (err) {
         return next(err);
       }
