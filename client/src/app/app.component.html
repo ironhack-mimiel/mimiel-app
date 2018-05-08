@@ -6,4 +6,9 @@
 </div>
 <h2>Here are some links to help you start: </h2>
 
-<app-login-form></app-login-form>
+<div *ngIf="!sessionService.user">
+<app-login-form ></app-login-form>
+</div>
+<div *ngIf="sessionService.user">
+<button (click)="sessionService.logout().subscribe()"> Logout </button>
+</div>
