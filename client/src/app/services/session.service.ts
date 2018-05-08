@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class SessionService {
+  showForm: boolean = true;
   user:any;
   userEvent: EventEmitter<any> = new EventEmitter();
   options: any = { withCredentials:true };
@@ -50,6 +51,11 @@ export class SessionService {
       .map(res => res.json())
       .map(user => this.handleUser(user))
       .catch(this.handleError);
+  }
+
+
+  toggleForm() {
+    this.showForm = !this.showForm
   }
 
 }

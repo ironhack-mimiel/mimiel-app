@@ -3,15 +3,3 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-
-<div *ngIf="!sessionService.user">
-  <button (click)="toggleForm()">Log in or Sign Up</button>
-  <div [hidden]="showForm">
-    <app-login-form></app-login-form>
-    <app-signup-form></app-signup-form>
-  </div>
-</div>
-
-<div *ngIf="sessionService.user">
-<button (click)="sessionService.logout().subscribe()"> Logout </button>
-</div>
