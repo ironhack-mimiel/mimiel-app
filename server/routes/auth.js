@@ -13,7 +13,7 @@ const logInPromise = (user, req) =>
 
 /* GET home page */
 router.post('/signup', (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, address } = req.body;
 
   if (!email || !password) {
     res.status(400).json({ message: 'Provide email and password' });
@@ -30,6 +30,7 @@ router.post('/signup', (req, res, next) => {
       const theUser = new User({
         username,
         email,
+        address,
         password: hashPass
       });
 

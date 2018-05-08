@@ -6,6 +6,7 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   hive: {type : Schema.Types.ObjectId, ref: 'Hive'},
+  address: { type: String, required: true },
   isApicultor: {type: Boolean, default: false}
 }, {
   timestamps: {
