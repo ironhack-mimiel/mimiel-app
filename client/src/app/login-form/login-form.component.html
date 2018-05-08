@@ -1,18 +1,22 @@
-<p>
-  login-form works!
-</p>
-<form>
-  <h2> Login or Signup </h2>
-  <label> Email </label>
-  <div class="control">
-    <input class="input" type="text" [(ngModel)]="email" name="email"/>
-  </div>
-  <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="password" name="password"/>
-
-  <div style="padding-top:30px">
-    <button (click)="login()"> login </button>
-  </div>
-</form>
+<div class="form">
+  <form>
+    <h2> Login</h2>
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="pepe@ironhack.com" [(ngModel)]="email" name="email" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control">
+        <input class="input" type="password" [(ngModel)]="password" name="password" />
+      </div>
+    </div>
+  
+    <div class="field">
+      <button (click)="login()" class="button is-warning"> login </button>
+    </div>
+  </form>
+</div>
 <p class="error"> {{ error }} </p>

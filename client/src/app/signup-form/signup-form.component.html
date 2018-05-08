@@ -1,23 +1,33 @@
-<p>
-  signup-form works!
-</p>
-
-<form>
-  <h2> Signup </h2>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="username" name="username"/>
-  <br>
-  <label> Email </label>
-  <input type="text" [(ngModel)]="email" name="email"/>
-  <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="password" name="password"/>
-  <br>
-  <label> Address </label>
-  <input type="text" [(ngModel)]="address" name="address"/>
-
-  <div style="padding-top:30px">
-    <button (click)="signup()"> Sign Up </button>
-  </div>
-</form>
+<div class="form">
+  <form>
+    <h2> Signup </h2>
+    <div class="field">
+      <label class="label"> Username </label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="username" name="username" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label"> Email </label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="email" name="email" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label"> Password </label>
+      <div class="control">
+        <input class="input" type="password" [(ngModel)]="password" name="password" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label"> Address </label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="address" name="address" />
+      </div>
+    </div>
+    <div class="field">
+      <button (click)="signup()" class="button"> Sign Up </button>
+    </div>
+  </form>
+</div>
 <p class="error"> {{ error }} </p>

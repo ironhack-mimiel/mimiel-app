@@ -14,12 +14,11 @@
 </header>
 
 
-<div [hidden]="sessionService.showForm" *ngIf="!sessionService.user">
-  <app-login-form></app-login-form>
-</div>
-
-<div [hidden]="sessionService.showForm" *ngIf="!sessionService.user">
-  <app-signup-form></app-signup-form>
+<div class="popup" [hidden]="sessionService.showForm" *ngIf="!sessionService.user">
+  <div class="form-popup">
+    <app-signup-form></app-signup-form>
+    <app-login-form></app-login-form>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
