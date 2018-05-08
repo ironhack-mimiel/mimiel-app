@@ -8,6 +8,7 @@
 
 <div *ngIf="!sessionService.user">
 <app-login-form ></app-login-form>
+<app-signup-form></app-signup-form>
 </div>
 <div *ngIf="sessionService.user">
 <button (click)="sessionService.logout().subscribe()"> Logout </button>

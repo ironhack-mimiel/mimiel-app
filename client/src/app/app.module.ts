@@ -7,6 +7,7 @@ import { SessionService } from './services/session.service';
 
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 
 
@@ -14,6 +15,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
   declarations: [
     AppComponent,
     LoginFormComponent,
+    SignupFormComponent,
   ],
   imports: [
     BrowserModule,
