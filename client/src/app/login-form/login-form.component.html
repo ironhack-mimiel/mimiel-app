@@ -1,0 +1,16 @@
+<p>
+  login-form works!
+</p>
+<form>
+  <h2> Login or Signup </h2>
+  <label> Email </label>
+  <input type="text" [(ngModel)]="email" name="email"/>
+  <br>
+  <label> Password </label>
+  <input type="password" [(ngModel)]="password" name="password"/>
+
+  <div style="padding-top:30px">
+    <button (click)="login()"> login </button>
+  </div>
+</form>
+<p class="error"> {{ error }} </p>
