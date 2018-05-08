@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { HomeComponent } from './home/home.component';
+import { HoneyListComponent } from './honey-list/honey-list.component';
+import { HoneyDetailComponent } from './honey-detail/honey-detail.component';
 
 
 
@@ -19,6 +21,8 @@ import { HomeComponent } from './home/home.component';
     LoginFormComponent,
     SignupFormComponent,
     HomeComponent,
+    HoneyListComponent,
+    HoneyDetailComponent,
   ],
   imports: [
     BrowserModule,
