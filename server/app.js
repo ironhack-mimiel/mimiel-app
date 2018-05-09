@@ -89,3 +89,6 @@ app.use(function(req, res) {
 });
 
 module.exports = app;
+
+
+//{dotfiles: "allow"}
