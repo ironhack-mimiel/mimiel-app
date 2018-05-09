@@ -5,14 +5,16 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { SessionService } from './services/session.service';
+import { HoneyInfoService } from './services/honey-info.service';
+
+
 import { routes } from './routes';
 import { AppComponent } from './app.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { SignupFormComponent } from './signup-form/signup-form.component';
-import { HomeComponent } from './home/home.component';
-import { HoneyListComponent } from './honey-list/honey-list.component';
-import { HoneyDetailComponent } from './honey-detail/honey-detail.component';
-import { HoneyInfoService } from './services/honey-info.service';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { HomeComponent } from './components/home/home.component';
+import { HoneyListComponent } from './components/honey-list/honey-list.component';
+import { HoneyDetailComponent } from './components/honey-detail/honey-detail.component';
 
 
 

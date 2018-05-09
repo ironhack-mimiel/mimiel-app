@@ -18,4 +18,10 @@ export class HoneyInfoService {
     .map(res => res.json())
     .catch(this.handleError)
   }
+
+  getOne(id) {
+    return this.http.get(`${environment.BASEURL}/api/honey/${id}`)
+    .map(res => res.json())
+    .catch(this.handleError)
+  }
 }

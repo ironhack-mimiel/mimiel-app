@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../services/session.service';
-import { HoneyInfoService } from '../services/honey-info.service';
+import { SessionService } from '../../services/session.service';
+import { HoneyInfoService } from '../../services/honey-info.service';
 import { HoneyListComponent } from '../honey-list/honey-list.component';
 
 @Component({

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const logInPromise = (user, req) =>
   new Promise((resolve, reject) => {
@@ -30,7 +30,6 @@ router.post('/signup', (req, res, next) => {
       const theUser = new User({
         username,
         email,
-        address,
         password: hashPass
       });
 
