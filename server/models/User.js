@@ -6,9 +6,13 @@ const userSchema = new Schema(
     username: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    hive: { type: Schema.Types.ObjectId, ref: 'Hive' },
+    name: {type: String},
+    surname: {type: String},
     address: { type: String, required: true },
-    isApicultor: { type: Boolean, default: false }
+    hive: { type: Schema.Types.ObjectId, ref: 'Hive' },
+    paymentMethod: {type: String, enum: ["Contrareembolso", "Tarjeta", "PayPal"]},
+    isApicultor: { type: Boolean, default: false },
+    isFilled: {type: Boolean, default: false},
   },
   {
     timestamps: {

@@ -1,7 +1,10 @@
 <header>
   <div class="navbar">
+    <div class="navbar-brand">
+      <p>{{title}}</p>
+    </div>
     <div *ngIf="!sessionService.user" class="navbar-menu is-active navbar-end">
-      <button (click)="sessionService.toggleForm()">Log in or Sign Up</button>
+      <button (click)="sessionService.toggleForm()" class="button" id="show-form">Log in or Sign Up</button>
     </div>
 
     <div *ngIf="sessionService.user">
