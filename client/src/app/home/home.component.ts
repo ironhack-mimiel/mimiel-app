@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../services/session.service';
 import { HoneyInfoService } from '../services/honey-info.service';
+import { HoneyListComponent } from '../honey-list/honey-list.component';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +12,10 @@ export class HomeComponent implements OnInit {
   title = "MI MIEL";
   honeys: Array<object>;
 
-  constructor(public sessionService: SessionService, public honeyService: HoneyInfoService) { }
+  constructor(public sessionService: SessionService) { }
 
   ngOnInit() {
-    this.honeyService.getAll().subscribe(honeys => this.honeys = honeys);
+
   }
 
 

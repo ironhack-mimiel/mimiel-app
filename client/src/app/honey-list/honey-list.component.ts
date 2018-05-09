@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HoneyInfoService } from '../services/honey-info.service';
 
 @Component({
   selector: 'app-honey-list',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./honey-list.component.css']
 })
 export class HoneyListComponent implements OnInit {
-
-  constructor() { }
+  honeys: Array<object>;
+  
+  constructor(public honeyService: HoneyInfoService) { }
 
   ngOnInit() {
+    this.honeyService.getAll().subscribe(honeys => this.honeys = honeys);
   }
 
 }
