@@ -7,6 +7,12 @@
   <div class="form">
     <form>
       <div class="field">
+        <label class="label"> Email </label>
+        <div class="control">
+          <input class="input" type="text" [(ngModel)]="email" name="email" disabled />
+        </div>
+      </div>
+      <div class="field">
         <label class="label">Nombre</label>
         <div class="control">
           <input class="input" type="text" placeholder="Pepe" [(ngModel)]="name" name="name" />
@@ -31,7 +37,7 @@
         </div>
       </div>
       <div class="field">
-        <button (click)="completeProfile()" class="button is-warning"> Completa tu perfil </button>
+        <button (click)="fillDetails()" class="button is-warning"> Completa tu perfil </button>
       </div>
     </form>
   </div>

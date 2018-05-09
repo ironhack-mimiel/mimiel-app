@@ -53,8 +53,8 @@ export class SessionService {
       .catch(this.handleError);
   }
 
-  fillDetails() {
-    return this.http.post(`${environment.BASEURL}/api/auth/fill-details`, {}, this.options)
+  fillDetails(update) {
+    return this.http.post(`${environment.BASEURL}/api/auth/fill-details`, update, this.options)
     .map(res => res.json())
     .map(user => this.handleUser(user))
     .catch(this.handleError);
