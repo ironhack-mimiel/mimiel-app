@@ -6,4 +6,5 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'honey/:id', component: HoneyDetailComponent },
+  { path: 'my-profile'}
 ];
