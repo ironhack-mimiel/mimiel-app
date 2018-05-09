@@ -2,13 +2,17 @@
   background-color: #ffdd57;
 }
 
-#show-form {
+.brown {
   background-color: #bf8040;
   position: fixed;
   top: 6px;
   right: 0;
   color: #ffdd57;
   font-weight: bold;
+}
+
+#profile {
+  right: 96px;
 }
 
 .popup {

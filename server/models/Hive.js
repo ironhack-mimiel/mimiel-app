@@ -7,7 +7,7 @@ const hiveSchema = new Schema(
     description: String,
     location: { type: { type: String }, coordinates: [Number] },
     honey: { type: Schema.Types.ObjectId, ref: 'Honey' },
-    sensor: { type: Schema.Types.ObjectId, ref: 'Sensor' },
+    rpi: { type: Schema.Types.ObjectId, ref: 'Rpi' },
     email: { type: String, required: true },
     phoneNumber: Number,
     picturesURL: [String],

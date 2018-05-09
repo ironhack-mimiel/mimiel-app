@@ -12,6 +12,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { HomeComponent } from './home/home.component';
 import { HoneyListComponent } from './honey-list/honey-list.component';
 import { HoneyDetailComponent } from './honey-detail/honey-detail.component';
+import { HoneyInfoService } from './services/honey-info.service';
 
 
 
@@ -30,7 +31,7 @@ import { HoneyDetailComponent } from './honey-detail/honey-detail.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService],
+  providers: [SessionService, HoneyInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

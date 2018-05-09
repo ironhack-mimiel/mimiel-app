@@ -1,6 +1,6 @@
 const express    = require('express');
 const router     = express.Router();
-const Honey      = require('../../models/honey');
+const Honey      = require('../models/Honey');
 
 router.get('/', (req, res, next) => {
   Honey.find({}, (err, dishes) => {
@@ -8,3 +8,5 @@ router.get('/', (req, res, next) => {
     return res.json(dishes);
   });
 });
+
+module.exports = router;

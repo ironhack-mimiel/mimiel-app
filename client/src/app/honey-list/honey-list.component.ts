@@ -7,7 +7,7 @@ import { HoneyInfoService } from '../services/honey-info.service';
   styleUrls: ['./honey-list.component.css']
 })
 export class HoneyListComponent implements OnInit {
-  honeys: Array<object>;
+  honeys: Array<any>;
   
   constructor(public honeyService: HoneyInfoService) { }
 
