@@ -6,6 +6,7 @@ const hiveSchema = new Schema(
     name: { type: String, required: true },
     description: String,
     location: { type: { type: String }, coordinates: [Number] },
+    beekeeper: { type: Schema.Types.ObjectId, ref: 'User' },
     honey: { type: Schema.Types.ObjectId, ref: 'Honey' },
     rpi: { type: Schema.Types.ObjectId, ref: 'Rpi' },
     email: { type: String, required: true },

@@ -8,7 +8,7 @@ const userSchema = new Schema(
     password: { type: String, required: true },
     name: {type: String},
     surname: {type: String},
-    address: { type: String, required: true },
+    address: {type: String},
     phoneNumber: {type: String},
     hive: { type: Schema.Types.ObjectId, ref: 'Hive' },
     paymentMethod: {type: String, enum: ["Contrareembolso", "Tarjeta", "PayPal"], default: "Contrareembolso"},

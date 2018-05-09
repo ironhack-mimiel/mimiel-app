@@ -11,9 +11,8 @@ const logInPromise = (user, req) =>
     });
   });
 
-/* GET home page */
 router.post('/signup', (req, res, next) => {
-  const { username, email, password, address } = req.body;
+  const { username, email, password } = req.body;
 
   if (!email || !password) {
     res.status(400).json({ message: 'Provide email and password' });
@@ -30,7 +29,6 @@ router.post('/signup', (req, res, next) => {
       const theUser = new User({
         username,
         email,
-        address,
         password: hashPass
       });
 
@@ -75,5 +73,17 @@ router.get('/logout', (req, res) => {
     return res.status(400).json({ message: 'You should loggin first' });
   }
 });
+
+router.post('/fill-details', (req, res, next) => {
+  const {name, surname, address, phoneNumber} = req.body;
+  const email = req.body.email;
+  const update = {name, surname, address, phoneNumber, isFilled:true};
+  User.findOneAndUpdate({ email }, update, {new : true})
+  .then(user => {
+    if(!user) {throw new Error('The email does not exist')}
+    res.status(200).json({ message: 'User updated successfully' });
+  })
+  .catch(e => res.status(500).json({ message: e.message }));  
+})
 
 module.exports = router;

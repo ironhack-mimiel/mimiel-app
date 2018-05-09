@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../services/session.service';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -8,7 +8,6 @@ import { SessionService } from '../services/session.service';
 })
 export class SignupFormComponent implements OnInit {
   username: string;
-  address: string;
   email: string;
   password: string;
   constructor(public sessionService: SessionService) {}
@@ -19,7 +18,6 @@ export class SignupFormComponent implements OnInit {
     const user = {
       username: this.username,
       password: this.password,
-      address: this.address,
       email: this.email
     };
     console.log(user);
