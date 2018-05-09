@@ -16,7 +16,6 @@ export class SignupFormComponent implements OnInit {
 
   signup() {
     const user = {
-      username: this.username,
       password: this.password,
       email: this.email
     };

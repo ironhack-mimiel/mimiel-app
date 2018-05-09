@@ -12,7 +12,7 @@ const logInPromise = (user, req) =>
   });
 
 router.post('/signup', (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { email, password } = req.body;
 
   if (!email || !password) {
     res.status(400).json({ message: 'Provide email and password' });
@@ -27,7 +27,6 @@ router.post('/signup', (req, res, next) => {
       const hashPass = bcrypt.hashSync(password, salt);
 
       const theUser = new User({
-        username,
         email,
         password: hashPass
       });
