@@ -11,10 +11,11 @@ const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const cors = require('cors');
+const DBURL = process.env.DBURL;
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/mimiel', { useMongoClient: true })
+  .connect(DBURL, { useMongoClient: true })
   .then(() => {
     console.log('Connected to Mongo!');
   })
@@ -81,6 +82,9 @@ app.use('/', index);
 
 const authRouter = require("./routes/auth");
 app.use("/api/auth", authRouter);
+
+const honeyRouter = require("./routes/honey");
+app.use("/api/honey", honeyRouter);
 
 app.use(function(req, res) {
   res.sendfile(__dirname + '/public/index.html');
