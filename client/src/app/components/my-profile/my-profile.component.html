@@ -1,0 +1,39 @@
+<p>
+  my-profile works!
+</p>
+{{sessionService}}
+<div *ngIf="!sessionService.user.isFilled">
+  <p class="title">Completa tu perfil para poder contactar con los apicultores</p>
+  <div class="form">
+    <form>
+      <div class="field">
+        <label class="label">Nombre</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Pepe" [(ngModel)]="name" name="name" />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Apellidos</label>
+        <div class="control">
+          <input class="input" type="text" [(ngModel)]="surname" name="surname" />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Dirección</label>
+        <div class="control">
+          <input class="input" type="text" [(ngModel)]="address" name="address" />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Número de teléfono</label>
+        <div class="control">
+          <input class="input" type="text" [(ngModel)]="phoneNumber" name="phoneNumber" />
+        </div>
+      </div>
+      <div class="field">
+        <button (click)="completeProfile()" class="button is-warning"> Completa tu perfil </button>
+      </div>
+    </form>
+  </div>
+  <p class="error"> {{ error }} </p>
+</div>

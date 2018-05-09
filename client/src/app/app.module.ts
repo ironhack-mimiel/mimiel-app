@@ -15,6 +15,7 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { HomeComponent } from './components/home/home.component';
 import { HoneyListComponent } from './components/honey-list/honey-list.component';
 import { HoneyDetailComponent } from './components/honey-detail/honey-detail.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 
 
@@ -26,6 +27,7 @@ import { HoneyDetailComponent } from './components/honey-detail/honey-detail.com
     HomeComponent,
     HoneyListComponent,
     HoneyDetailComponent,
+    MyProfileComponent,
   ],
   imports: [
     BrowserModule,
