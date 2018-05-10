@@ -21,6 +21,7 @@
   background-color: rgba(220, 220, 220, 0.60);
   position: fixed;
   top: 0;
+  z-index:2;
 }
 
 .form-popup {

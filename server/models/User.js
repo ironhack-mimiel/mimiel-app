@@ -3,12 +3,11 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    username: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
     name: {type: String},
     surname: {type: String},
-    address: { type: String, required: true },
+    address: {type: String},
     phoneNumber: {type: String},
     hive: { type: Schema.Types.ObjectId, ref: 'Hive' },
     paymentMethod: {type: String, enum: ["Contrareembolso", "Tarjeta", "PayPal"], default: "Contrareembolso"},

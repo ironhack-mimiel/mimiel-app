@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HoneyInfoService } from '../services/honey-info.service';
+import { HoneyInfoService } from '../../services/honey-info.service';
 
 @Component({
   selector: 'app-honey-list',
