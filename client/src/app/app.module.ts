@@ -17,6 +17,7 @@ import { HoneyListComponent } from './components/honey-list/honey-list.component
 import { HoneyDetailComponent } from './components/honey-detail/honey-detail.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { FillDetailsFormComponent } from './components/fill-details-form/fill-details-form.component';
+import { MyProfileEditComponent } from './components/my-profile/my-profile-edit/my-profile-edit.component';
 
 
 
@@ -30,6 +31,7 @@ import { FillDetailsFormComponent } from './components/fill-details-form/fill-de
     HoneyDetailComponent,
     MyProfileComponent,
     FillDetailsFormComponent,
+    MyProfileEditComponent,
   ],
   imports: [
     BrowserModule,

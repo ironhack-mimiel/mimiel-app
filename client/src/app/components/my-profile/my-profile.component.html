@@ -1,4 +1,36 @@
-<h1 class="title">MI PERFIL</h1>
 <div class="section" [hidden]="sessionService.user.isFilled">
   <app-fill-details-form></app-fill-details-form>
 </div>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3 left-panel">
+        <!-- Change left pannel depending of user type -->
+        <div *ngIf="sessionService.user.isApicultor">
+          <ul>
+            <li (click)="changeRightComponent('editProfile')">Edit profile</li>
+            <li (click)="changeRightComponent('deleteProfile')">Delete profile</li>
+            <li (click)="changeRightComponent('sponsoredHives')">Sponsored hives</li>
+            <li (click)="changeRightComponent('payments')">Payments</li>
+            <li (click)="changeRightComponent('billing')">Billing</li>
+          </ul>
+        </div>
+        <div *ngIf="!sessionService.user.isApicultor">
+          <ul>
+            <li (click)="changeRightComponent('editProfile')">Edit profile</li>
+            <li (click)="changeRightComponent('deleteProfile')">Delete profile</li>
+            <li (click)="changeRightComponent('hives')">Hives</li>
+            <li (click)="changeRightComponent('addNewHive')">Add new hive</li>
+            <li (click)="changeRightComponent('payments')">Payments</li>
+            <li (click)="changeRightComponent('billing')">Billing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="column is-9 right-panel">
+        <!-- Change right pannel depending on option selected -->
+        <app-fill-details-form *ngIf=""></app-fill-details-form>
+      </div>
+    </div>
+  </div>
+</section>
