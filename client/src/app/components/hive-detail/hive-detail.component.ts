@@ -18,10 +18,10 @@ export class HiveDetailComponent implements OnInit {
 
   averageTemp(hive) {
     let tempObject = hive.rpi.temperature[0];
-    tempObject = delete tempObject.date;
-    tempObject = Object.values(tempObject).map(n => parseFloat(n));
-    let tempSum = tempObject.reduce(function(a, b) { return a + b; });
-    let avg = tempSum / tempObject.length;
+    let tempArray = [tempObject.temperature1, tempObject.temperature2, tempObject.temperature3]
+    tempArray = tempArray.map(n => parseFloat(n));
+    let tempSum = tempArray.reduce(function(a, b) { return a + b; });
+    let avg = tempSum / tempArray.length;
     this.dailyAverage = avg;
   }
   constructor(
@@ -37,7 +37,8 @@ export class HiveDetailComponent implements OnInit {
         this.hive = hive;
         this.lat = hive.location.coordinates[0];
         this.lng = hive.location.coordinates[1];
-        this.averageTemp(this.hive)
+        this.averageTemp(this.hive);
+        console.log(this.dailyAverage)
       });
     });
   }
