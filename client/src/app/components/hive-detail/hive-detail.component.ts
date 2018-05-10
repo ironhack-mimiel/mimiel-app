@@ -11,6 +11,11 @@ export class HiveDetailComponent implements OnInit {
   hive: object;
   dailyAverage: number;
 
+  title: string = 'My first AGM project';
+  lat: number;
+  lng: number;
+
+
   averageTemp(hive) {
     let tempObject = hive.rpi.temperature[0];
     tempObject = delete tempObject.date;
@@ -24,14 +29,17 @@ export class HiveDetailComponent implements OnInit {
     public route: ActivatedRoute,
     public router: Router
   ) {
-    route.params.subscribe(params => {
-      hiveService.getOne(params.id).subscribe(hive => {
+   
+   }
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.hiveService.getOne(params.id).subscribe(hive => {
         this.hive = hive;
+        this.lat = hive.location.coordinates[0];
+        this.lng = hive.location.coordinates[1];
         this.averageTemp(this.hive)
       });
     });
-   }
-  ngOnInit() {
   }
 
 }

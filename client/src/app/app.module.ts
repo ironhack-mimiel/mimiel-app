@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AgmCoreModule } from '@agm/core';
 
 import { SessionService } from './services/session.service';
 import { HoneyInfoService } from './services/honey-info.service';
@@ -40,7 +41,10 @@ import { MyProfileEditComponent } from './components/my-profile/my-profile-edit/
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAEJmeY3Pyn91jt-VceT2StgpSovA9jcrs'
+    })
   ],
   providers: [SessionService, HoneyInfoService, HiveInfoService],
   bootstrap: [AppComponent]

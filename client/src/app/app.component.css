@@ -3,13 +3,10 @@
 }
 
 .brown {
-  position: fixed;
+  float: right;
   top: 6px;
 }
 
-#profile {
-  right: 96px;
-}
 
 .popup {
   width: 100%;

@@ -11,7 +11,13 @@
     </div>
     <div class="columns">
       <p class="title"> INFORMACION SOBRE LA COLMENA</p>
-      <div id="map" height="400"></div>
+      <div id="map" class="column is-half">
+          <agm-map [latitude]="lat" [longitude]="lng" zoom="10">
+            </agm-map>
+      </div>
+      <div class="column is-half">
+        
+      </div>
     </div>
     <div class="columns">
       <button class="button brown" (click)="toggleContactForm()">Contactar con la colmena</button>
