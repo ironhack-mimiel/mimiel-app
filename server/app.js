@@ -77,11 +77,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // default value for title local
 app.locals.title = 'MiMiel API';
 
-<<<<<<< HEAD
-const index = require('./routes/index');
-=======
 const index = require("./routes/index");
->>>>>>> master
 app.use("/", index);
 
 const authRouter = require("./routes/auth");
