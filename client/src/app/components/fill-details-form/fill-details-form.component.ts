@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fill-details-form',
@@ -13,7 +14,7 @@ export class FillDetailsFormComponent implements OnInit {
   phoneNumber: string;
   email: string = this.sessionService.user.email;
 
-  constructor(public sessionService: SessionService) {}
+  constructor(public sessionService: SessionService, public router: Router) {}
 
   ngOnInit() {}
 
@@ -25,6 +26,6 @@ export class FillDetailsFormComponent implements OnInit {
       phoneNumber: this.phoneNumber,
       email: this.email
     };
-    this.sessionService.fillDetails(update).subscribe();
+    this.sessionService.fillDetails(update).subscribe(() => this.router.navigate(['/my-profile']));
   }
 }
