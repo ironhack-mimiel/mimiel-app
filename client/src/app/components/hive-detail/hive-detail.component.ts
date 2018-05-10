@@ -9,6 +9,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HiveDetailComponent implements OnInit {
   hive: object;
+  dailyAverage: number;
+
+  averageTemp(hive) {
+    let tempObject = hive.rpi.temperature[0];
+    tempObject = delete tempObject.date;
+    tempObject = Object.values(tempObject).map(n => parseFloat(n));
+    let tempSum = tempObject.reduce(function(a, b) { return a + b; });
+    let avg = tempSum / tempObject.length;
+    this.dailyAverage = avg;
+  }
   constructor(
     public hiveService: HiveInfoService,
     public route: ActivatedRoute,
@@ -17,6 +27,7 @@ export class HiveDetailComponent implements OnInit {
     route.params.subscribe(params => {
       hiveService.getOne(params.id).subscribe(hive => {
         this.hive = hive;
+        this.averageTemp(this.hive)
       });
     });
    }

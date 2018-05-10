@@ -5,11 +5,38 @@
 
 {{hive.name}}
 
-<div *ngFor="let temperature of hive.rpi.temperature">
-  {{temperature.temperature1}}
-  {{temperature.temperature2}}
-  {{temperature.temperature3}}
-  {{temperature.date}}
+<div class="columns">
+  <div class="column">
+    <table>
+      <tr>
+        <td>Temperature1</td>
+        <td>Temperature2</td>
+        <td>Temperature3</td>
+        <td>Date</td>
+      </tr>
+      <tr *ngFor="let temperature of hive.rpi.temperature">
+        <td>
+          {{temperature.temperature1}}
+        </td>
+        <td>
+          {{temperature.temperature2}}
+        </td>
+        <td>
+          {{temperature.temperature3}}
+        </td>
+        <td>
+          {{temperature.date | date: "medium"}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="title-4">La temperatura media del dia es: {{dailyAverage}} </div>
+    </div>
+  </div>
+
+
 
 </div>
 <div id="map">
