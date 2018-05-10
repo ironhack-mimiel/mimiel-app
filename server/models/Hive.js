@@ -12,7 +12,7 @@ const hiveSchema = new Schema(
     email: { type: String, required: true },
     phoneNumber: Number,
     picturesURL: [String],
-    patrons: [Schema.Types.ObjectId]
+    patrons: [{ type: Schema.Types.ObjectId, ref: 'User' }]
   },
   {
     timestamps: {

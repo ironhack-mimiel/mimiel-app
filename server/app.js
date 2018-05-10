@@ -86,6 +86,9 @@ app.use("/api/auth", authRouter);
 const honeyRouter = require("./routes/honey");
 app.use("/api/honey", honeyRouter);
 
+const hiveRouter = require("./routes/hive");
+app.use("/api/hive", hiveRouter);
+
 app.use(function(req, res) {
   res.sendfile(__dirname + '/public/index.html');
 });

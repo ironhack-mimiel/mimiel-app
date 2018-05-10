@@ -2,5 +2,7 @@
   
   {{honey.name}}
 
-  <a (click)="toggleContactForm()">Contactar con la colmena</a>
+  <button class="button" (click)="toggleContactForm()">Contactar con la colmena</button>
+
+  <a [routerLink]="['/hive']">Ir a la colmena</a>
 </div>

@@ -1,22 +1,21 @@
 const express    = require('express');
 const router     = express.Router();
 const Honey      = require('../models/Honey');
-const Hive = require("../models/Hive")
+const Hive = require("../models/Hive");
 
 router.get('/', (req, res, next) => {
-  Honey.find({}, (err, honeys) => {
+  Honey.find({}, (err, hives) => {
     if (err) { return res.json(err).status(500); }
-    return res.json(honeys);
+    return res.json(hives);
   });
 });
 
 router.get('/:id', (req, res, next) => {
-  Honey.findById(req.params.id)
-    .populate('hive')
-    .exec((err, honey) => {
+  Hive.findById(req.params.id)
+    .exec((err, hive) => {
       if (err)         { return res.status(500).json(err); }
-      if (!honey)      { return res.status(404).json(new Error("404")) }
-      return res.json(honey);
+      if (!hive)      { return res.status(404).json(new Error("404")) }
+      return res.json(hive);
     });
 });
 

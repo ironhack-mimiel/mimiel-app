@@ -17,7 +17,9 @@ export class HoneyDetailComponent implements OnInit {
     route.params.subscribe(params => {
       honeyService.getOne(params.id).subscribe(honey => {
         this.honey = honey;
-        console.log(this.honey);
+        if (this.honey) {
+          console.log(this.honey.hive);
+        }        
       });
     });
   }

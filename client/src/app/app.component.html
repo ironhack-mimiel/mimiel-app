@@ -1,7 +1,7 @@
 <header>
   <div class="navbar">
     <div class="navbar-brand">
-      <p>{{title}}</p>
+      <a [routerLink]="['/home']" >{{title}}</a>
     </div>
     <div *ngIf="!sessionService.user" class="navbar-menu is-active navbar-end">
       <button (click)="sessionService.toggleForm()" class="button brown">Log in or Sign Up</button>
