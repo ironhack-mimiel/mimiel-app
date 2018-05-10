@@ -15,7 +15,7 @@
 </header>
 
 
-<div class="popup" [hidden]="sessionService.showForm" *ngIf="!sessionService.user">
+<div *ngIf="!sessionService.user" class="popup" [hidden]="sessionService.showForm" >
   <div class="form-popup">
     <app-signup-form></app-signup-form>
     <app-login-form></app-login-form>

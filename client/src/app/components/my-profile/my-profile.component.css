@@ -3,3 +3,19 @@
   float: left;
   padding: 32px;
 }
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.left-panel {
+  background-color: red;
+}
+
+.right-panel {
+  background-color: blue;
+}
+
+

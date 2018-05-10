@@ -8,9 +8,15 @@ import { SessionService } from '../../services/session.service';
 })
 export class MyProfileComponent implements OnInit {
 
+  rightComponent: string = "";
+
   constructor(public sessionService: SessionService) { }
 
   ngOnInit() {
+  }
+
+  changeRightComponent(component){
+
   }
 
 }

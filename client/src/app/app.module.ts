@@ -19,6 +19,7 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
 import { FillDetailsFormComponent } from './components/fill-details-form/fill-details-form.component';
 import { HiveDetailComponent } from './components/hive-detail/hive-detail.component';
 import { HiveInfoService } from './services/hive-info.service';
+import { MyProfileEditComponent } from './components/my-profile/my-profile-edit/my-profile-edit.component';
 
 
 
@@ -33,6 +34,7 @@ import { HiveInfoService } from './services/hive-info.service';
     MyProfileComponent,
     FillDetailsFormComponent,
     HiveDetailComponent,
+    MyProfileEditComponent,
   ],
   imports: [
     BrowserModule,
