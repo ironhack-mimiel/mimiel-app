@@ -17,6 +17,8 @@ import { HoneyListComponent } from './components/honey-list/honey-list.component
 import { HoneyDetailComponent } from './components/honey-detail/honey-detail.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { FillDetailsFormComponent } from './components/fill-details-form/fill-details-form.component';
+import { HiveDetailComponent } from './components/hive-detail/hive-detail.component';
+import { HiveInfoService } from './services/hive-info.service';
 
 
 
@@ -30,6 +32,7 @@ import { FillDetailsFormComponent } from './components/fill-details-form/fill-de
     HoneyDetailComponent,
     MyProfileComponent,
     FillDetailsFormComponent,
+    HiveDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { FillDetailsFormComponent } from './components/fill-details-form/fill-de
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService, HoneyInfoService],
+  providers: [SessionService, HoneyInfoService, HiveInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

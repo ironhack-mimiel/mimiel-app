@@ -1,8 +1,23 @@
 <div class="section">
-  
-  {{honey.name}}
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half">
+        <p class="title">{{honey.name}}</p>
+        <p class="subtitle">{{honey.type}}</p>
+      </div>
+      <div class="column is-half">
+        <img [src]="honey.pictureUrl" alt="Imagen de la miel">
+      </div>
+    </div>
+    <div class="columns">
+      <p class="title"> INFORMACION SOBRE LA COLMENA</p>
+      <div id="map" height="400"></div>
+    </div>
+    <div class="columns">
+      <button class="button brown" (click)="toggleContactForm()">Contactar con la colmena</button>
 
-  <button class="button" (click)="toggleContactForm()">Contactar con la colmena</button>
-
-  <a [routerLink]="['/hive']">Ir a la colmena</a>
-</div>
+      <div class="button yellow">
+        <a [routerLink]="['/hive', honey.hive._id]">Ir a la colmena</a>
+      </div>
+    </div>
+  </div>

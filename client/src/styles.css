@@ -2,3 +2,15 @@
 .label {
   color: #bf8040;
 }
+
+.brown {
+  background-color: #bf8040;
+  color: #ffdd57;
+  font-weight: bold;
+}
+
+.yellow {
+  background-color: #ffdd57;
+  color: #bf8040;
+  font-weight: bold;
+}

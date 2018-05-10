@@ -2,6 +2,7 @@ const express    = require('express');
 const router     = express.Router();
 const Honey      = require('../models/Honey');
 const Hive = require("../models/Hive");
+const Rpi = require('../models/Rpi')
 
 router.get('/', (req, res, next) => {
   Honey.find({}, (err, hives) => {
@@ -12,6 +13,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   Hive.findById(req.params.id)
+    .populate("rpi")
     .exec((err, hive) => {
       if (err)         { return res.status(500).json(err); }
       if (!hive)      { return res.status(404).json(new Error("404")) }

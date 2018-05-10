@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HoneyInfoService } from '../../services/honey-info.service';
+import { HiveInfoService } from '../../services/hive-info.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./honey-detail.component.css']
 })
 export class HoneyDetailComponent implements OnInit {
-  honey: Object = {};
+  honey: object;
   constructor(
     public honeyService: HoneyInfoService,
     public route: ActivatedRoute,
@@ -17,12 +18,10 @@ export class HoneyDetailComponent implements OnInit {
     route.params.subscribe(params => {
       honeyService.getOne(params.id).subscribe(honey => {
         this.honey = honey;
-        if (this.honey) {
-          console.log(this.honey.hive);
-        }        
       });
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }
