@@ -23,7 +23,7 @@
       <button class="button brown" (click)="toggleContactForm()">Contactar con la colmena</button>
 
       <div class="button yellow">
-        <a [routerLink]="['/hive', honey.hive._id]">Ir a la colmena</a>
+        <a (click)="goToHive()">Ir a la colmena</a>
       </div>
     </div>
   </div>

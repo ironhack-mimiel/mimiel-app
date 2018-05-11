@@ -15,7 +15,7 @@ const DBURL = process.env.DBURL;
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(DBURL, { useMongoClient: true })
+  .connect(DBURL)
   .then(() => {
     console.log('Connected to Mongo!');
   })

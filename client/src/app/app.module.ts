@@ -26,6 +26,7 @@ import { MyProfileHivesComponent } from './components/my-profile/my-profile-hive
 import { MyProfileAddnewhiveComponent } from './components/my-profile/my-profile-addnewhive/my-profile-addnewhive.component';
 import { MyProfilePaymentsComponent } from './components/my-profile/my-profile-payments/my-profile-payments.component';
 import { MyProfileBillingComponent } from './components/my-profile/my-profile-billing/my-profile-billing.component';
+import { IsPatronService } from './services/is-patron.service';
 
 
 
@@ -56,7 +57,7 @@ import { MyProfileBillingComponent } from './components/my-profile/my-profile-bi
       apiKey: 'AIzaSyAEJmeY3Pyn91jt-VceT2StgpSovA9jcrs'
     })
   ],
-  providers: [SessionService, HoneyInfoService, HiveInfoService],
+  providers: [SessionService, HoneyInfoService, HiveInfoService, IsPatronService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
