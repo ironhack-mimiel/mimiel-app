@@ -1,3 +1,4 @@
+import { Injectable, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service';
 
@@ -8,15 +9,12 @@ import { SessionService } from '../../services/session.service';
 })
 export class MyProfileComponent implements OnInit {
 
-  rightComponent: string = "";
 
-  constructor(public sessionService: SessionService) { }
+  rightComponent: string = '';
 
-  ngOnInit() {
-  }
+  constructor(public sessionService: SessionService) {}
 
-  changeRightComponent(component){
+  ngOnInit() {}
 
-  }
 
 }

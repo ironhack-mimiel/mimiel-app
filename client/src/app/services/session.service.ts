@@ -60,6 +60,13 @@ export class SessionService {
     .catch(this.handleError);
   }
 
+  updateProfile(update) {
+    return this.http.post(`${environment.BASEURL}/api/auth/update-profile`, update, this.options)
+      .map(res => res.json())
+      .map(user => this.handleUser(user))
+      .catch(this.handleError);
+  }
+
   toggleForm() {
     this.showForm = !this.showForm
   }

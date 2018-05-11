@@ -20,6 +20,11 @@ import { FillDetailsFormComponent } from './components/fill-details-form/fill-de
 import { HiveDetailComponent } from './components/hive-detail/hive-detail.component';
 import { HiveInfoService } from './services/hive-info.service';
 import { MyProfileEditComponent } from './components/my-profile/my-profile-edit/my-profile-edit.component';
+import { MyProfileDeleteComponent } from './components/my-profile/my-profile-delete/my-profile-delete.component';
+import { MyProfileHivesComponent } from './components/my-profile/my-profile-hives/my-profile-hives.component';
+import { MyProfileAddnewhiveComponent } from './components/my-profile/my-profile-addnewhive/my-profile-addnewhive.component';
+import { MyProfilePaymentsComponent } from './components/my-profile/my-profile-payments/my-profile-payments.component';
+import { MyProfileBillingComponent } from './components/my-profile/my-profile-billing/my-profile-billing.component';
 
 
 
@@ -35,6 +40,11 @@ import { MyProfileEditComponent } from './components/my-profile/my-profile-edit/
     FillDetailsFormComponent,
     HiveDetailComponent,
     MyProfileEditComponent,
+    MyProfileDeleteComponent,
+    MyProfileHivesComponent,
+    MyProfileAddnewhiveComponent,
+    MyProfilePaymentsComponent,
+    MyProfileBillingComponent,
   ],
   imports: [
     BrowserModule,
