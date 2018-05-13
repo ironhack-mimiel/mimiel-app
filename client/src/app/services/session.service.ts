@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 import { environment } from '../../environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class SessionService {
@@ -12,12 +13,13 @@ export class SessionService {
   userEvent: EventEmitter<any> = new EventEmitter();
   options: any = { withCredentials:true };
 
-  constructor(private http: Http) {
+  constructor(private http: Http, public router: Router) {
     this.isLoggedIn().subscribe();
   }
 
   handleError(e) {
-    return Observable.throw(e.json().message);
+    console.log(e);
+    return Observable.throw(e.json().message)
   }
 
   handleUser(user?:object){
@@ -30,41 +32,55 @@ export class SessionService {
     return this.http.post(`${environment.BASEURL}/api/auth/signup`, user, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(user))
-      .catch(this.handleError);
+      .catch(error => this.handleError(error));
   }
 
   login(email, password) {
-    return this.http.post(`${environment.BASEURL}/api/auth/login`, {email,password}, this.options)
+    return this.http
+      .post(`${environment.BASEURL}/api/auth/login`, { email, password }, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(user))
-      .catch(this.handleError);
+      .catch(error => this.handleError(error));
   }
 
   logout() {
-    return this.http.get(`${environment.BASEURL}/api/auth/logout`,this.options)
+    return this.http
+      .get(`${environment.BASEURL}/api/auth/logout`, this.options)
       .map(() => this.handleUser())
-      .catch(this.handleError);
+      .do(() => this.router.navigate((['/home'])))
+      .catch(error => this.handleError(error));
   }
 
   isLoggedIn() {
-    return this.http.get(`${environment.BASEURL}/api/auth/loggedin`, this.options)
+    return this.http
+      .get(`${environment.BASEURL}/api/auth/loggedin`, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(user))
-      .catch(this.handleError);
+      .catch(error => this.handleError(error));
   }
 
   fillDetails(update) {
     return this.http.post(`${environment.BASEURL}/api/auth/fill-details`, update, this.options)
     .map(res => res.json())
     .map(user => this.handleUser(user))
-    .catch(this.handleError);
+      .catch(error => this.handleError(error));
   }
 
   updateProfile(update) {
-    return this.http.post(`${environment.BASEURL}/api/auth/update-profile`, update, this.options)
+    return this.http
+      .post(`${environment.BASEURL}/api/auth/update-profile`, update, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(user))
-      .catch(this.handleError);
+      .catch(error => this.handleError(error));
+  }
+
+  deleteAccount(id){
+    console.log(id)
+    return this.http
+      .post(`${environment.BASEURL}/api/auth/delete-profile/${id}`, this.options)
+      .map(res => res.json())
+      .map(user => this.handleUser())
+      .catch(error => this.handleError(error));
   }
 
   toggleForm() {

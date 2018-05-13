@@ -27,4 +27,10 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
+router.get('/user/:id', (req, res, next) => {
+  Hive.find({ patrons: req.params.id })
+    .then(hives => res.status(200).json(hives))
+    .catch(error => res.status(500).json(err))
+});
+
 module.exports = router;

@@ -19,4 +19,10 @@ export class HiveInfoService {
     .map(res => res.json())
     .catch(this.handleError)
   }
+
+  getAll(id) {
+    return this.http.get(`${environment.BASEURL}/api/hive/user/${id}`)
+      .map(res => res.json())
+      .catch(this.handleError)
+  }
 }

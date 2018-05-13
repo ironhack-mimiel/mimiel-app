@@ -8,13 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public sessionService: SessionService, public router: Router) {}
+  constructor(public sessionService: SessionService, public router: Router) { }
   title = 'MiMiel';
+
 
   logout() {
     this.sessionService.logout().subscribe(() => {
       this.sessionService.toggleForm();
       this.router.navigate(['home'])
     });
+  }
+
+  ngOnInit() {
+    console.log('a' + this.sessionService.user);
   }
 }

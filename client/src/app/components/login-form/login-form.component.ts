@@ -16,6 +16,11 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {}
 
   login() {
+<<<<<<< HEAD
+    this.sessionService.login(this.email, this.password)
+      .subscribe(user => console.log(user));
+=======
     this.sessionService.login(this.email, this.password).subscribe();
+>>>>>>> bc126140ece3be8baae522140fd56d4b629e846f
   }
 }
