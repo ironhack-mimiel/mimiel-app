@@ -1,0 +1,18 @@
+<p>
+  send-message works!
+</p>
+
+<div class="form">
+  <form>
+    <h2> Send a message </h2>
+    <div class="field">
+      <label class="label"> Message </label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="message" name="message" />
+      </div>
+    </div>
+    <div class="field">
+      <button (click)="sendMessage()" class="button"> Send Message </button>
+    </div>
+  </form>
+</div>

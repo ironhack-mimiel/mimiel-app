@@ -1,0 +1,20 @@
+<p>
+  show-messages works!
+</p>
+
+<h1> Received messages</h1>
+<div *ngFor="let message of receivedMessages">
+  De: {{message.from.name}} {{message.from.surname}}, Email: {{message.from.email}}
+  Mensaje:{{message.message}}
+  Fecha: {{message.created_at | date:'medium'}}
+  <p *ngIf="!message.isRead">Mensaje sin leer</p>
+  <button *ngIf="!message.isRead" (click)="readMessage(message._id)">Marcar como leido</button>
+</div>
+
+
+<h1> Sent messages</h1>
+<div *ngFor="let message of sentMessages">
+  Para: {{message.to.name}} {{message.to.surname}}, Email: {{message.to.email}}
+  {{message.message}}
+  Fecha: {{message.created_at | date:'medium'}}
+</div>

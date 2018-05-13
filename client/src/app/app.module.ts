@@ -26,6 +26,10 @@ import { MyProfileHivesComponent } from './components/my-profile/my-profile-hive
 import { MyProfileAddnewhiveComponent } from './components/my-profile/my-profile-addnewhive/my-profile-addnewhive.component';
 import { MyProfilePaymentsComponent } from './components/my-profile/my-profile-payments/my-profile-payments.component';
 import { MyProfileBillingComponent } from './components/my-profile/my-profile-billing/my-profile-billing.component';
+import { IsPatronService } from './services/is-patron.service';
+import { ShowMessagesComponent } from './components//my-profile/show-messages/show-messages.component';
+import { MessagingService } from './services/messaging.service';
+import { SendMessageComponent } from './components/send-message/send-message.component';
 
 
 
@@ -46,6 +50,8 @@ import { MyProfileBillingComponent } from './components/my-profile/my-profile-bi
     MyProfileAddnewhiveComponent,
     MyProfilePaymentsComponent,
     MyProfileBillingComponent,
+    ShowMessagesComponent,
+    SendMessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,7 @@ import { MyProfileBillingComponent } from './components/my-profile/my-profile-bi
       apiKey: 'AIzaSyAEJmeY3Pyn91jt-VceT2StgpSovA9jcrs'
     })
   ],
-  providers: [SessionService, HoneyInfoService, HiveInfoService],
+  providers: [SessionService, HoneyInfoService, HiveInfoService, IsPatronService, MessagingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
