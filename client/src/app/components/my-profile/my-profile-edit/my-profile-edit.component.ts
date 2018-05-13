@@ -14,6 +14,7 @@ export class MyProfileEditComponent implements OnInit {
   email: string;
   password: string = "";
   message: string;
+  id: string = this.sessionService.user._id;
 
   constructor(public sessionService: SessionService) {}
 
@@ -23,6 +24,7 @@ export class MyProfileEditComponent implements OnInit {
     if(this.password !== ""){
       this.message = '';
       const update = {
+        id: this.id,
         name: this.name,
         surname: this.surname,
         address: this.address,

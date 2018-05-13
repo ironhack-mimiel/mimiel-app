@@ -19,7 +19,7 @@ export class SignupFormComponent implements OnInit {
       password: this.password,
       email: this.email
     };
-    console.log(user);
-    this.sessionService.signup(user).subscribe();
+    this.sessionService.signup(user)
+      .subscribe(user => console.log(user));
   }
 }

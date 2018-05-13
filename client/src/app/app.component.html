@@ -1,7 +1,7 @@
 <header>
   <div class="navbar">
     <div class="navbar-brand">
-      <a [routerLink]="['/home']" >{{title}}</a>
+      <a [routerLink]="['/home']">{{title}}</a>
     </div>
     <div *ngIf="!sessionService.user" class="navbar-menu is-active navbar-end">
       <button (click)="sessionService.toggleForm()" class="button brown">Log in or Sign Up</button>
@@ -15,7 +15,7 @@
 </header>
 
 
-<div *ngIf="!sessionService.user" class="popup" [hidden]="sessionService.showForm" >
+<div *ngIf="!sessionService.user" class="popup" [hidden]="sessionService.showForm">
   <div class="form-popup">
     <app-signup-form></app-signup-form>
     <app-login-form></app-login-form>

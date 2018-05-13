@@ -1,3 +1,15 @@
-<p>
-  my-profile-hives works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>{{this.sessionService.user.name}} sponsored hives</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let hive of hives">
+      <div class="col-3">
+        <p>{{hive.email}}</p>
+        <img src="{{hive.picturesURL}}" alt="Hive picture" width="200px">
+      </div>
+    </div>
+  </div>
+</div>

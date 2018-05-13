@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
+const _ = require('lodash');
 
 const logInPromise = (user, req) =>
   new Promise((resolve, reject) => {
@@ -83,6 +84,30 @@ router.post('/fill-details', (req, res, next) => {
     res.status(200).json({ message: 'User updated successfully' });
   })
   .catch(e => res.status(500).json({ message: e.message }));  
+})
+
+router.post('/update-profile', (req, res, next) => {
+  let update = _.pickBy(req.body, function(value) {return value !== ''});
+  update = _.omit(update, 'password');
+  console.log(update);
+
+  User.findById(update.id)
+    .then(user => {
+      if (!bcrypt.compareSync(req.body.password, user.password)) {
+        throw new Error('The user does not exist');
+      }
+      User.update({ _id: update.id}, update, {new: true})
+        .then(res.status(200).json({ message: 'User updated successfully' }))
+        //.catch(res.status(500).json({ message: 'There was a problem updating user data'}))
+    })
+    //.catch(e => res.status(500).json({ message: e.message }));
+})
+
+router.post('/delete-profile/:id', (req, res, next) => {
+
+  User.findByIdAndRemove(req.params.id)
+    .then(res.status(200).json({ message: 'User updated successfully' }))
+    //.catch(res.status(500).json({ message: 'There was a problem updating user data'}))
 })
 
 module.exports = router;

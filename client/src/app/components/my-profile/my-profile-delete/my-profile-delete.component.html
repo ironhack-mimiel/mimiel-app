@@ -1,3 +1,38 @@
-<p>
-  my-profile-delete works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Delete your account</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h5>Please, give us feedback</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>Why are you leaving?</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="radio" name="action" id="delete-option1" value="delete-option1" [(ngModel)]="option"/>
+      <label for="delete-option1">I began to produce my own honey</label>
+      <br />
+      <input type="radio" name="action" id="delete-option2" value="delete-option2" [(ngModel)]="option"/>
+      <label for="delete-option2">I'm not selling honey anymore</label>
+      <br />
+      <input type="radio" name="action" id="delete-option3" value="delete-option3" [(ngModel)]="option"/>
+      <label for="delete-option3">Other (provide additional feedback)</label>
+      <br />
+      <div *ngIf="option==='delete-option3'">
+        <input type="text" name="action" id="delete-option3-reason" value="delete-option3-reason" [(ngModel)]="deleteReason" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button (click)="deleteAccount()">Delete your account</button>
+    </div>
+  </div>
+</div>
