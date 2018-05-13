@@ -13,7 +13,6 @@ const userSchema = new Schema(
     paymentMethod: {type: String, enum: ["Contrareembolso", "Tarjeta", "PayPal"], default: "Contrareembolso"},
     isApicultor: { type: Boolean, default: false },
     isFilled: {type: Boolean, default: false},
-    pendingNotifications: Number
   },
   {
     timestamps: {
