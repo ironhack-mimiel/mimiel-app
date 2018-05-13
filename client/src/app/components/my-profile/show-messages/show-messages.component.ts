@@ -10,6 +10,7 @@ import { SessionService } from '../../../services/session.service';
 export class ShowMessagesComponent implements OnInit {
   sentMessages: Array<Object>;
   receivedMessages: Array<Object>;
+  showReply: boolean = false;
   constructor(
     public messagingService: MessagingService,
     public sessionService: SessionService
@@ -33,4 +34,6 @@ export class ShowMessagesComponent implements OnInit {
           .subscribe(messages => (this.receivedMessages = messages))
       );
   }
+
+  toggleReply = (event ?) => this.showReply = !this.showReply
 }

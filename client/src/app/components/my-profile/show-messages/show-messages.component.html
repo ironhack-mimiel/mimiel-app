@@ -9,6 +9,8 @@
   Fecha: {{message.created_at | date:'medium'}}
   <p *ngIf="!message.isRead">Mensaje sin leer</p>
   <button *ngIf="!message.isRead" (click)="readMessage(message._id)">Marcar como leido</button>
+  <button (click)="toggleReply()">Responder al mensaje</button>
+  <app-send-message *ngIf="showReply" [hiveInfo]="message.hive" [toWho]="message.from" (onToggleForm)="toggleReply($event)"></app-send-message>
 </div>
 
 
