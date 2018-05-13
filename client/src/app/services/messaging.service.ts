@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class MessagingService {
   constructor(private http: Http) {}
+  options: any = { withCredentials:true };
 
   handleError(e) {
     return Observable.throw(e.json().message);
@@ -25,5 +26,11 @@ export class MessagingService {
       .get(`${environment.BASEURL}/api/messages/sent/${id}`)
       .map(res => res.json())
       .catch(this.handleError);
+  }
+
+  sendMessage(message) {
+    return this.http.post(`${environment.BASEURL}/api/messages`, message, this.options)
+    .map(res => res.json())
+    .catch(this.handleError);
   }
 }

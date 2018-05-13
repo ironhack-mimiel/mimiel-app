@@ -29,6 +29,7 @@ import { MyProfileBillingComponent } from './components/my-profile/my-profile-bi
 import { IsPatronService } from './services/is-patron.service';
 import { ShowMessagesComponent } from './components/show-messages/show-messages.component';
 import { MessagingService } from './services/messaging.service';
+import { SendMessageComponent } from './components/send-message/send-message.component';
 
 
 
@@ -50,6 +51,7 @@ import { MessagingService } from './services/messaging.service';
     MyProfilePaymentsComponent,
     MyProfileBillingComponent,
     ShowMessagesComponent,
+    SendMessageComponent,
   ],
   imports: [
     BrowserModule,

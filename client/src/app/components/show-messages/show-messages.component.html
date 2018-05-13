@@ -7,6 +7,9 @@
   De: {{message.from.name}} {{message.from.surname}}, Email: {{message.from.email}}
   Mensaje:{{message.message}}
   Fecha: {{message.created_at | date:'medium'}}
+  <p *ngIf="!message.isRead">Mensaje sin leer</p>
+  <button (click)="readMessage()">Marcar como leido</button>
+  <button (click)="answerMessage()">Contestar al mensaje</button>
 </div>
 
 
