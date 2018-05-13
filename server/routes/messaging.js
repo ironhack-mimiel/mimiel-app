@@ -51,6 +51,14 @@ router.get('/sent/:id', (req, res, next) => {
     .catch(e => res.status(500).json({ message: e.message }));
 });
 
+// Mark messsage as read
+router.get('/:id', (req, res, next) => {
+  Messages.findByIdAndUpdate(req.params.id, {isRead: true}, {new: true})
+    .then( message => res.status(200).json({ message: 'Message marked as read' })
+    )
+    .catch(e => res.status(500).json({ message: e.message }));
+});
+
 // Delete a message
 router.delete('/:id', (req, res, next) => {
   Messages.findByIdAndRemove(req.params.id)
