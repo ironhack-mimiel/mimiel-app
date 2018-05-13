@@ -12,11 +12,11 @@
     <p class="title"> INFORMACION SOBRE LA COLMENA</p>
     <div class="columns">
       <div id="map" class="column is-half">
-          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10">
-            </agm-map>
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10">
+        </agm-map>
       </div>
       <div class="column is-half">
-        
+
       </div>
     </div>
     <div class="columns">
@@ -27,3 +27,8 @@
       </div>
     </div>
   </div>
+
+  <div [hidden]="!showForm">
+    <app-send-message (onToggleForm)="toggleContactForm($event)" [hiveInfo]="honey.hive"></app-send-message>
+  </div>
+</div>

@@ -5,14 +5,14 @@ const Messages = require('../models/Message');
 
 //Create new Message
 router.post('/', (req, res, next) => {
-  const { from, to, message } = req.body;
+  const { from, to, hive, message } = req.body;
   if (!to || !from || !message) {
     res
       .status(400)
       .json({ message: 'Sorry, but one or more fields are empty' });
     return;
   }
-  Messages.create({ from, to, message })
+  Messages.create({ from, to, message, hive })
     .then(message =>
       res
         .status(200)
