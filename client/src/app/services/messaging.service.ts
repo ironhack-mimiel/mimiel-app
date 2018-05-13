@@ -33,4 +33,10 @@ export class MessagingService {
     .map(res => res.json())
     .catch(this.handleError);
   }
+
+  readMessage(id) {
+    return this.http.get(`${environment.BASEURL}/api/messages/${id}`)
+    .map(res => res.json())
+    .catch(this.handleError);
+  }
 }

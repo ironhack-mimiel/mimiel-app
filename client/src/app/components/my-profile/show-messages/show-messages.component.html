@@ -8,8 +8,7 @@
   Mensaje:{{message.message}}
   Fecha: {{message.created_at | date:'medium'}}
   <p *ngIf="!message.isRead">Mensaje sin leer</p>
-  <button (click)="readMessage()">Marcar como leido</button>
-  <button (click)="answerMessage()">Contestar al mensaje</button>
+  <button *ngIf="!message.isRead" (click)="readMessage(message._id)">Marcar como leido</button>
 </div>
 
 

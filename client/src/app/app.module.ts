@@ -27,7 +27,7 @@ import { MyProfileAddnewhiveComponent } from './components/my-profile/my-profile
 import { MyProfilePaymentsComponent } from './components/my-profile/my-profile-payments/my-profile-payments.component';
 import { MyProfileBillingComponent } from './components/my-profile/my-profile-billing/my-profile-billing.component';
 import { IsPatronService } from './services/is-patron.service';
-import { ShowMessagesComponent } from './components/show-messages/show-messages.component';
+import { ShowMessagesComponent } from './components//my-profile/show-messages/show-messages.component';
 import { MessagingService } from './services/messaging.service';
 import { SendMessageComponent } from './components/send-message/send-message.component';
 
