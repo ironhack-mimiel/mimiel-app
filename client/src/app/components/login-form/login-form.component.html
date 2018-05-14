@@ -4,18 +4,21 @@
     <div class="field">
       <label class="label">Email</label>
       <div class="control">
-        <input class="input" type="text" placeholder="pepe@ironhack.com" [(ngModel)]="email" name="email" #myEmail="ngModel" required/>
+        <input class="input" type="email" [(ngModel)]="email" name="email" #myEmail="ngModel" required />
         <span *ngIf="!myEmail.valid && myEmail.touched">The email is required.</span>
+        <span ng-show="myEmail.error.email">Please insert a valid email.</span>
       </div>
     </div>
     <div class="field">
-      <label class="label">Password</label>
+      <label class="label">Contraseña</label>
       <div class="control">
-        <input class="input" type="password" [(ngModel)]="password" name="password" #myPassword="ngModel" required/>
+        <input class="input" type="password" [(ngModel)]="password" name="password" #myPassword="ngModel" required />
         <span *ngIf="!myPassword.valid && myPassword.touched">The password is required.</span>
+
+
       </div>
     </div>
-  
+
     <div class="field">
       <button (click)="login()" class="button is-warning"> login </button>
     </div>
