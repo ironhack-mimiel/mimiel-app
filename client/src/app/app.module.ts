@@ -31,12 +31,9 @@ import { IsPatronService } from './services/is-patron.service';
 import { ShowMessagesComponent } from './components//my-profile/show-messages/show-messages.component';
 import { MessagingService } from './services/messaging.service';
 import { SendMessageComponent } from './components/send-message/send-message.component';
-<<<<<<< HEAD
 import { FileUploadModule } from 'ng2-file-upload';
 import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addnewhive/addnewhive-pics/addnewhive-pics.component';
-=======
 import { GeocodeComponent } from './components/geocode/geocode.component';
->>>>>>> alvaro
 
 
 
@@ -60,11 +57,8 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     MyProfileBillingComponent,
     ShowMessagesComponent,
     SendMessageComponent,
-<<<<<<< HEAD
-    AddnewhivePicsComponent
-=======
+    AddnewhivePicsComponent,
     GeocodeComponent,
->>>>>>> alvaro
   ],
   imports: [
     BrowserModule,
@@ -74,7 +68,6 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAEJmeY3Pyn91jt-VceT2StgpSovA9jcrs'
     }),
-<<<<<<< HEAD
     FileUploadModule
   ],
   providers: [
@@ -83,10 +76,8 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     HiveInfoService,
     IsPatronService,
     MessagingService,
-    FileUploadModule
-=======
+    FileUploadModule,
     AngularGooglePlaceModule
->>>>>>> alvaro
   ],
   bootstrap: [AppComponent]
 })
