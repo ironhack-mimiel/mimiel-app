@@ -35,5 +35,10 @@ export class ShowMessagesComponent implements OnInit {
       );
   }
 
-  toggleReply = (event ?) => this.showReply = !this.showReply
+  toggleReply = (event?) => (this.showReply = !this.showReply);
+
+  activatePatron(hiveId, userId, messageId) {
+    this.messagingService.activatePatron(hiveId, userId).subscribe();
+    this.readMessage(messageId);
+  }
 }

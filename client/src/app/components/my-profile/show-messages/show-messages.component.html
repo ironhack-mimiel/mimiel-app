@@ -10,6 +10,7 @@
   <p *ngIf="!message.isRead">Mensaje sin leer</p>
   <button *ngIf="!message.isRead" (click)="readMessage(message._id)">Marcar como leido</button>
   <button (click)="toggleReply()">Responder al mensaje</button>
+  <button *ngIf="message.isRequest && !message.isRead" (click)="activatePatron(message.hive._id, message.from._id, message._id)">Dar de alta al usuario en la colmena</button>
   <app-send-message *ngIf="showReply" [hiveInfo]="message.hive" [toWho]="message.from" (onToggleForm)="toggleReply($event)"></app-send-message>
 </div>
 

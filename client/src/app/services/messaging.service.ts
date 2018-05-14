@@ -39,4 +39,10 @@ export class MessagingService {
     .map(res => res.json())
     .catch(this.handleError);
   }
+
+  activatePatron(hiveId, userId) {
+    return this.http.put(`${environment.BASEURL}/api/messages/${hiveId}`, {userId})
+    .map(res => res.json())
+    .catch(this.handleError);
+  }
 }

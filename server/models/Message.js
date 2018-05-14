@@ -7,7 +7,8 @@ const MessageSchema = new Schema(
     to: { type: Schema.Types.ObjectId, ref: 'User' },
     message: {type: String},
     hive: { type: Schema.Types.ObjectId, ref: 'Hive' },
-    isRead: {type: Boolean, default: false}
+    isRead: {type: Boolean, default: false},
+    isRequest: {type: Boolean, default: false}
   },
   {
     timestamps: {

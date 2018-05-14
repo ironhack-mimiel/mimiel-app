@@ -29,6 +29,6 @@
   </div>
 
   <div [hidden]="!showForm">
-    <app-send-message (onToggleForm)="toggleContactForm($event)" [hiveInfo]="honey.hive" [toWho]="honey.hive.beekeeper"></app-send-message>
+    <app-send-message (onToggleForm)="toggleContactForm($event)" [hiveInfo]="honey.hive" [toWho]="honey.hive.beekeeper" [isRequest]="true" ></app-send-message>
   </div>
 </div>

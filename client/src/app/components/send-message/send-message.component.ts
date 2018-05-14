@@ -25,14 +25,14 @@ export class SendMessageComponent implements OnInit {
 
   @Input() toWho: string;
 
+  @Input() isRequest: boolean;
+
   constructor(
     public messagingService: MessagingService,
     public sessionService: SessionService
   ) {}
 
   ngOnInit() {
-    console.log(this.hiveInfo)
-    console.log(this.toWho)
   }
 
   sendMessage() {
@@ -40,7 +40,8 @@ export class SendMessageComponent implements OnInit {
       from: this.sessionService.user._id,
       to: this.toWho,
       hive: this.hiveInfo._id,
-      message: this.message
+      message: this.message,
+      isRequest: this.isRequest
     };
 
     this.messagingService
