@@ -14,6 +14,7 @@ export class HiveDetailComponent implements OnInit {
   lat: number;
   lng: number;
   temperatureData: object;
+  error: any;
 
   averageTemperature(hive) {
     let tempArray: Array<any> = [];
