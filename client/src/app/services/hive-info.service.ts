@@ -25,4 +25,10 @@ export class HiveInfoService {
       .map(res => res.json())
       .catch(this.handleError)
   }
+
+  newHive(data) {
+    return this.http.post(`${environment.BASEURL}/api/hive/new`, data)
+      .map(res => res.json())
+      .catch(this.handleError);
+  }
 }

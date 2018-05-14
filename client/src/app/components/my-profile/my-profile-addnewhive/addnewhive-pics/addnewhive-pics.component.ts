@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { FileUploader, FileUploadModule } from 'ng2-file-upload';
-
-const URL = '/api/hive/newhivepics';
+import { PictureUploadService } from '../../../../services/picture-upload.service';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-addnewhive-pics',
@@ -12,7 +12,10 @@ const URL = '/api/hive/newhivepics';
 })
 export class AddnewhivePicsComponent implements OnInit {
 
-  public uploader: FileUploader = new FileUploader({ url: URL });
+
+
+  public uploader: FileUploader = new FileUploader({
+    url: `${environment.BASEURL}/api/hive/newhivepics/${this.pictureUploadService.lastHiveCreated}` });
   public hasBaseDropZoneOver: boolean = false;
   public hasAnotherDropZoneOver: boolean = false;
 
@@ -24,7 +27,12 @@ export class AddnewhivePicsComponent implements OnInit {
     this.hasAnotherDropZoneOver = e;
   }
 
-  constructor() {}
+  constructor(public pictureUploadService: PictureUploadService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+      console.log("ImageUpload:uploaded:", item, status, response);
+    };
+  }
 }

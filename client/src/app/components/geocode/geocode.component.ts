@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Address } from 'angular-google-place';
 
 @Component({
@@ -9,8 +9,7 @@ import { Address } from 'angular-google-place';
 export class GeocodeComponent implements OnInit {
   constructor() {}
 
-  lat: number;
-  lng: number;
+  @Output() onGetFormatedAddress = new EventEmitter<Object>();
 
   public options = {
     type: 'address',
@@ -19,12 +18,16 @@ export class GeocodeComponent implements OnInit {
 
   ngOnInit() {}
 
-  getAddress(place: Address) {
+  /* getAddress(place: Address) {
     console.log('Address', place);
-  }
+  } */
+
   getFormattedAddress(event: any) {
-    this.lat = event.lat;
-    this.lng = event.lng;
-    console.log(this.lat, this.lng)
+    const location = {
+      city: event.city,
+      coordinates: [event.lat, event.lng]
+    }
+
+    this.onGetFormatedAddress.emit(location);
   }
 }

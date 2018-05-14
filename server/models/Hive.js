@@ -5,11 +5,11 @@ const hiveSchema = new Schema(
   {
     name: { type: String, required: true },
     description: String,
-    location: { type: { type: String }, coordinates: [Number] },
+    location: { city: { type: String }, coordinates: [Number] },
     beekeeper: { type: Schema.Types.ObjectId, ref: 'User' },
     honey: { type: Schema.Types.ObjectId, ref: 'Honey' },
     rpi: { type: Schema.Types.ObjectId, ref: 'Rpi' },
-    picturesURL: [String],
+    picturesURL: String,
     patrons: [{ type: Schema.Types.ObjectId, ref: 'User' }]
   },
   {

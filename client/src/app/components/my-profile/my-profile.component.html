@@ -27,23 +27,26 @@
         </div>
         <div class="column is-9 right-panel">
           <!-- Change right pannel depending on option selected -->
-          <div *ngIf="rightComponent === 'editProfile'">
+          <div *ngIf="rightComponent === 'editProfile' && pictureUploadService.showPanelComponent">
             <app-my-profile-edit></app-my-profile-edit>
           </div>
-          <div *ngIf="rightComponent === 'deleteProfile'">
+          <div *ngIf="rightComponent === 'deleteProfile' && pictureUploadService.showPanelComponent">
             <app-my-profile-delete></app-my-profile-delete>
           </div>
-          <div *ngIf="rightComponent == 'hives'">
+          <div *ngIf="rightComponent == 'hives' && pictureUploadService.showPanelComponent">
             <app-my-profile-hives></app-my-profile-hives>
           </div>
-          <div *ngIf="rightComponent == 'addNewHive'">
+          <div *ngIf="rightComponent == 'addNewHive' && pictureUploadService.showPanelComponent">
             <app-my-profile-addnewhive></app-my-profile-addnewhive>
           </div>
-          <div *ngIf="rightComponent == 'payments'">
+          <div *ngIf="rightComponent == 'payments' && pictureUploadService.showPanelComponent">
             <app-my-profile-payments></app-my-profile-payments>
           </div>
-          <div *ngIf="rightComponent == 'billing'">
+          <div *ngIf="rightComponent == 'billing' && pictureUploadService.showPanelComponent">
             <app-my-profile-billing></app-my-profile-billing>
+          </div>
+          <div *ngIf="pictureUploadService.showAddImageComponent === true">
+            <app-addnewhive-pics [(ngModel)]="rightComponent" (ngModelChange)="rightComponent = ''"></app-addnewhive-pics>
           </div>
         </div>
       </div>
@@ -52,5 +55,3 @@
 </div>
 
 <app-show-messages></app-show-messages>
-
-

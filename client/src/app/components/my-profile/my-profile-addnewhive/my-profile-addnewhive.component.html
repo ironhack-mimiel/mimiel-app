@@ -18,7 +18,7 @@
         <label class="label">Where's your hive located at?</label>
         <small class="label">User's wont see the exact location</small>
         <div class="control">
-          <input class="input" type="text" [(ngModel)]="hiveLocation" name="hiveLocation" />
+          <app-geocode (onGetFormatedAddress)="getAddressFromChild($event)"></app-geocode>
         </div>
       </div>
       <div class="field">
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="field">
-        <button (click)="updateProfile()" class="button is-warning">Update your profile</button>
+        <button (click)="newHive()" class="button is-warning">Go ahead and upload awesome pictures!</button>
       </div>
     </form>
   </div>

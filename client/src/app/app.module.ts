@@ -34,6 +34,7 @@ import { SendMessageComponent } from './components/send-message/send-message.com
 import { FileUploadModule } from 'ng2-file-upload';
 import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addnewhive/addnewhive-pics/addnewhive-pics.component';
 import { GeocodeComponent } from './components/geocode/geocode.component';
+import { PictureUploadService } from './services/picture-upload.service';
 
 
 
@@ -58,7 +59,7 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     ShowMessagesComponent,
     SendMessageComponent,
     AddnewhivePicsComponent,
-    GeocodeComponent,
+    GeocodeComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +69,8 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAEJmeY3Pyn91jt-VceT2StgpSovA9jcrs'
     }),
-    FileUploadModule
+    FileUploadModule,
+    AngularGooglePlaceModule
   ],
   providers: [
     SessionService,
@@ -77,7 +79,7 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     IsPatronService,
     MessagingService,
     FileUploadModule,
-    AngularGooglePlaceModule
+    PictureUploadService
   ],
   bootstrap: [AppComponent]
 })

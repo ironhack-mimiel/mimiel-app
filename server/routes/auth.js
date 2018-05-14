@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const Hive = require('../models/Hive');
 const bcrypt = require('bcryptjs');
 const _ = require('lodash');
 
@@ -104,10 +105,42 @@ router.post('/update-profile', (req, res, next) => {
 })
 
 router.post('/delete-profile/:id', (req, res, next) => {
+  
+  User.findById(req.params.id)
+    .then(user => {
+      if(user.isApicultor){
 
-  User.findByIdAndRemove(req.params.id)
-    .then(res.status(200).json({ message: 'User updated successfully' }))
-    //.catch(res.status(500).json({ message: 'There was a problem updating user data'}))
+        // Deleting beekeeper honey
+        Hive.find({ beekeeper: user._id })
+          .then(hives => {
+            hives.forEach(hive => {
+              Honey.remove({ hive: hive._id })
+            })
+              .catch(error => res.status(500).json({ message: 'There was a problem deleting user honey' }))
+          })
+          .catch(error => res.status(500).json({ message: 'There was a problem finding user honey' }))
+        
+          // Deleting users hives and the user himself
+        User.findByIdAndRemove(req.params.id)
+          .then(user => {
+            res.status(200).json({ message: "User deleted succesfully" })
+            Hive.deleteMany({ beekeeper: user._id })
+              .then(res.status(200).json({ message: "User hives deleted succesfully" }))
+              .catch(res.status(500).json({ message: "There was a problem deleting user hives" }))
+          })
+          .catch(res.status(500).json({ message: "There was a problem deleting user" })) 
+      }
+
+      else {
+        Hive.find({ patrons: { $in: [user._id]} })
+          .then(hives => {
+            console.log(hives);  
+            //hives.forEach(hive => {
+            //})
+          })
+        }
+      })
 })
+
 
 module.exports = router;
