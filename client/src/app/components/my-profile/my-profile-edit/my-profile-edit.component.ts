@@ -12,6 +12,7 @@ export class MyProfileEditComponent implements OnInit {
   address: string;
   phoneNumber: string;
   email: string;
+  payMethod: string;
   password: string = "";
   message: string;
   id: string = this.sessionService.user._id;
@@ -30,11 +31,15 @@ export class MyProfileEditComponent implements OnInit {
         address: this.address,
         phoneNumber: this.phoneNumber,
         email: this.email,
-        password: this.password
+        password: this.password,
+        paymentMethod: this.payMethod
       };
       this.sessionService
         .updateProfile(update)
-        .subscribe();
+        .subscribe(user => {
+          console.log(this.sessionService.user.isApicultor);
+          this.sessionService.handleUser(user)
+        });
     } else {
       this.message = 'Your need to provide your password';
     }

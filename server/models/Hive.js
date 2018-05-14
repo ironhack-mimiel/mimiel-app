@@ -9,8 +9,6 @@ const hiveSchema = new Schema(
     beekeeper: { type: Schema.Types.ObjectId, ref: 'User' },
     honey: { type: Schema.Types.ObjectId, ref: 'Honey' },
     rpi: { type: Schema.Types.ObjectId, ref: 'Rpi' },
-    email: { type: String, required: true },
-    phoneNumber: Number,
     picturesURL: [String],
     patrons: [{ type: Schema.Types.ObjectId, ref: 'User' }]
   },

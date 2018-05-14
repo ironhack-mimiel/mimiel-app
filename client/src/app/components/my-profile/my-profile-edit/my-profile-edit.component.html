@@ -32,6 +32,18 @@
           <input class="input" type="text" [(ngModel)]="phoneNumber" name="phoneNumber" />
         </div>
       </div>
+      <div *ngIf="sessionService.user.isApicultor === true">
+        <div class="field">
+          <label class="label">How would you want to get paid?</label>
+          <div class="control">
+            <select name="payMethod" id="payMethod" [(ngModel)]="payMethod">
+              <option value="creditCard">Credit Card</option>
+              <option value="paypal">Paypal</option>
+              <option value="cashOnDelivery">Cash on delivery</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <div class="field">
         <label class="label">Please, type your password</label>
         <div class="control">

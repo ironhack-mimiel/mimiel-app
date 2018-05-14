@@ -96,8 +96,8 @@ router.post('/update-profile', (req, res, next) => {
       if (!bcrypt.compareSync(req.body.password, user.password)) {
         throw new Error('The user does not exist');
       }
-      User.update({ _id: update.id}, update, {new: true})
-        .then(res.status(200).json({ message: 'User updated successfully' }))
+      User.findByIdAndUpdate(update.id, update, {new: true})
+        .then(user => {res.status(200).json(user)})
         //.catch(res.status(500).json({ message: 'There was a problem updating user data'}))
     })
     //.catch(e => res.status(500).json({ message: e.message }));

@@ -24,37 +24,9 @@
       <div class="field">
         <label class="label">What kind of honey are your bees making?</label>
         <div class="control">
-          <input class="input" type="text" [(ngModel)]="honeyKind" name="honeyKind" />
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Where do you want to receive incoming emails related to this hive?</label>
-        <small class="label">By default, we will use your account settings</small>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="email" name="email" />
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Provide a contact number for your customers</label>
-        <small class="label">By default, we will use your account settings</small>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="phoneNumber" name="phoneNumber" />
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">How would you want to get paid?</label>
-        <div class="control">
-          <select name="payMethod" id="payMethod" [(ngModel)]="payMethod">
-            <option value="creditCard">Credit Card</option>
-            <option value="paypal">Paypal</option>
-            <option value="cashOnDelivery">Cash on delivery</option>
+          <select name="honeyKind" id="honeyKind" [(ngModel)]="honeyKind">
+            <option *ngFor="let honey of honeys" value="{{honey._id}}">{{honey.name}}</option>
           </select>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Give your potential customers a nice view of your hive</label>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="phoneNumber" name="phoneNumber" />
         </div>
       </div>
       <div *ngIf="message !== ''">
