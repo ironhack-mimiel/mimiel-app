@@ -26,8 +26,9 @@ router.get('/received/:id', (req, res, next) => {
   Messages.find({ to: req.params.id })
     .populate({
       path: 'from',
-      select: 'name surname email -_id',
+      select: 'name surname email',
     })
+    .populate('hive')
     .then(messages => {
       messages == []
         ? res.status(200).json({ message: 'The user has no received messages' })

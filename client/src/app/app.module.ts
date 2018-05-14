@@ -35,6 +35,7 @@ import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addn
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

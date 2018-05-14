@@ -23,6 +23,8 @@ export class SendMessageComponent implements OnInit {
 
   @Input() hiveInfo: Hive;
 
+  @Input() toWho: string;
+
   constructor(
     public messagingService: MessagingService,
     public sessionService: SessionService
@@ -30,15 +32,17 @@ export class SendMessageComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.hiveInfo)
+    console.log(this.toWho)
   }
 
   sendMessage() {
     const message = {
       from: this.sessionService.user._id,
-      to: this.hiveInfo.beekeeper,
+      to: this.toWho,
       hive: this.hiveInfo._id,
       message: this.message
     };
+
     this.messagingService
       .sendMessage(message)
       .subscribe(() => this.onToggleForm.emit());
