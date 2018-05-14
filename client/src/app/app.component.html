@@ -1,7 +1,7 @@
 <header>
   <div class="navbar">
     <div class="navbar-brand">
-      <a [routerLink]="['/home']">{{title}}</a>
+      <a [routerLink]="['/home']"><img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526247047/mm-hex-marron-amarillo.png" width="64" id="mimiel-btn"></a>
     </div>
     <div *ngIf="!sessionService.user" class="navbar-menu is-active navbar-end">
       <button (click)="sessionService.toggleForm()" class="button brown">Log in or Sign Up</button>
@@ -21,5 +21,10 @@
     <app-login-form></app-login-form>
   </div>
 </div>
+
+
+<app-geocode></app-geocode>
+
+
 
 <router-outlet></router-outlet>

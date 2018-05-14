@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
+import {AngularGooglePlaceModule} from 'angular-google-place';
 
 import { SessionService } from './services/session.service';
 import { HoneyInfoService } from './services/honey-info.service';
@@ -30,8 +31,12 @@ import { IsPatronService } from './services/is-patron.service';
 import { ShowMessagesComponent } from './components//my-profile/show-messages/show-messages.component';
 import { MessagingService } from './services/messaging.service';
 import { SendMessageComponent } from './components/send-message/send-message.component';
+<<<<<<< HEAD
 import { FileUploadModule } from 'ng2-file-upload';
 import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addnewhive/addnewhive-pics/addnewhive-pics.component';
+=======
+import { GeocodeComponent } from './components/geocode/geocode.component';
+>>>>>>> alvaro
 
 
 
@@ -55,7 +60,11 @@ import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addn
     MyProfileBillingComponent,
     ShowMessagesComponent,
     SendMessageComponent,
+<<<<<<< HEAD
     AddnewhivePicsComponent
+=======
+    GeocodeComponent,
+>>>>>>> alvaro
   ],
   imports: [
     BrowserModule,
@@ -65,6 +74,7 @@ import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addn
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAEJmeY3Pyn91jt-VceT2StgpSovA9jcrs'
     }),
+<<<<<<< HEAD
     FileUploadModule
   ],
   providers: [
@@ -74,6 +84,9 @@ import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addn
     IsPatronService,
     MessagingService,
     FileUploadModule
+=======
+    AngularGooglePlaceModule
+>>>>>>> alvaro
   ],
   bootstrap: [AppComponent]
 })

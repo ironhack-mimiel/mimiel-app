@@ -2,17 +2,18 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const Messages = require('../models/Message');
+const Hive = require('../models/Hive')
 
 //Create new Message
 router.post('/', (req, res, next) => {
-  const { from, to, hive, message } = req.body;
+  const { from, to, hive, message, isRequest } = req.body;
   if (!to || !from || !message) {
     res
       .status(400)
       .json({ message: 'Sorry, but one or more fields are empty' });
     return;
   }
-  Messages.create({ from, to, message, hive })
+  Messages.create({ from, to, message, hive, isRequest })
     .then(message =>
       res
         .status(200)
@@ -68,4 +69,14 @@ router.delete('/:id', (req, res, next) => {
     )
     .catch(e => res.status(500).json({ message: e.message }));
 });
+
+// Make a User Patron of a hive
+router.put('/:id', (req, res, next) => {
+  Hive.findByIdAndUpdate(req.params.id, {$push: {patrons: req.body.userId}})
+    .then(() =>
+      res.status(200).json({ message: 'User added to the hive' })
+    )
+    .catch(e => res.status(500).json({ message: e.message }));
+})
+
 module.exports = router;

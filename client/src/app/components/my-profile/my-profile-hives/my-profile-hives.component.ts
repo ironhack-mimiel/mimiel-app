@@ -29,7 +29,6 @@ export class MyProfileHivesComponent implements OnInit {
       .getAll(this.sessionService.user._id)
       .subscribe(hives => {
         this.hives = hives
-        console.log(this.hives)
       });
   }
 

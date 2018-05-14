@@ -33,7 +33,7 @@ export class HoneyDetailComponent implements OnInit {
   lng: number;
   honey: Honey;
   showForm: boolean = false;
-
+  
   constructor(
     public honeyService: HoneyInfoService,
     public route: ActivatedRoute,
@@ -43,8 +43,7 @@ export class HoneyDetailComponent implements OnInit {
     public messagingService: MessagingService
   ) {}
 
-  ngOnInit() {
-    
+  ngOnInit() {    
     this.route.params.subscribe(params => {
       this.honeyService.getOne(params.id).subscribe(honey => {
         this.honey = honey;
