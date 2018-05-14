@@ -3,3 +3,17 @@
   float: left;
   padding: 32px;
 }
+
+input:focus {
+  outline: none;
+}
+
+.ng-touched {
+  border-color: blue;
+}
+
+
+
+.ng-touched.ng-valid {
+  
+}

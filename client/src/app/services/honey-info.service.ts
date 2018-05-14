@@ -16,12 +16,12 @@ export class HoneyInfoService {
   getAll() {
     return this.http.get(`${environment.BASEURL}/api/honey`)
     .map(res => res.json())
-    .catch(this.handleError)
+    .catch(error => this.handleError(error))
   }
 
   getOne(id) {
     return this.http.get(`${environment.BASEURL}/api/honey/${id}`)
     .map(res => res.json())
-    .catch(this.handleError)
+    .catch(error => this.handleError(error))
   }
 }

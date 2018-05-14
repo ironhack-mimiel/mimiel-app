@@ -13,7 +13,7 @@ const logInPromise = (user, req) =>
   });
 
 router.post('/signup', (req, res, next) => {
-  const { email, password } = req.body;
+  const { email, password, isApicultor } = req.body;
 
   if (!email || !password) {
     res.status(400).json({ message: 'Provide email and password' });
@@ -29,7 +29,8 @@ router.post('/signup', (req, res, next) => {
 
       const theUser = new User({
         email,
-        password: hashPass
+        password: hashPass,
+        isApicultor
       });
 
       return theUser.save().then(user => logInPromise(user, req));

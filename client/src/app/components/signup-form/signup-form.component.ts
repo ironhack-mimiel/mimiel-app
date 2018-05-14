@@ -10,6 +10,7 @@ export class SignupFormComponent implements OnInit {
   username: string;
   email: string;
   password: string;
+  isApicultor: boolean;
   constructor(public sessionService: SessionService) {}
 
   ngOnInit() {}
@@ -17,7 +18,8 @@ export class SignupFormComponent implements OnInit {
   signup() {
     const user = {
       password: this.password,
-      email: this.email
+      email: this.email,
+      isApicultor: this.isApicultor
     };
     this.sessionService.signup(user)
       .subscribe(user => console.log(user));

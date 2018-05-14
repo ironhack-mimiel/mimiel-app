@@ -18,31 +18,31 @@ export class MessagingService {
     return this.http
       .get(`${environment.BASEURL}/api/messages/received/${id}`)
       .map(res => res.json())
-      .catch(this.handleError);
+      .catch(error => this.handleError(error));
   }
 
   getSentMessages(id) {
     return this.http
       .get(`${environment.BASEURL}/api/messages/sent/${id}`)
       .map(res => res.json())
-      .catch(this.handleError);
+      .catch(error => this.handleError(error));
   }
 
   sendMessage(message) {
     return this.http.post(`${environment.BASEURL}/api/messages`, message, this.options)
     .map(res => res.json())
-    .catch(this.handleError);
+    .catch(error => this.handleError(error));
   }
 
   readMessage(id) {
     return this.http.get(`${environment.BASEURL}/api/messages/${id}`)
     .map(res => res.json())
-    .catch(this.handleError);
+    .catch(error => this.handleError(error));
   }
 
   activatePatron(hiveId, userId) {
     return this.http.put(`${environment.BASEURL}/api/messages/${hiveId}`, {userId})
     .map(res => res.json())
-    .catch(this.handleError);
+    .catch(error => this.handleError(error));
   }
 }
