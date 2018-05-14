@@ -6,22 +6,9 @@ import { IsPatronService } from '../../services/is-patron.service';
 import { SessionService } from '../../services/session.service';
 import { MessagingService } from '../../services/messaging.service';
 import { SendMessageComponent } from '../send-message/send-message.component';
+import { Honey } from '../../interfaces/honey';
 
-interface Honey {
-  name: string;
-  description: string;
-  email: string;
-  hive: Hive;
-}
 
-interface Hive {
-  _id: string;
-  name: string;
-  description: string;
-  beekeeper: string;
-  rpi: object;
-  patrons: Array<any>;
-}
 
 @Component({
   selector: 'app-honey-detail',

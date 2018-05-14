@@ -11,19 +11,20 @@ export class HiveInfoService {
   constructor(private http: Http) { }
 
   handleError(e) {
+    console.log(e)
     return Observable.throw(e.json().message);
   }
 
   getOne(id) {
     return this.http.get(`${environment.BASEURL}/api/hive/${id}`)
     .map(res => res.json())
-    .catch(this.handleError)
+    .catch(error => this.handleError(error))
   }
 
   getAll(id) {
     return this.http.get(`${environment.BASEURL}/api/hive/user/${id}`)
       .map(res => res.json())
-      .catch(this.handleError)
+      .catch(error => this.handleError(error))
   }
 
   newHive(data) {

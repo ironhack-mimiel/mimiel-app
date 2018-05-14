@@ -4,7 +4,7 @@
     <div class="field">
       <label class="label"> Email </label>
       <div class="control">
-        <input class="input" type="text" [(ngModel)]="email" name="email" />
+        <input class="input" type="text" [(ngModel)]="email" name="email" minlength="6" />
       </div>
     </div>
     <div class="field">
@@ -12,6 +12,14 @@
       <div class="control">
         <input class="input" type="password" [(ngModel)]="password" name="password" />
       </div>
+    </div>
+    <div class="field">
+      <label class="label"> Is apicultor </label>
+      No
+      <input type="radio" [(ngModel)]="isApicultor" name="isApicultor" value="false">
+      Yes
+      <input type="radio" [(ngModel)]="isApicultor" name="isApicultor" value="true">
+
     </div>
     <div class="field">
       <button (click)="signup()" class="button"> Sign Up </button>

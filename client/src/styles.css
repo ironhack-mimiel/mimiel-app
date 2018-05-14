@@ -14,3 +14,11 @@
   color: #bf8040;
   font-weight: bold;
 }
+
+input.ng-invalid {
+  border-color: red;
+}
+
+input.ng-valid{
+  border-color: green;
+}

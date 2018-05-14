@@ -1,5 +1,5 @@
 <div class="section">
-  <div class="container">
+  <div class="container" *ngIf="honey">
     <div class="columns">
       <div class="column is-half">
         <p class="title">{{honey.name}}</p>
@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div [hidden]="!showForm">
+  <div [hidden]="!showForm" *ngIf="honey">
     <app-send-message (onToggleForm)="toggleContactForm($event)" [hiveInfo]="honey.hive" [toWho]="honey.hive.beekeeper" [isRequest]="true" ></app-send-message>
   </div>
 </div>
