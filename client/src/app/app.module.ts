@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
 import {AngularGooglePlaceModule} from 'angular-google-place';
+import { ChartsModule } from 'ng2-charts';
 
 import { SessionService } from './services/session.service';
 import { HoneyInfoService } from './services/honey-info.service';
@@ -34,6 +35,7 @@ import { SendMessageComponent } from './components/send-message/send-message.com
 import { FileUploadModule } from 'ng2-file-upload';
 import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addnewhive/addnewhive-pics/addnewhive-pics.component';
 import { GeocodeComponent } from './components/geocode/geocode.component';
+import { ChartTestComponent } from './chart-test/chart-test.component';
 
 
 
@@ -47,6 +49,7 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     HoneyListComponent,
     HoneyDetailComponent,
     MyProfileComponent,
+    GeocodeComponent,
     FillDetailsFormComponent,
     HiveDetailComponent,
     MyProfileEditComponent,
@@ -58,7 +61,7 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     ShowMessagesComponent,
     SendMessageComponent,
     AddnewhivePicsComponent,
-    GeocodeComponent,
+    ChartTestComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,9 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAEJmeY3Pyn91jt-VceT2StgpSovA9jcrs'
     }),
-    FileUploadModule
+    FileUploadModule,
+    AngularGooglePlaceModule,
+    ChartsModule
   ],
   providers: [
     SessionService,
@@ -77,7 +82,6 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
     IsPatronService,
     MessagingService,
     FileUploadModule,
-    AngularGooglePlaceModule
   ],
   bootstrap: [AppComponent]
 })

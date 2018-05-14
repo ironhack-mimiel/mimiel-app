@@ -10,19 +10,11 @@
     <table>
       <tr>
         <td>Temperature1</td>
-        <td>Temperature2</td>
-        <td>Temperature3</td>
         <td>Date</td>
       </tr>
       <tr *ngFor="let temperature of hive.rpi.temperature">
         <td>
           {{temperature.temperature1}}
-        </td>
-        <td>
-          {{temperature.temperature2}}
-        </td>
-        <td>
-          {{temperature.temperature3}}
         </td>
         <td>
           {{temperature.date | date: "medium"}}
@@ -32,10 +24,13 @@
   </div>
   <div class="column">
     <div class="card">
-      <div class="title-4">La temperatura media del dia entre los 3 sensores es: {{dailyAverage}} </div>
+      <div class="title-4">La temperatura media del dia es: {{average}} </div>
     </div>
   </div>
 </div>
+
+<app-chart-test [temperatureData]="temperatureData" [averageTemperature]="average"></app-chart-test>
+
 <div id="map">
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
