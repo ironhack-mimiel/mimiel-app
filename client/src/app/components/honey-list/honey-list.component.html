@@ -1,7 +1,8 @@
 <div class="container">
   <h1> Algunas de nuestras mieles </h1>
-  <div class="columns is-multiline">
-    <div *ngFor="let honey of honeys" class="column is-one-third">
+  <input [(ngModel)]="searchText" placeholder="Busca la miel por tipo">
+  <div class="columns is-multiline" *ngIf="honeys">
+    <div *ngFor="let honey of honeys | filter : searchText" class="column is-one-third" >
       <div class="card">
         <img [src]="honey.pictureUrl" class="card-image">
         <div class="card-content">

@@ -36,6 +36,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addnewhive/addnewhive-pics/addnewhive-pics.component';
 import { GeocodeComponent } from './components/geocode/geocode.component';
 import { ChartTestComponent } from './chart-test/chart-test.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -62,6 +63,7 @@ import { ChartTestComponent } from './chart-test/chart-test.component';
     SendMessageComponent,
     AddnewhivePicsComponent,
     ChartTestComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

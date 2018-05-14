@@ -1,38 +1,34 @@
-<p>
-  hive-detail works!
-</p>
-
-
-{{hive.name}}
-
-<div class="columns">
-  <div class="column">
-    <table>
-      <tr>
-        <td>Temperature1</td>
-        <td>Date</td>
-      </tr>
-      <tr *ngFor="let temperature of hive.rpi.temperature">
-        <td>
-          {{temperature.temperature1}}
-        </td>
-        <td>
-          {{temperature.date | date: "medium"}}
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div class="column">
-    <div class="card">
-      <div class="title-4">La temperatura media del dia es: {{average}} </div>
+<div *ngIf="hive">
+  {{hive.name}}
+  <div class="columns">
+    <div class="column">
+      <table>
+        <tr>
+          <td>Temperature1</td>
+          <td>Date</td>
+        </tr>
+        <tr *ngFor="let temperature of hive.rpi.temperature">
+          <td>
+            {{temperature.temperature1}}
+          </td>
+          <td>
+            {{temperature.date | date: "medium"}}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="column">
+      <div class="card">
+        <div class="title-4">La temperatura media del dia es: {{average}} </div>
+      </div>
     </div>
   </div>
-</div>
 
-<app-chart-test [temperatureData]="temperatureData" [averageTemperature]="average"></app-chart-test>
+  <app-chart-test [temperatureData]="temperatureData" [averageTemperature]="average"></app-chart-test>
 
-<div id="map">
-  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map>
+  <div id="map">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div>
 </div>
