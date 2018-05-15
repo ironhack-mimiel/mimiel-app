@@ -31,10 +31,18 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
+// Search for hives where user is patron
 router.get('/user/:id', (req, res, next) => {
   Hive.find({ patrons: req.params.id })
     .then(hives => res.status(200).json(hives))
     .catch(error => res.status(500).json(err))
+});
+
+// Search for hives owned by a beekeeper
+router.get('/beekeeper/:id', (req, res, next) => {
+  Hive.find({ beekeeper: req.params.id })
+    .then(hives => res.status(200).json(hives))
+    .catch(error => res.status(500).json(err));
 });
 
 router.post('/new', (req, res, next) => {

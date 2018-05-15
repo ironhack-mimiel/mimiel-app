@@ -24,4 +24,11 @@ export class HoneyInfoService {
     .map(res => res.json())
     .catch(error => this.handleError(error))
   }
+
+  newHoney(data){
+    return this.http
+      .post(`${environment.BASEURL}/api/honey/new`, data)
+      .map(res => res.json())
+      .catch(this.handleError);
+  }
 }

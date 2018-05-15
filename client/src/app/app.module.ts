@@ -38,6 +38,8 @@ import { GeocodeComponent } from './components/geocode/geocode.component';
 import { PictureUploadService } from './services/picture-upload.service';
 import { ChartTestComponent } from './chart-test/chart-test.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { MyProfileAddnewhoneyComponent } from './components/my-profile/my-profile-addnewhoney/my-profile-addnewhoney.component';
+import { MyProfileAddnewhoneyPicsComponent } from './components/my-profile/my-profile-addnewhoney/my-profile-addnewhoney-pics/my-profile-addnewhoney-pics.component';
 
 
 
@@ -66,6 +68,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     GeocodeComponent,
     ChartTestComponent,
     FilterPipe,
+    MyProfileAddnewhoneyComponent,
+    MyProfileAddnewhoneyPicsComponent
   ],
   imports: [
     BrowserModule,

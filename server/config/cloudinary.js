@@ -17,7 +17,6 @@ var storage = cloudinaryStorage({
   folder: 'mimiel',
   allowedFormats: ['jpg', 'png'],
   filename: function (req, file, cb) {
-    console.log("AQUI")
     cb(null, Date.now());
   }
 });

@@ -6,9 +6,6 @@ import { HoneyInfoService } from '../../../services/honey-info.service';
 import { HiveInfoService } from '../../../services/hive-info.service';
 import { PictureUploadService } from '../../../services/picture-upload.service';
 
-
-
-
 @Component({
   selector: 'app-my-profile-addnewhive',
   templateUrl: './my-profile-addnewhive.component.html',
@@ -43,7 +40,6 @@ export class MyProfileAddnewhiveComponent implements OnInit {
       name: this.hiveName,
       description: this.hiveDescription,
       location: this.hiveLocation,
-      honey: this.honeyKind,
       picturesURL: ""
     };
 

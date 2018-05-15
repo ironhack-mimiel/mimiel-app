@@ -92,7 +92,6 @@ router.post('/fill-details', (req, res, next) => {
 router.post('/update-profile', (req, res, next) => {
   let update = _.pickBy(req.body, function(value) {return value !== ''});
   update = _.omit(update, 'password');
-  console.log(update);
 
   User.findById(update.id)
     .then(user => {
@@ -101,9 +100,9 @@ router.post('/update-profile', (req, res, next) => {
       }
       User.findByIdAndUpdate(update.id, update, {new: true})
         .then(user => {res.status(200).json(user)})
-        //.catch(res.status(500).json({ message: 'There was a problem updating user data'}))
+        .catch(error => next({ message: 'There was a problem updating user data' }))
     })
-    //.catch(e => res.status(500).json({ message: e.message }));
+    .catch(error => res.status(500).json({ message: error }));
 })
 
 router.post('/delete-profile/:id', (req, res, next) => {

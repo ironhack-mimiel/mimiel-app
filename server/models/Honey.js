@@ -6,7 +6,7 @@ const honeySchema = new Schema(
     name: {type: String, required: true},
     type: {type: String},
     hive: { type: Schema.Types.ObjectId, ref: 'Hive' },
-    pictureUrl: String
+    pictureURL: String
   },
   {
     timestamps: {

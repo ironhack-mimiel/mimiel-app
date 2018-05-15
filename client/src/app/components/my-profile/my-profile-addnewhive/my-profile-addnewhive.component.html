@@ -20,14 +20,6 @@
         <app-geocode (onGetFormatedAddress)="getAddressFromChild($event)"></app-geocode>
       </div>
     </div>
-    <div class="field">
-      <label class="label">What kind of honey are your bees making?</label>
-      <div class="control">
-        <select name="honeyKind" id="honeyKind" [(ngModel)]="honeyKind">
-          <option *ngFor="let honey of honeys" value="{{honey._id}}">{{honey.name}}</option>
-        </select>
-      </div>
-    </div>
     <div *ngIf="message !== ''">
       <div class="field">
         <label class="label">{{message}}</label>

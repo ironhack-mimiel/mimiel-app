@@ -2,6 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service';
 import { PictureUploadService } from '../../services/picture-upload.service';
+import { HiveInfoService } from '../../services/hive-info.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -14,7 +15,8 @@ export class MyProfileComponent implements OnInit {
 
   constructor(
     public sessionService: SessionService,
-    public pictureUploadService: PictureUploadService
+    public pictureUploadService: PictureUploadService,
+    public hiveService: HiveInfoService
   ) {}
 
   ngOnInit() {}

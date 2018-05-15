@@ -5,13 +5,14 @@ import { PictureUploadService } from '../../../../services/picture-upload.servic
 import { environment } from '../../../../../environments/environment';
 
 @Component({
-  selector: 'app-addnewhive-pics',
-  templateUrl: './addnewhive-pics.component.html',
-  styleUrls: ['./addnewhive-pics.component.css'],
+  selector: 'app-my-profile-addnewhoney-pics',
+  templateUrl: './my-profile-addnewhoney-pics.component.html',
+  styleUrls: ['./my-profile-addnewhoney-pics.component.css'],
 })
-export class AddnewhivePicsComponent implements OnInit {
+export class MyProfileAddnewhoneyPicsComponent implements OnInit {
   public uploader: FileUploader = new FileUploader({
-    url: `${environment.BASEURL}/api/hive/newhivepics/${this.pictureUploadService.lastHiveCreated}` });
+    url: `${environment.BASEURL}/api/honey/newhoneypics/${this.pictureUploadService.lastHoneyCreated}`
+  });
   public hasBaseDropZoneOver: boolean = false;
   public hasAnotherDropZoneOver: boolean = false;
 
@@ -26,10 +27,12 @@ export class AddnewhivePicsComponent implements OnInit {
   constructor(public pictureUploadService: PictureUploadService) {}
 
   ngOnInit() {
-    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onAfterAddingFile = file => {
+      file.withCredentials = false;
+    };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-      console.log("ImageUpload:uploaded:", item, status, response);
-      this.pictureUploadService.showAddImageComponent = !this.pictureUploadService.showAddImageComponent;
+      console.log('ImageUpload:uploaded:', item, status, response);
+      this.pictureUploadService.honeyShowAddImageComponent = !this.pictureUploadService.honeyShowAddImageComponent;
       this.pictureUploadService.showPanelComponent = !this.pictureUploadService.showPanelComponent;
     };
   }

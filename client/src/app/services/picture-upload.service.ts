@@ -6,6 +6,9 @@ export class PictureUploadService {
   showPanelComponent: boolean = true;
   lastHiveCreated: string;
 
+  honeyShowAddImageComponent: boolean = false;
+  lastHoneyCreated: string;
+
   constructor() {}
 
 

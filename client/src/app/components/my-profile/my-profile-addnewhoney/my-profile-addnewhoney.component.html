@@ -1,0 +1,34 @@
+<div class="container">
+  <p class="title">Add a new honey type</p>
+  <div class="form">
+    <div class="field">
+      <label class="label">Give your honey a name</label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="honeyName" name="honeyName" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Add a description for your honey</label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="honeyType" name="honeyType" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Where's your hive located at?</label>
+      <div class="control">
+        <select name="honeyHive" id="honeyHive" [(ngModel)]="honeyHive">
+          <option *ngFor="let hive of hives" value="{{hive._id}}">{{hive.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div *ngIf="message !== ''">
+      <div class="field">
+        <label class="label">{{message}}</label>
+      </div>
+    </div>
+    <div class="field">
+      <button (click)="newHoney()" class="button is-warning">Go ahead and upload awesome pictures!</button>
+    </div>
+  </div>
+  <p class="error"> {{ error }} </p>
+</div>
