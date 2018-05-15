@@ -6,7 +6,7 @@
       <div class="control">
         <input class="input" type="email" [(ngModel)]="email" name="email" #myEmail="ngModel" required />
         <span *ngIf="!myEmail.valid && myEmail.touched">The email is required.</span>
-        <span  ng-show="myEmail.$error.email">Please insert a valid email.</span>
+        <span  ng-show="myEmail.$error.email">Please insert a valid email</span>
 
       </div>
     </div>
