@@ -1,22 +1,18 @@
 <div class="form">
-  <form ngNativeValidate>
+  <form>
     <h2> Signup </h2>
     <div class="field">
       <label class="label"> Email </label>
-      <div class="control">
-        <input class="input" type="email" [(ngModel)]="email" name="email" #myEmail="ngModel" required />
+      <div>
+        <input class="form-control" type="text" [(ngModel)]="email" name="email" #myEmail="ngModel" required />
         <span *ngIf="!myEmail.valid && myEmail.touched">The email is required.</span>
-        <span  ng-show="myEmail.$error.email">Please insert a valid email.</span>
-
       </div>
     </div>
     <div class="field">
       <label class="label"> Password </label>
       <div class="control">
-        <input class="input" type="password" [(ngModel)]="password" name="password" #myPassword="ngModel" required />
+        <input class="form-control" type="password" [(ngModel)]="password" name="password" #myPassword="ngModel" required />
         <span *ngIf="!myPassword.valid && myPassword.touched">The password is required.</span>
-      
-       
       </div>
     </div>
     <div class="field">

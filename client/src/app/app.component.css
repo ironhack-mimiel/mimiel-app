@@ -1,5 +1,6 @@
 .navbar {
   background-color: #ffdd57;
+  z-index: 2;
 }
 
 .brown {
@@ -14,7 +15,7 @@
   background-color: rgba(220, 220, 220, 0.60);
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 1.5
 }
 
 .form-popup {
