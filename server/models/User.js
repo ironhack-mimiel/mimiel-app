@@ -9,7 +9,6 @@ const userSchema = new Schema(
     surname: {type: String},
     address: {type: String},
     phoneNumber: {type: String},
-    hive: [{ type: Schema.Types.ObjectId, ref: 'Hive' }],
     paymentMethod: {type: String, enum: ["Contrareembolso", "Tarjeta", "PayPal"], default: "Contrareembolso"},
     isApicultor: { type: Boolean, default: false },
     isFilled: {type: Boolean, default: false},
