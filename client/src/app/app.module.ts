@@ -35,14 +35,9 @@ import { SendMessageComponent } from './components/send-message/send-message.com
 import { FileUploadModule } from 'ng2-file-upload';
 import { AddnewhivePicsComponent } from './components/my-profile/my-profile-addnewhive/addnewhive-pics/addnewhive-pics.component';
 import { GeocodeComponent } from './components/geocode/geocode.component';
-<<<<<<< HEAD
 import { PictureUploadService } from './services/picture-upload.service';
 import { ChartTestComponent } from './chart-test/chart-test.component';
 import { FilterPipe } from './pipes/filter.pipe';
-=======
-import { ChartTestComponent } from './chart-test/chart-test.component';
-import { FilterPipe } from './pipes/filter.pipe';
->>>>>>> 6bd25d16a54865b2b549c22c23fd92f719978a2a
 
 
 
