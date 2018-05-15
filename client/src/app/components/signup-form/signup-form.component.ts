@@ -24,4 +24,8 @@ export class SignupFormComponent implements OnInit {
     this.sessionService.signup(user)
       .subscribe();
   }
+
+  showEmail (a) {
+    console.log(a)
+  }
 }
