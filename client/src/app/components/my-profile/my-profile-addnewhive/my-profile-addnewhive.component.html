@@ -1,43 +1,41 @@
 <div class="container">
   <p class="title">Add a new hive</p>
   <div class="form">
-    <form id="fillform">
+    <div class="field">
+      <label class="label">Give your hive a name</label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="hiveName" name="hiveName" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Add a description</label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="hiveDescription" name="hiveDescription" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Where's your hive located at?</label>
+      <small class="label">User's wont see the exact location</small>
+      <div class="control">
+        <app-geocode (onGetFormatedAddress)="getAddressFromChild($event)"></app-geocode>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">What kind of honey are your bees making?</label>
+      <div class="control">
+        <select name="honeyKind" id="honeyKind" [(ngModel)]="honeyKind">
+          <option *ngFor="let honey of honeys" value="{{honey._id}}">{{honey.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div *ngIf="message !== ''">
       <div class="field">
-        <label class="label">Give your hive a name</label>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="hiveName" name="hiveName" />
-        </div>
+        <label class="label">{{message}}</label>
       </div>
-      <div class="field">
-        <label class="label">Add a description</label>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="hiveDescription" name="hiveDescription" />
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Where's your hive located at?</label>
-        <small class="label">User's wont see the exact location</small>
-        <div class="control">
-          <app-geocode (onGetFormatedAddress)="getAddressFromChild($event)"></app-geocode>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">What kind of honey are your bees making?</label>
-        <div class="control">
-          <select name="honeyKind" id="honeyKind" [(ngModel)]="honeyKind">
-            <option *ngFor="let honey of honeys" value="{{honey._id}}">{{honey.name}}</option>
-          </select>
-        </div>
-      </div>
-      <div *ngIf="message !== ''">
-        <div class="field">
-          <label class="label">{{message}}</label>
-        </div>
-      </div>
-      <div class="field">
-        <button (click)="newHive()" class="button is-warning">Go ahead and upload awesome pictures!</button>
-      </div>
-    </form>
+    </div>
+    <div class="field">
+      <button (click)="newHive()" class="button is-warning">Go ahead and upload awesome pictures!</button>
+    </div>
   </div>
   <p class="error"> {{ error }} </p>
 </div>

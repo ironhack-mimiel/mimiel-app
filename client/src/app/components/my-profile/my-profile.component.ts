@@ -19,10 +19,7 @@ export class MyProfileComponent implements OnInit {
 
   ngOnInit() {}
 
-  toggleRightComponent(event){
-    console.log('previous: ' + this.rightComponent);
+  toggleRightComponent(event?){
     this.rightComponent = event;
-
-    console.log('event: ' + this.rightComponent);
   }
 }

@@ -22,6 +22,6 @@ export class SignupFormComponent implements OnInit {
       isApicultor: this.isApicultor
     };
     this.sessionService.signup(user)
-      .subscribe(user => console.log(user));
+      .subscribe();
   }
 }

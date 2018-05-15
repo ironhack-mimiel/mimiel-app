@@ -18,10 +18,6 @@ export class GeocodeComponent implements OnInit {
 
   ngOnInit() {}
 
-  /* getAddress(place: Address) {
-    console.log('Address', place);
-  } */
-
   getFormattedAddress(event: any) {
     const location = {
       city: event.city,
