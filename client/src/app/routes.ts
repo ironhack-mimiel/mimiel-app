@@ -8,7 +8,7 @@ import { HoneyListComponent } from './components/honey-list/honey-list.component
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'honey', component: HoneyListComponent}
+  { path: 'honey', component: HoneyListComponent},
   { path: 'honey/:id', component: HoneyDetailComponent },
   { path: 'hive/:id', component: HiveDetailComponent },
   { path: 'my-profile', component: MyProfileComponent}

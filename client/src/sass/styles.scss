@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import './cards';
 @import './home';
+@import './honeylist';
+
 
 * {
   font-family: $font-stack;
@@ -52,7 +54,7 @@ body {
 //Titles
 h2 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: bolder;
   color: $font-title;
 }
 
@@ -78,6 +80,11 @@ h3 {
   margin: 0 auto;
 }
 // Button
+.btn-large {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+}
+
 .btn-brown {
   background-color: $yellow;
   border: 1px solid $brown;
@@ -149,14 +156,6 @@ header {
       color: $font-text;
     }
   }
-}
-
-input.ng-invalid {
-  border-color: red;
-}
-
-input.ng-valid {
-  border-color: green;
 }
 
 // app-component
