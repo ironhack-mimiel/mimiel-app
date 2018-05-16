@@ -1,8 +1,12 @@
-
-  <h1> Algunas de nuestras mieles </h1>
-  <input [(ngModel)]="searchText" placeholder="Busca la miel por tipo">
+  <<div class="section-title padding-16">
+		<h3> Algunas de nuestras mieles </h3>
+	</div>
+  <div id="search-box">
+		<input [(ngModel)]="searchText" id="search-input" placeholder="Busca la miel por tipo">
+		<img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526492676/GLYPHS/search.svg" id="search-glyph">
+	</div>
   <div class="row" *ngIf="honeys">
-    <div *ngFor="let honey of honeys | filter : searchText" class="col-3">
+    <div *ngFor="let honey of honeys | filter : searchText">
       <div class="card">
       	<img  class="card-img" [src]="honey.pictureURL">
       	<div class="card-content">
