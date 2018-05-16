@@ -1,0 +1,38 @@
+.hero {
+  width: 100%;
+  height: 600px;
+  background-image: url('http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526486517/background-hero.jpg');
+  background-size: cover;
+}
+
+.hero-title {
+  padding: 56px 108px;
+  font-size: 72px;
+  color: white;
+  font-weight: bold;
+  .subtitle {
+    font-size: 56px;
+  }
+}
+
+.info {
+  border-bottom: 1px solid $font-text;
+  img {
+    display: block;
+    height: 124px;
+    margin: 0 auto;
+  }
+  text-align: center;
+  color: $brown;
+}
+
+#best-honeys {
+  .card {
+    margin: 0 auto;
+  }
+}
+
+#show-more {
+  display: block;
+  margin: 56px auto;
+}

@@ -3,159 +3,233 @@
 @import './mixins';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import './cards';
+@import './home';
 
 * {
-    font-family: $font-stack;
+  font-family: $font-stack;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 12pt;
+  color: $font-text;
 }
 
 //General classes:
 .padding-8 {
-    padding: 8px 0;
-  }
-  
+  padding: 8px 0;
+}
+
+.padding-16 {
+  padding: 16px 0;
+}
+
+.padding-24 {
+  padding: 24px 0;
+}
+
+.padding-32 {
+  padding: 32px 0;
+}
+
+.padding-40 {
+  padding: 40px 0;
+}
+
+.padding-56 {
+  padding: 56px 0;
+}
+
+.row {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.text-block {
+  line-height: 1.6;
+}
+
+//Titles
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: $font-title;
+}
+
+h3 {
+  font-size: 1.5em;
+  color: $font-title;
+}
+
+.text-block {
+  color: $font-block-text;
+}
+
+.section-title {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 56px;
+}
+
+//Map
+.map {
+  height: 500px;
+  max-width: 1208px;
+  margin: 0 auto;
+}
+// Button
+.btn-brown {
+  background-color: $yellow;
+  border: 1px solid $brown;
+  border-radius: 4px;
+  color: $brown;
+  font-weight: bolder;
+}
+
+.btn-yellow {
+  background-color: $brown;
+  border: 1px solid $yellow;
+  border-radius: 4px;
+  color: $yellow;
+  font-weight: bolder;
+}
 
 // Navbar
 header {
-    background-color: $navbar-background-color;
-    width: 100%;
+  background-color: $navbar-background-color;
+  width: 100%;
 }
 
 .navbar-wrapper {
+  padding: 0;
+  height: 80px;
+  width: 100%;
+  max-width: 1208px;
+  margin: 0 auto !important;
+  .col {
+    height: 100%;
+  }
+  .navbar-brand {
     padding: 0;
-    height: 80px;
-    width: 100%;
-    max-width: 1208px;
-    margin: 0 auto !important;
-    .col {
-        height: 100%;
-    }
-    .navbar-brand {
+    a {
+      img {
+        margin: 0;
         padding: 0;
-        a {
-            img {
-                margin: 0;
-                padding: 0;
-                height: 64px;
-            }
-            #mimiel-btn:hover {
-                transform: translateY(-4px);
-            }
-            #mimiel-btn:active {
-                transform: translateY(4px);
-            }
-        }
-        h1 {
-            display: inline-block;
-            margin-left: 20px;
-            color: $brown;
-            font-size: $navbar-brand-title-size;
-        }
-        h1:hover {
-            cursor: pointer;
-            color: $font-text;
-        }
+        height: 64px;
+      }
+      #mimiel-btn:hover {
+        transform: translateY(-4px);
+      }
+      #mimiel-btn:active {
+        transform: translateY(4px);
+      }
     }
-    .navbar-button-wrapper {
-        text-align: right;
-        .navbar-button {
-            display: inline-block;
-            color: $brown;
-            font-weight: bold;
-            font-size: 16px;
-            margin-left: 56px;
-        }
-        .navbar-button:hover {
-            cursor: pointer;
-            color: $font-text;
-        }
+    h1 {
+      display: inline-block;
+      margin-left: 20px;
+      color: $brown;
+      font-size: $navbar-brand-title-size;
     }
+    h1:hover {
+      cursor: pointer;
+      color: $font-text;
+    }
+  }
+  .navbar-button-wrapper {
+    text-align: right;
+    .navbar-button {
+      display: inline-block;
+      color: $brown;
+      font-weight: bold;
+      font-size: 16px;
+      margin-left: 56px;
+    }
+    .navbar-button:hover {
+      cursor: pointer;
+      color: $font-text;
+    }
+  }
 }
 
 input.ng-invalid {
-    border-color: red;
+  border-color: red;
 }
 
 input.ng-valid {
-    border-color: green;
+  border-color: green;
 }
 
 // app-component
 
 .popup {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(220, 220, 220, 0.60);
-    position: fixed;
-    top: 0;
-    z-index: 1.5
+  width: 100%;
+  height: 100%;
+  background-color: rgba(220, 220, 220, 0.6);
+  position: fixed;
+  top: 0;
+  z-index: 1.5;
 }
 
 .form-popup {
-    box-sizing: border-box;
-    width: 80%;
-    background-color: white;
-    height: 66%;
-    position: absolute;
-    top: 16.5%;
-    left: 10%;
+  box-sizing: border-box;
+  width: 80%;
+  background-color: white;
+  height: 66%;
+  position: absolute;
+  top: 16.5%;
+  left: 10%;
 }
 
 // others
 canvas {
-    max-height: 600px;
+  max-height: 600px;
 }
 
 #fillform {
-    width: 50%;
-    margin: 0 auto;
+  width: 50%;
+  margin: 0 auto;
 }
 
 #map {
-    height: 500px;
-    width: 50%;
-    margin: 0 auto;
-    max-width: 900px;
+  height: 500px;
+  width: 50%;
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 agm-map {
-    height: 500px;
+  height: 500px;
 }
 
 //login-form
 .form {
-    width: 50%;
-    float: left;
-    padding: 32px;
+  width: 50%;
+  float: left;
+  padding: 32px;
 }
 
 // signup-form
 .form {
-    width: 50%;
-    float: left;
-    padding: 32px;
+  width: 50%;
+  float: left;
+  padding: 32px;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 // my-profile-addnewhive
 .my-drop-zone {
-    border: dotted 3px lightgray;
+  border: dotted 3px lightgray;
 }
 
 .nv-file-over {
-    border: dotted 3px red;
+  border: dotted 3px red;
 }
 
 /* Default class applied to drop zones on over */
 
 .another-file-over-class {
-    border: dotted 3px green;
-}
-
-
-.row {
-    max-width: 1256px;
-    margin: 0 auto;
+  border: dotted 3px green;
 }
