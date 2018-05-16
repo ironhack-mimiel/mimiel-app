@@ -11,11 +11,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   honeys: Array<any>;
-  
+
   constructor(public honeyService: HoneyInfoService, public router: Router) { }
 
   ngOnInit() {
     this.honeyService.getAll().subscribe(honeys => this.honeys = honeys);
+  }
+
+  navigateTo(): void {
+    window.scrollTo({ left: 0, top: 1000, behavior: 'smooth' });
   }
 
 }

@@ -2,7 +2,12 @@
   <div class="hero-title">
     <p class="padding-16">Miel natural.</p>
     <p class="padding-16 subtitle">De la colmena a tu hogar.</p>
-    <button [routerLink]="['/honey']" class="btn btn-yellow btn-large">Ver mieles</button>
+    <button [routerLink]="['/honey']" class="btn btn-brown btn-large">Ver mieles</button>
+    <div class="learn-more-button">
+      <a (click)="navigateTo()">
+        <img class="learn-more-arrow" src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526499481/down-arrow.png" alt="Learn more">
+      </a>
+    </div>
   </div>
 </div>
 <section>
@@ -12,15 +17,15 @@
     </div>
     <div class="col-4">
       <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526488188/info1.png">
-      <p class="padding-16">Producimos la miel de forma natural</p>
+      <p class="padding-16">Escoge un sabor y una colmena</p>
     </div>
     <div class="col-4">
       <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526488188/info2.png">
-      <p class="padding-16">Envasada de forma artesanal.</p>
+      <p class="padding-16">Comprueba en tiempo real cómo crecen</p>
     </div>
     <div class="col-4">
       <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526488188/info3.png">
-      <p class="padding-16">En 24 horas la tienes en tu casa.</p>
+      <p class="padding-16">Disfruta del sabor de la miel auténtica</p>
     </div>
   </div>
 </section>

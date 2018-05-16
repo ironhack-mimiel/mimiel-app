@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 
+@import './_variables';
 html,
 body,
 div,
@@ -110,6 +111,8 @@ section {
 
 body {
     line-height: 1;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 ol,
@@ -135,3 +138,14 @@ table {
     border-spacing: 0;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $yellow inset !important;
+    box-shadow: 0 0 0 1000px $yellow inset !important;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
