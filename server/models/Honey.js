@@ -3,9 +3,14 @@ const Schema = mongoose.Schema;
 
 const honeySchema = new Schema(
   {
-    name: {type: String, required: true},
-    type: {type: String},
+    name: { type: String, required: true },
+    type: {
+      type: String,
+      enum: ['Milflores', 'Romero', 'Eucalipto', 'Montaña', 'Acacia']
+    },
     hive: { type: Schema.Types.ObjectId, ref: 'Hive' },
+    description: String,
+    price: Number,
     pictureURL: String
   },
   {

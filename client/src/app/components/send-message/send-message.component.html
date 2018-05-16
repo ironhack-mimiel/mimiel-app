@@ -2,8 +2,8 @@
   send-message works!
 </p>
 
-<div class="form">
-  <form>
+<div *ngIf="hiveInfo">
+  <div class="form">
     <h2> Send a message </h2>
     <div class="field">
       <label class="label"> Mensaje a la colmena {{hiveInfo.name}}, Apicultor {{toWho.name}} </label>
@@ -14,5 +14,5 @@
     <div class="field">
       <button (click)="sendMessage()" class="button"> Send Message </button>
     </div>
-  </form>
+  </div>
 </div>
