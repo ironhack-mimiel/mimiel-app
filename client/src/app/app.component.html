@@ -1,20 +1,27 @@
-<header>
-  <div class="navbar">
-    <div class="navbar-brand">
-      <a [routerLink]="['/home']">
-        <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526247047/mm-hex-marron-amarillo.png" width="64" id="mimiel-btn">
-      </a>
-    </div>
-    <div *ngIf="!sessionService.user" class="navbar-menu is-active navbar-end">
-      <button (click)="sessionService.toggleForm()" class="button brown">Log in or Sign Up</button>
-    </div>
-
-    <div *ngIf="sessionService.user" class="navbar-menu is-active navbar-end">
-      <button (click)="logout()" class="button brown"> Logout </button>
-      <a [routerLink]="['/my-profile']" class="button brown" id="profile"> Ir a mi perfil</a>
+  <div class="container-fluid navbar-wrapper py-2">
+    <div class="row d-flex justify-content-between align-items-center px-3">
+      <div class="col col-3 py-1">
+        <div class="navbar-brand d-flex align-items-center">
+          <a [routerLink]="['/home']" >
+            <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526247047/mm-hex-marron-amarillo.png" width="64" id="mimiel-btn">
+          </a>
+          <h1 class="text-center">Mi Miel</h1>
+        </div>
+      </div>
+      <div class="col col-3">
+        <!-- NAVBAR BUTTONS IF USER IS NOT LOGGED IN -->
+        <div *ngIf="!sessionService.user" class="navbar-menu is-active navbar-end">
+          <button (click)="sessionService.toggleForm()" class="button brown">Log in or Sign Up</button>
+        </div>
+        <!-- NAVBAR BUTTONS IF USER IS LOGGED IN -->
+        <div *ngIf="sessionService.user" class="navbar-menu is-active navbar-end">
+          <button (click)="logout()" class="button brown"> Logout </button>
+          <a [routerLink]="['/my-profile']" class="button brown" id="profile"> Ir a mi perfil</a>
+        </div>
+      </div>
     </div>
   </div>
-</header>
+
 
 
 <div *ngIf="!sessionService.user" class="popup" [hidden]="sessionService.showForm">
