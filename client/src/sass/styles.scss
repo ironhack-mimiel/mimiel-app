@@ -1,0 +1,74 @@
+@import './variables';
+@import './mixins';
+canvas {
+    max-height: 600px;
+}
+
+#fillform {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#map {
+    height: 500px;
+    width: 50%;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+agm-map {
+    height: 500px;
+}
+
+// honey-list
+img {
+    height: 300px;
+}
+
+//login-form
+.form {
+    width: 50%;
+    float: left;
+    padding: 32px;
+}
+
+// signup-form
+.form {
+    width: 50%;
+    float: left;
+    padding: 32px;
+}
+
+input:focus {
+    outline: none;
+}
+
+// my-profile-addnewhive
+.my-drop-zone {
+    border: dotted 3px lightgray;
+}
+
+.nv-file-over {
+    border: dotted 3px red;
+}
+
+/* Default class applied to drop zones on over */
+
+.another-file-over-class {
+    border: dotted 3px green;
+}
+
+// my-profile
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.left-panel {
+    background-color: red;
+}
+
+.right-panel {
+    background-color: blue;
+}
