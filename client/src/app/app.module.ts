@@ -40,8 +40,9 @@ import { ChartTestComponent } from './chart-test/chart-test.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { MyProfileAddnewhoneyComponent } from './components/my-profile/my-profile-addnewhoney/my-profile-addnewhoney.component';
 import { MyProfileAddnewhoneyPicsComponent } from './components/my-profile/my-profile-addnewhoney/my-profile-addnewhoney-pics/my-profile-addnewhoney-pics.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -69,7 +70,7 @@ import { MyProfileAddnewhoneyPicsComponent } from './components/my-profile/my-pr
     ChartTestComponent,
     FilterPipe,
     MyProfileAddnewhoneyComponent,
-    MyProfileAddnewhoneyPicsComponent
+    MyProfileAddnewhoneyPicsComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +82,10 @@ import { MyProfileAddnewhoneyPicsComponent } from './components/my-profile/my-pr
     }),
     FileUploadModule,
     AngularGooglePlaceModule,
-    ChartsModule
+    ChartsModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [
     SessionService,

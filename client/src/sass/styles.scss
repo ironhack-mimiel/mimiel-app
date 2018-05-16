@@ -2,102 +2,54 @@
 @import './variables';
 @import './mixins';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import './cards';
-
+@import './navbar';
+@import './_signup_form';
+@import './login_form';
+@import './_custom_theme';
 * {
     font-family: $font-stack;
 }
 
-//General classes:
+// general classes:
 .padding-8 {
     padding: 8px 0;
-  }
-  
-
-// Navbar
-header {
-    background-color: $navbar-background-color;
-    width: 100%;
 }
 
-.navbar-wrapper {
-    padding: 0;
-    height: 80px;
+// popup tool
+.popup {
     width: 100%;
-    max-width: 1208px;
-    margin: 0 auto !important;
-    .col {
-        height: 100%;
-    }
-    .navbar-brand {
-        padding: 0;
-        a {
-            img {
-                margin: 0;
-                padding: 0;
-                height: 64px;
-            }
-            #mimiel-btn:hover {
-                transform: translateY(-4px);
-            }
-            #mimiel-btn:active {
-                transform: translateY(4px);
-            }
-        }
-        h1 {
-            display: inline-block;
-            margin-left: 20px;
-            color: $brown;
-            font-size: $navbar-brand-title-size;
-        }
-        h1:hover {
-            cursor: pointer;
-            color: $font-text;
-        }
-    }
-    .navbar-button-wrapper {
-        text-align: right;
-        .navbar-button {
-            display: inline-block;
-            color: $brown;
-            font-weight: bold;
-            font-size: 16px;
-            margin-left: 56px;
-        }
-        .navbar-button:hover {
-            cursor: pointer;
-            color: $font-text;
-        }
-    }
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
+.form-popup {
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 16px;
+    width: 30%;
+    background-color: $yellow;
+    height: 66%;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+// ??????
 input.ng-invalid {
     border-color: red;
 }
 
 input.ng-valid {
     border-color: green;
-}
-
-// app-component
-
-.popup {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(220, 220, 220, 0.60);
-    position: fixed;
-    top: 0;
-    z-index: 1.5
-}
-
-.form-popup {
-    box-sizing: border-box;
-    width: 80%;
-    background-color: white;
-    height: 66%;
-    position: absolute;
-    top: 16.5%;
-    left: 10%;
 }
 
 // others
@@ -128,13 +80,6 @@ agm-map {
     padding: 32px;
 }
 
-// signup-form
-.form {
-    width: 50%;
-    float: left;
-    padding: 32px;
-}
-
 input:focus {
     outline: none;
 }
@@ -153,7 +98,6 @@ input:focus {
 .another-file-over-class {
     border: dotted 3px green;
 }
-
 
 .row {
     max-width: 1256px;

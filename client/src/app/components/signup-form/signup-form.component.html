@@ -1,31 +1,61 @@
-<div class="form">
-  <form>
-    <h2> Signup </h2>
-    <div class="field">
-      <label class="label"> Email </label>
-      <div>
-        <input class="form-control" type="text" [(ngModel)]="email" name="email" #myEmail="ngModel" required />
-        <span *ngIf="!myEmail.valid && myEmail.touched">The email is required.</span>
-      </div>
+<div class="container signup-wrapper">
+  <div class="row">
+    <div class="col signup-title-wrapper">
+      <h2 class="signup-title"> Be bee! </h2>
     </div>
-    <div class="field">
-      <label class="label"> Password </label>
-      <div class="control">
-        <input class="form-control" type="password" [(ngModel)]="password" name="password" #myPassword="ngModel" required />
-        <span *ngIf="!myPassword.valid && myPassword.touched">The password is required.</span>
-      </div>
-    </div>
-    <div class="field">
-      <label class="label"> Is apicultor </label>
-      No
-      <input type="radio" [(ngModel)]="isApicultor" name="isApicultor" value="false">
-      Yes
-      <input type="radio" [(ngModel)]="isApicultor" name="isApicultor" value="true">
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="signup-form">
+        <form>
+          <div>
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="john-doe@example.com" type="email" [(ngModel)]="email" name="email" #myEmail="ngModel" required>
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
 
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="My new password" type="password" [(ngModel)]="password" name="password" #myPassword="ngModel" required>
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="John Doe" type="text" [(ngModel)]="name" name="name" #myName="ngModel" required>
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field>
+              <mat-label>Address</mat-label>
+              <input matInput placeholder="13 Rue del percebe" type="text" [(ngModel)]="address" name="address" #myAddress="ngModel" required>
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+          <!-- <div class="field">
+            <mat-form-field>
+              <input matInput class="form-control" [(ngModel)]="email" name="email" #myEmail="ngModel" required />
+              <span *ngIf="!myEmail.valid && myEmail.touched">The email is required.</span>
+            </mat-form-field>
+          </div> -->
+          <!-- <div class="field">
+            <label class="label"> Is apicultor </label>
+            No
+            <input type="radio" [(ngModel)]="isApicultor" name="isApicultor" value="false"> Yes
+            <input type="radio" [(ngModel)]="isApicultor" name="isApicultor" value="true">
+          </div> -->
+          <div class="field">
+            <p (click)="signup()" class="signup-button"> Sign Up! </p>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="field">
-      <button (click)="signup()" class="button"> Sign Up </button>
-    </div>
-  </form>
+  </div>
 </div>
-<p class="error"> {{ error }} </p>

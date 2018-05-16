@@ -16,23 +16,30 @@
         <div *ngIf="!sessionService.user">
           <div class="navbar-button-wrapper">
             <p (click)="sessionService.toggleForm()" class="navbar-button">Become a beekeeper</p>
-            <p (click)="sessionService.toggleForm()" class="navbar-button">Sign Up</p>
-            <p (click)="sessionService.toggleForm()" class="navbar-button">Log in</p>
+            <p (click)="sessionService.toggleSignupForm()" class="navbar-button">Sign Up</p>
+            <p (click)="sessionService.toggleLoginForm()" class="navbar-button">Log in</p>
           </div>
         </div>
         <!-- NAVBAR BUTTONS IF USER IS LOGGED IN -->
         <div *ngIf="sessionService.user">
-          <a [routerLink]="['/my-profile']" class="button brown" id="profile"> Ir a mi perfil</a>
-          <p (click)="logout()" class="navbar-button"> Logout </p>
+          <div class="navbar-button-wrapper">
+            <a [routerLink]="['/my-profile']" class="navbar-button" id="link-to-profile">My profile</a>
+            <p (click)="logout()" class="navbar-button"> Logout </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </header>
-
-<div *ngIf="!sessionService.user" class="popup" [hidden]="sessionService.showForm">
+<!-- SIGNUP FORM -->
+<div *ngIf="!sessionService.user" class="popup" [hidden]="sessionService.showSignupForm">
   <div class="form-popup">
     <app-signup-form></app-signup-form>
+  </div>
+</div>
+<!-- LOGIN FORM -->
+<div *ngIf="!sessionService.user" class="popup" [hidden]="sessionService.showLoginForm">
+  <div class="form-popup">
     <app-login-form></app-login-form>
   </div>
 </div>

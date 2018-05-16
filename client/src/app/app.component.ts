@@ -15,7 +15,6 @@ export class AppComponent {
 
   logout() {
     this.sessionService.logout().subscribe(() => {
-      this.sessionService.toggleForm();
       this.router.navigate(['home']);
     });
   }

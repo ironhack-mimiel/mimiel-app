@@ -1,26 +1,34 @@
-<div class="form">
-  <form>
-    <h2> Login</h2>
-    <div class="field">
-      <label class="label">Email</label>
-      <div>
-        <input class="form-control" type="text" [(ngModel)]="email" name="email" #myEmail="ngModel" required />
-        <span *ngIf="!myEmail.valid && myEmail.touched">The email is required.</span>
+<div class="container login-wrapper">
+  <div class="row">
+    <div class="col login-title-wrapper">
+      <h2 class="login-title"> Welcome bee! </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="login-form">
+        <form>
+          <div>
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="john-doe@example.com" type="email" [(ngModel)]="email" name="email" #myEmail="ngModel" required>
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="My new password" type="password" [(ngModel)]="password" name="password" #myPassword="ngModel"
+                required>
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+          <div class="field">
+            <p (click)="login()" class="login-button"> Log in! </p>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="field">
-      <label class="label">Contraseña</label>
-      <div>
-        <input class="form-control" type="password" [(ngModel)]="password" name="password" #myPassword="ngModel" required />
-        <span *ngIf="!myPassword.valid && myPassword.touched">The password is required.</span>
-
-
-      </div>
-    </div>
-
-    <div class="field">
-      <button (click)="login()" class="button is-warning"> login </button>
-    </div>
-  </form>
+  </div>
 </div>
-<p class="error"> {{ error }} </p>
