@@ -1,16 +1,51 @@
 .card {
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  border-radius: 5px 5px 6px 6px;
+  box-shadow: 0 1px 5px grey;
   height: 352px;
   width: 232px;
+  margin: 8px;
+  background-color: $bgwhite;
   box-sizing: border-box;
-  img {
+  .card-img {
     width: 100%;
     height: 50%;
-  };
+  }
+  .card-content {
+    padding: 0 24px;
+    height: 50%;
+  }
   .title {
     color: $font-title;
     font-size: 1.3em;
-  } 
-  button {
-    padding: 8px;
   }
+  .text {
+    color: $font-text;
+  }
+  span {
+    color: $font-title;
+    font-weight: bold;
+  }
+  .card-button {
+    background-color: $yellow;
+
+    position: relative;
+    bottom: 0;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    align-self: end;
+    box-sizing: content-box;
+    margin-top: 8px;
+    a {
+      color: $brown;
+      font-weight: bold;
+    }
+  }
+}
+
+.card:hover{
+  box-shadow: 0 4px 5px grey;
+  position: relative;
+  top: -5px;
 }

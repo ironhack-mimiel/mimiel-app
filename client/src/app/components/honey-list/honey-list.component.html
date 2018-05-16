@@ -1,19 +1,24 @@
-<div class="container">
+
   <h1> Algunas de nuestras mieles </h1>
   <input [(ngModel)]="searchText" placeholder="Busca la miel por tipo">
-  <div class="columns is-multiline" *ngIf="honeys">
-    <div *ngFor="let honey of honeys | filter : searchText" class="card">
-      <img [src]="honey.pictureURL">
-      <div class="title">
-        <p>{{honey.name}}</p>
-      </div>
-      <div>
-        Tipo: {{honey.type}}
-      </div>
-      {{honey.price | number:'1.2-2'}} €/kg
-      <div class="button brown">
-        <a [routerLink]="['/honey',honey._id]">Ver detalle</a>
+  <div class="row" *ngIf="honeys">
+    <div *ngFor="let honey of honeys | filter : searchText" class="col-3">
+      <div class="card">
+      	<img  class="card-img" [src]="honey.pictureURL">
+      	<div class="card-content">
+      	  <div class="title padding-8">
+      	    <p>{{honey.name}}</p>
+      	  </div>
+      	  <div class="text padding-8">
+      	    Tipo: {{honey.type}} 
+      	  </div>
+      	  <div class="text padding-8">
+      	    <span>{{honey.price | number:'1.2-2'}} €/kg</span>
+      	  </div>
+      	  <div class="card-button">
+      	    <a [routerLink]="['/honey',honey._id]">Ver detalle</a>
+      	  </div>
+      	</div>
       </div>
     </div>
   </div>
-</div>

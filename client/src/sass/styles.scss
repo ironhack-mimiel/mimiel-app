@@ -8,6 +8,12 @@
     font-family: $font-stack;
 }
 
+//General classes:
+.padding-8 {
+    padding: 8px 0;
+  }
+  
+
 // Navbar
 header {
     background-color: $navbar-background-color;
@@ -146,4 +152,10 @@ input:focus {
 
 .another-file-over-class {
     border: dotted 3px green;
+}
+
+
+.row {
+    max-width: 1256px;
+    margin: 0 auto;
 }
