@@ -1,13 +1,11 @@
 <div class="section">
-  <div class="container" *ngIf="honey">
-    <div class="columns">
-      <div class="column is-half">
-        <p class="title">{{honey.name}}</p>
-        <p class="subtitle">{{honey.type}}</p>
-      </div>
-      <div class="column is-half">
-        <img [src]="honey.pictureURL" alt="Imagen de la miel">
-      </div>
+  <div class="row" *ngIf="honey">
+    <div class="col-4">
+      <img [src]="honey.pictureURL" alt="Imagen de la miel">
+    </div>
+    <div class="col-6">
+      <p class="title">{{honey.name}}</p>
+      <p class="subtitle">{{honey.type}}</p>
       <p>{{honey.description}}</p>
     </div>
     <p> Precio: {{honey.price | number:'1.2-2'}}€/kg</p>
@@ -32,6 +30,6 @@
   </div>
 
   <div [hidden]="!showForm" *ngIf="honey">
-    <app-send-message (onToggleForm)="toggleContactForm($event)" [hiveInfo]="honey.hive" [toWho]="honey.hive.beekeeper" [isRequest]="true" ></app-send-message>
+    <app-send-message (onToggleForm)="toggleContactForm($event)" [hiveInfo]="honey.hive" [toWho]="honey.hive.beekeeper" [isRequest]="true"></app-send-message>
   </div>
 </div>

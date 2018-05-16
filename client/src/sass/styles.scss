@@ -8,6 +8,12 @@
     font-family: $font-stack;
 }
 
+//General classes:
+.padding-8 {
+    padding: 8px 0;
+  }
+  
+
 // Navbar
 .navbar-wrapper {
     margin: 0;
@@ -110,11 +116,6 @@ agm-map {
     height: 500px;
 }
 
-// honey-list
-img {
-    height: 300px;
-}
-
 //login-form
 .form {
     width: 50%;
@@ -161,4 +162,9 @@ input:focus {
 
 .right-panel {
     background-color: blue;
+}
+
+.row {
+    max-width: 1256px;
+    margin: 0 auto;
 }
