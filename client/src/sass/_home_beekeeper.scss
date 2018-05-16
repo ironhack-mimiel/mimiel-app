@@ -1,7 +1,7 @@
-.hero {
+.hero-beekeeper {
     width: 100%;
-    height: 95vh;
-    background-image: url('http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526502670/home-beekeeper.jpg');
+    height: 92vh;
+    background-image: url('http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526494383/hero-background.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -33,7 +33,7 @@
     }
     text-align: center;
     color: $brown;
-    .home-steps {
+    .home-beekeeper-steps {
         border-left: 3px solid $yellow;
         border-right: 3px solid $yellow;
     }
@@ -44,13 +44,19 @@
     font-weight: bolder;
 }
 
-#best-honeys {
-    .card {
-        margin: 0 auto;
+.hive-with-sensors-wrapper {
+    text-align: center;
+    .hive-with-sensors-img {
+        width: 400px;
     }
 }
 
-#show-more {
+.beekeeper-content {
+  margin-bottom: 16px;
+  color: $brown;
+}
+
+#beekeeper-button {
     display: block;
     margin: 56px auto;
 }

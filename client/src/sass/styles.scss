@@ -9,17 +9,16 @@
 @import './login_form';
 @import './_custom_theme';
 @import './home';
+@import './home_beekeeper';
 @import './honeylist';
-
-
 * {
-  font-family: $font-stack;
+    font-family: $font-stack;
 }
 
 body {
-  box-sizing: border-box;
-  font-size: 12pt;
-  color: $font-text;
+    box-sizing: border-box;
+    font-size: 12pt;
+    color: $font-text;
 }
 
 // general classes:
@@ -60,116 +59,117 @@ input.ng-invalid {
 
 input.ng-valid {
     border-color: green;
-  padding: 8px 0;
+    padding: 8px 0;
 }
 
 .padding-16 {
-  padding: 16px 0;
+    padding: 16px 0;
 }
 
 .padding-24 {
-  padding: 24px 0;
+    padding: 24px 0;
 }
 
 .padding-32 {
-  padding: 32px 0;
+    padding: 32px 0;
 }
 
 .padding-40 {
-  padding: 40px 0;
+    padding: 40px 0;
 }
 
 .padding-56 {
-  padding: 56px 0;
+    padding: 56px 0;
 }
 
 .row {
-  max-width: 1240px;
-  margin: 0 auto;
+    max-width: 1240px;
+    margin: 0 auto;
 }
 
 .text-block {
-  line-height: 1.6;
+    line-height: 1.6;
 }
 
 //Titles
 h2 {
-  font-size: 2em;
-  font-weight: bolder;
-  color: $font-title;
+    font-size: 2em;
+    font-weight: bolder;
+    color: $font-title;
 }
 
 h3 {
-  font-size: 1.5em;
-  color: $font-title;
+    font-size: 1.5em;
+    color: $font-title;
 }
 
 .text-block {
-  color: $font-block-text;
+    color: $font-block-text;
 }
 
 .section-title {
-  width: 100%;
-  text-align: center;
-  padding-bottom: 56px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 56px;
 }
 
 //Map
 .map {
-  height: 500px;
-  max-width: 1208px;
-  margin: 0 auto;
+    height: 500px;
+    max-width: 1208px;
+    margin: 0 auto;
 }
+
 // Button
 .btn-large {
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
 }
 
 .btn-brown {
-  background-color: $yellow;
-  border: 1px solid $brown;
-  border-radius: 4px;
-  color: $brown;
-  font-weight: bolder;
+    background-color: $yellow;
+    border: 1px solid $brown;
+    border-radius: 4px;
+    color: $brown;
+    font-weight: bolder;
 }
 
 .btn-yellow {
-  background-color: $brown;
-  border: 1px solid $yellow;
-  border-radius: 4px;
-  color: $yellow;
-  font-weight: bolder;
+    background-color: $brown;
+    border: 1px solid $yellow;
+    border-radius: 4px;
+    color: $yellow;
+    font-weight: bolder;
 }
 
 // others
 canvas {
-  max-height: 600px;
+    max-height: 600px;
 }
 
 #fillform {
-  width: 50%;
-  margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
 }
 
 #map {
-  height: 500px;
-  width: 50%;
-  margin: 0 auto;
-  max-width: 900px;
+    height: 500px;
+    width: 50%;
+    margin: 0 auto;
+    max-width: 900px;
 }
 
 agm-map {
-  height: 500px;
+    height: 500px;
 }
 
 // my-profile-addnewhive
 .my-drop-zone {
-  border: dotted 3px lightgray;
+    border: dotted 3px lightgray;
 }
 
 .nv-file-over {
-  border: dotted 3px red;
+    border: dotted 3px red;
 }
 
 /* Default class applied to drop zones on over */
@@ -182,4 +182,3 @@ agm-map {
     max-width: 1256px;
     margin: 0 auto;
 }
-

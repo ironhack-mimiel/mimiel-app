@@ -3,20 +3,15 @@ import { SessionService } from '../../services/session.service';
 import { HoneyInfoService } from '../../services/honey-info.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-home-beekeeper',
+  templateUrl: './home-beekeeper.component.html',
+  styleUrls: ['./home-beekeeper.component.scss']
 })
-export class HomeComponent implements OnInit {
-  honeys: Array<any>;
+export class HomeBeekeeperComponent implements OnInit {
+  constructor() {}
 
-  constructor(public honeyService: HoneyInfoService, public router: Router) { }
-
-  ngOnInit() {
-    this.honeyService.getAll().subscribe(honeys => this.honeys = honeys);
-  }
+  ngOnInit() {}
 
   navigateTo(): void {
     window.scrollTo({ left: 0, top: 1000, behavior: 'smooth' });

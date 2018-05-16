@@ -43,6 +43,7 @@ import { MyProfileAddnewhoneyPicsComponent } from './components/my-profile/my-pr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HomeBeekeeperComponent } from './components/home-beekeeper/home-beekeeper.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { MatInputModule } from '@angular/material/input';
     FilterPipe,
     MyProfileAddnewhoneyComponent,
     MyProfileAddnewhoneyPicsComponent,
+    HomeBeekeeperComponent,
   ],
   imports: [
     BrowserModule,

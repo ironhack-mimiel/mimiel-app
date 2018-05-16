@@ -15,7 +15,7 @@
         <!-- NAVBAR BUTTONS IF USER IS NOT LOGGED IN -->
         <div *ngIf="!sessionService.user">
           <div class="navbar-button-wrapper">
-            <p (click)="sessionService.toggleForm()" class="navbar-button">Become a beekeeper</p>
+            <p [routerLink]="['/beekeeper']" class="navbar-button">Become a beekeeper</p>
             <p (click)="sessionService.toggleSignupForm()" class="navbar-button">Sign Up</p>
             <p (click)="sessionService.toggleLoginForm()" class="navbar-button">Log in</p>
           </div>
