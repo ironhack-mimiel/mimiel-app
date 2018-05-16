@@ -10,6 +10,7 @@
 @import './_custom_theme';
 @import './home';
 @import './honeylist';
+@import './_hive_detail';
 
 
 * {
@@ -22,10 +23,6 @@ body {
   color: $font-text;
 }
 
-// general classes:
-.padding-8 {
-    padding: 8px 0;
-}
 
 // popup tool
 .popup {
@@ -63,6 +60,10 @@ input.ng-valid {
   padding: 8px 0;
 }
 
+.padding-8 {
+  padding: 8px 0;
+}
+
 .padding-16 {
   padding: 16px 0;
 }
@@ -84,7 +85,7 @@ input.ng-valid {
 }
 
 .row {
-  max-width: 1240px;
+  max-width: 1256px;
   margin: 0 auto;
 }
 
@@ -104,6 +105,15 @@ h3 {
   color: $font-title;
 }
 
+h4 {
+  font-size: 1.3em;
+  color: $font-block-text
+}
+
+h5 {
+  color: $font-title;
+}
+
 .text-block {
   color: $font-block-text;
 }
@@ -114,12 +124,6 @@ h3 {
   padding-bottom: 56px;
 }
 
-//Map
-.map {
-  height: 500px;
-  max-width: 1208px;
-  margin: 0 auto;
-}
 // Button
 .btn-large {
   padding: 0.5rem 1rem;
@@ -146,15 +150,6 @@ h3 {
 
 
 // others
-canvas {
-  max-height: 600px;
-}
-
-#fillform {
-  width: 50%;
-  margin: 0 auto;
-}
-
 #map {
   height: 500px;
   width: 50%;
@@ -181,8 +176,5 @@ agm-map {
     border: dotted 3px green;
 }
 
-.row {
-    max-width: 1256px;
-    margin: 0 auto;
-}
+
 

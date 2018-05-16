@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HiveInfoService } from '../../services/hive-info.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { Hive } from '../../interfaces/hive';
 
 @Component({
@@ -29,8 +30,13 @@ export class HiveDetailComponent implements OnInit {
   constructor(
     public hiveService: HiveInfoService,
     public route: ActivatedRoute,
-    public router: Router
+    public router: Router,
+    private location: Location
   ) {}
+
+  goBack() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.hiveService.getOne(params.id).subscribe(hive => {
