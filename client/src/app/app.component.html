@@ -1,28 +1,34 @@
-  <div class="container-fluid navbar-wrapper py-2">
-    <div class="row d-flex justify-content-between align-items-center px-3">
-      <div class="col col-3 py-1">
-        <div class="navbar-brand d-flex align-items-center">
-          <a [routerLink]="['/home']" >
-            <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526247047/mm-hex-marron-amarillo.png" width="64" id="mimiel-btn">
+<header>
+  <div class="navbar-wrapper">
+    <div class="row d-flex justify-content-between align-items-center">
+      <div class="col-3 py-2">
+        <div class="navbar-brand d-flex align-items-center pl-0">
+          <a [routerLink]="['/home']">
+            <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526247047/mm-hex-marron-amarillo.png" id="mimiel-btn">
           </a>
-          <h1 class="text-center">Mi Miel</h1>
+          <a [routerLink]="['/home']">
+            <h1 class="text-center">Mi Miel</h1>
+          </a>
         </div>
       </div>
-      <div class="col col-3">
+      <div class="col-6 pr-0">
         <!-- NAVBAR BUTTONS IF USER IS NOT LOGGED IN -->
-        <div *ngIf="!sessionService.user" class="navbar-menu is-active navbar-end">
-          <button (click)="sessionService.toggleForm()" class="button brown">Log in or Sign Up</button>
+        <div *ngIf="!sessionService.user">
+          <div class="navbar-button-wrapper">
+            <p (click)="sessionService.toggleForm()" class="navbar-button">Become a beekeeper</p>
+            <p (click)="sessionService.toggleForm()" class="navbar-button">Sign Up</p>
+            <p (click)="sessionService.toggleForm()" class="navbar-button">Log in</p>
+          </div>
         </div>
         <!-- NAVBAR BUTTONS IF USER IS LOGGED IN -->
-        <div *ngIf="sessionService.user" class="navbar-menu is-active navbar-end">
-          <button (click)="logout()" class="button brown"> Logout </button>
+        <div *ngIf="sessionService.user">
           <a [routerLink]="['/my-profile']" class="button brown" id="profile"> Ir a mi perfil</a>
+          <p (click)="logout()" class="navbar-button"> Logout </p>
         </div>
       </div>
     </div>
   </div>
-
-
+</header>
 
 <div *ngIf="!sessionService.user" class="popup" [hidden]="sessionService.showForm">
   <div class="form-popup">
