@@ -1,5 +1,93 @@
+@import './_reset';
 @import './variables';
 @import './mixins';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+* {
+    font-family: $font-stack;
+}
+
+// Navbar
+.navbar-wrapper {
+    margin: 0;
+    padding: 0;
+    height: 88px;
+    background-color: $navbar-background-color;
+
+    .col {
+      height: 100%;
+    }
+    .navbar-brand {
+        padding: 0;
+        a {
+            img {
+                margin: 0;
+                padding: 0;
+                height: 64px;
+            }
+            #mimiel-btn:hover {
+                transform: translateY(-4px);
+            }
+            #mimiel-btn:active {
+                transform: translateY(4px);
+            }
+        }
+        h1 {
+            display: inline-block;
+        }
+    }
+}
+
+// styles.css
+.label {
+    color: #bf8040;
+}
+
+.brown {
+    background-color: #bf8040;
+    color: #ffdd57;
+    font-weight: bold;
+}
+
+.yellow {
+    background-color: #ffdd57;
+    color: #bf8040;
+    font-weight: bold;
+}
+
+input.ng-invalid {
+    border-color: red;
+}
+
+input.ng-valid {
+    border-color: green;
+}
+
+// app-component
+.brown {
+    float: right;
+    top: 6px;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(220, 220, 220, 0.60);
+    position: fixed;
+    top: 0;
+    z-index: 1.5
+}
+
+.form-popup {
+    box-sizing: border-box;
+    width: 80%;
+    background-color: white;
+    height: 66%;
+    position: absolute;
+    top: 16.5%;
+    left: 10%;
+}
+
+// others
 canvas {
     max-height: 600px;
 }
