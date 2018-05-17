@@ -10,8 +10,6 @@ import { MyProfileEditComponent } from './components/my-profile/my-profile-edit/
 import { MyProfileHivesComponent } from './components/my-profile/my-profile-hives/my-profile-hives.component';
 import { MyProfileAddnewhiveComponent } from './components/my-profile/my-profile-addnewhive/my-profile-addnewhive.component';
 import { MyProfileAddnewhoneyComponent } from './components/my-profile/my-profile-addnewhoney/my-profile-addnewhoney.component';
-import { MyProfilePaymentsComponent } from './components/my-profile/my-profile-payments/my-profile-payments.component';
-import { MyProfileBillingComponent } from './components/my-profile/my-profile-billing/my-profile-billing.component';
 import { ErrorComponent } from './components/error/error.component';
 
 export const routes: Routes = [
@@ -27,7 +25,5 @@ export const routes: Routes = [
   { path: 'hives', component: MyProfileHivesComponent },
   { path: 'addnewhive', component: MyProfileAddnewhiveComponent },
   { path: 'addnewhoney', component: MyProfileAddnewhoneyComponent },
-  { path: 'payments', component: MyProfilePaymentsComponent },
-  { path: 'billing', component: MyProfileBillingComponent },
   { path: 'error', component: ErrorComponent }
 ];
