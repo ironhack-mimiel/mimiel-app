@@ -5,6 +5,7 @@ import { SessionService } from '../../../services/session.service';
 import { HoneyInfoService } from '../../../services/honey-info.service';
 import { HiveInfoService } from '../../../services/hive-info.service';
 import { PictureUploadService } from '../../../services/picture-upload.service';
+import { AddnewhivePicsComponent } from './addnewhive-pics/addnewhive-pics.component';
 
 @Component({
   selector: 'app-my-profile-addnewhive',

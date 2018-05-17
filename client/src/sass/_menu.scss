@@ -1,0 +1,24 @@
+.mat-menu-content {
+    background: $yellow;
+    border-radius: 5px;
+}
+
+.mat-menu-item {
+    font-family: $font-stack;
+    color: $brown;
+    background-color: $yellow;
+    font-weight: bolder;
+}
+
+.mat-menu-item:hover {
+    color: green;
+    border: 1px solid red;
+}
+
+.mat-menu-item:active {
+    border: 1px solid red;
+}
+
+.mat-menu-item:focus {
+    border: 1px solid red;
+}

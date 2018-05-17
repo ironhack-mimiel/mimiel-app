@@ -43,5 +43,9 @@
       <img class="hive-with-sensors-img" src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526507882/hive-sensor.jpg" alt="Hive with sensors">
     </div>
   </div>
-  <button class="btn btn-yellow" [routerLink]="['/honey']" id="beekeeper-button">Contrata apicultura 2.0</button>
+  <div *ngIf="!sessionService.user">
+    <div>
+      <p (click)="sessionService.toggleSignupForm()" class="btn btn-yellow" id="beekeeper-button">Contrata apicultura 2.0</p>
+    </div>
+  </div>
 </div>

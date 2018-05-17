@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../services/session.service';
+import { MyProfileDeleteComponent } from './my-profile-delete/my-profile-delete.component';
 
 @Component({
   selector: 'app-my-profile-edit',

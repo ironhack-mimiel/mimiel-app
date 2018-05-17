@@ -1,0 +1,27 @@
+.hero-error {
+    width: 100%;
+    height: 92vh;
+    background-image: url('http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526520291/terror-bee.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: 1;
+    .hero-error-title {
+        padding: 10px 108px;
+        font-size: 64px;
+        color: white;
+        font-weight: bold;
+        .subtitle {
+            font-size: 48px;
+        }
+    }
+    .canvas-error {
+        position: absolute;
+        margin: auto;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}

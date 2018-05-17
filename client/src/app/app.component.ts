@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SessionService } from './services/session.service';
 import { Router } from '@angular/router';
+import { MyProfileMenuComponent } from './components/my-profile-menu/my-profile-menu.component';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class AppComponent {
 
   logout() {
     this.sessionService.logout().subscribe(() => {
-      this.router.navigate(['home']);
+      this.router.navigate(['/home']);
     });
   }
 

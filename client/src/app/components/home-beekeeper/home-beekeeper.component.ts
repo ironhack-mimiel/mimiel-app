@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./home-beekeeper.component.scss']
 })
 export class HomeBeekeeperComponent implements OnInit {
-  constructor() {}
+  constructor(public sessionService: SessionService) {}
 
   ngOnInit() {}
 

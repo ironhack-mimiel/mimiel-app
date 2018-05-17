@@ -1,7 +1,6 @@
 // Navbar
-
 #link-to-profile {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 header {
@@ -58,6 +57,13 @@ header {
         .navbar-button:hover {
             cursor: pointer;
             border-bottom: 2px solid $brown;
+        }
+        .notification-bell-wrapper {
+            display: inline-block;
+            .notification-bell {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 }

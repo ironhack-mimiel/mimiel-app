@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -23,7 +23,7 @@ import { FillDetailsFormComponent } from './components/fill-details-form/fill-de
 import { HiveDetailComponent } from './components/hive-detail/hive-detail.component';
 import { HiveInfoService } from './services/hive-info.service';
 import { MyProfileEditComponent } from './components/my-profile/my-profile-edit/my-profile-edit.component';
-import { MyProfileDeleteComponent } from './components/my-profile/my-profile-delete/my-profile-delete.component';
+import { MyProfileDeleteComponent } from './components/my-profile/my-profile-edit/my-profile-delete/my-profile-delete.component';
 import { MyProfileHivesComponent } from './components/my-profile/my-profile-hives/my-profile-hives.component';
 import { MyProfileAddnewhiveComponent } from './components/my-profile/my-profile-addnewhive/my-profile-addnewhive.component';
 import { MyProfilePaymentsComponent } from './components/my-profile/my-profile-payments/my-profile-payments.component';
@@ -44,6 +44,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HomeBeekeeperComponent } from './components/home-beekeeper/home-beekeeper.component';
+import { MyProfileMenuComponent } from './components/my-profile-menu/my-profile-menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { ErrorComponent } from './components/error/error.component';
 
 
 @NgModule({
@@ -73,6 +76,8 @@ import { HomeBeekeeperComponent } from './components/home-beekeeper/home-beekeep
     MyProfileAddnewhoneyComponent,
     MyProfileAddnewhoneyPicsComponent,
     HomeBeekeeperComponent,
+    MyProfileMenuComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +92,8 @@ import { HomeBeekeeperComponent } from './components/home-beekeeper/home-beekeep
     ChartsModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule,
   ],
   providers: [
     SessionService,

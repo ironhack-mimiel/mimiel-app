@@ -1,0 +1,11 @@
+<p mat-button [matMenuTriggerFor]="profile" class="navbar-button">My profile</p>
+<mat-menu #profile="matMenu" yPosition="above" xPosition="before" FocusOrigin='' class="profile-menu">
+  <button mat-menu-item [routerLink]="['/messages']">Messages</button>
+  <button mat-menu-item [routerLink]="['/editprofile']">Edit profile</button>
+  <button mat-menu-item [routerLink]="['/hives']">Hives</button>
+  <button mat-menu-item [routerLink]="['/addnewhive']">Add new hive</button>
+  <button mat-menu-item [routerLink]="['/addnewhoney']">Add new honey</button>
+  <button mat-menu-item [routerLink]="['/payments']">Payments</button>
+  <button mat-menu-item [routerLink]="['/billing']">Billing</button>
+  <button mat-menu-item [routerLink]="['/error']">Error</button>
+</mat-menu>
