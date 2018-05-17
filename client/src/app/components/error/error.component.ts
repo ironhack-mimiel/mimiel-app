@@ -13,27 +13,35 @@ import { Observable } from 'rxjs';
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss']
 })
-export class ErrorComponent implements OnInit {
+export class ErrorComponent implements OnInit, AfterViewInit {
   @ViewChild('canvasError') canvas: ElementRef;
 
   @Input() public width = 1700;
   @Input() public height = 800;
 
-  private cx: CanvasRenderingContext2D;
+  private ctx: CanvasRenderingContext2D;
 
-  public ngAfterViewInit() {
+  constructor() {
+    document.addEventListener('keyup', function () {
+      console.log('keys pressed');
+    });
+  }
+
+  ngOnInit() { }
+
+  public ngAfterViewInit(): void {
     // get the context
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
-    this.cx = canvasEl.getContext('2d');
+    this.ctx = canvasEl.getContext('2d');
 
     // set the width and height
-    canvasEl.width = this.width;
-    canvasEl.height = this.height;
+    canvasEl.width = window.innerWidth;
+    canvasEl.height = window.innerHeight;
 
     // set some default properties about the line
-    this.cx.lineWidth = 3;
-    this.cx.lineCap = 'round';
-    this.cx.strokeStyle = '#F00';
+    this.ctx.lineWidth = 13;
+    this.ctx.lineCap = 'round';
+    this.ctx.strokeStyle = '#F00';
 
     // we'll implement this method to start capturing mouse events
     this.captureEvents(canvasEl);
@@ -41,7 +49,7 @@ export class ErrorComponent implements OnInit {
 
   private captureEvents(canvasEl: HTMLCanvasElement) {
     Observable
-      // this will capture all mousedown events from teh canvas element
+      // this will capture all mousedown events from the canvas element
       .fromEvent(canvasEl, 'mousedown')
       .switchMap((e) => {
         return Observable
@@ -51,7 +59,7 @@ export class ErrorComponent implements OnInit {
           // this will trigger a 'mouseup' event
           .takeUntil(Observable.fromEvent(canvasEl, 'mouseup'))
           // we'll also stop (and unsubscribe) once the mouse leaves the canvas (mouseleave event)
-          .takeUntil(Observable.fromEvent(canvasEl, 'mouseleave'))
+          //.takeUntil(Observable.fromEvent(canvasEl, 'mouseleave'))
           // pairwise lets us get the previous value to draw a line from
           // the previous point to the current point
           .pairwise()
@@ -61,16 +69,17 @@ export class ErrorComponent implements OnInit {
 
         // previous and current position with the offset
         const prevPos = {
-          x: res[0].clientX - rect.left,
-          y: res[0].clientY - rect.top
+          x: res[0].clientX - rect.left + window.pageXOffset,
+          y: res[0].clientY - rect.top + window.pageYOffset
         };
 
         const currentPos = {
-          x: res[1].clientX - rect.left,
-          y: res[1].clientY - rect.top
+          x: res[1].clientX - rect.left + window.pageXOffset,
+          y: res[1].clientY - rect.top + window.pageYOffset
         };
 
-        console.log(prevPos.y);
+        console.log("prevPos: " + prevPos);
+        console.log('currentPos: ' + currentPos);
         // this method we'll implement soon to do the actual drawing
         this.drawOnCanvas(prevPos, currentPos);
       });
@@ -81,28 +90,20 @@ export class ErrorComponent implements OnInit {
     currentPos: { x: number, y: number }
   ) {
     // incase the context is not set
-    if (!this.cx) { return; }
+    if (!this.ctx) { return; }
 
     // start our drawing path
-    this.cx.beginPath();
+    this.ctx.beginPath();
 
     // we're drawing lines so we need a previous position
     if (prevPos) {
       // sets the start point
-      this.cx.moveTo(prevPos.x, prevPos.y); // from
+      this.ctx.moveTo(prevPos.x, prevPos.y); // from
       // draws a line from the start pos until the current position
-      this.cx.lineTo(currentPos.x, currentPos.y);
+      this.ctx.lineTo(currentPos.x, currentPos.y);
 
       // strokes the current path with the styles we set earlier
-      this.cx.stroke();
+      this.ctx.stroke();
     }
   }
-
-  constructor() {
-    document.addEventListener('keyup', function() {
-      console.log('keys pressed');
-    });
-  }
-
-  ngOnInit() {}
 }
