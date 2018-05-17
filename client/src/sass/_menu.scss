@@ -4,6 +4,7 @@
 }
 
 .mat-menu-item {
+  box-sizing: border-box;
     font-family: $font-stack;
     color: $brown;
     background-color: $yellow;
@@ -11,8 +12,7 @@
 }
 
 .mat-menu-item:hover {
-    color: green;
-    border: 3px solid $brown;
+    border: 2px solid $brown;
 }
 
 /* .mat-menu-item:active {
