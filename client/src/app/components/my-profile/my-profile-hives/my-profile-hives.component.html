@@ -1,14 +1,49 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h3>{{this.sessionService.user.name}} sponsored hives</h3>
+      <h3>Tus colmenas apadrinadas</h3>
     </div>
   </div>
   <div class="row">
     <div *ngFor="let hive of hives">
-      <div class="col-3">
-        <p>{{hive.email}}</p>
-        <img src="{{hive.picturesURL}}" alt="Hive picture" width="200px">
+      <div class="card">
+        <img class="card-img" [src]="hive.picturesURL">
+        <div class="card-content">
+          <div class="title padding-8">
+            <p>{{hive.name}}</p>
+          </div>
+          <div class="text padding-8">
+            Región: {{hive.location.city}}
+          </div>
+          <div class="text padding-8">
+            {{hive.beekeeper.name}}
+          </div>
+          <div class="card-button">
+            <a [routerLink]="['/hive', hive._id]">Ir a la colmena</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="honeys">
+  <div *ngFor="let honey of honeys | filter : searchText">
+    <div class="card">
+      <img class="card-img" [src]="honey.pictureURL">
+      <div class="card-content">
+        <div class="title padding-8">
+          <p>{{honey.name}}</p>
+        </div>
+        <div class="text padding-8">
+          Tipo: {{honey.type}}
+        </div>
+        <div class="text padding-8">
+          <span>{{honey.price | number:'1.2-2'}} €/kg</span>
+        </div>
+        <div class="card-button">
+          <a [routerLink]="['/honey',honey._id]">Ver detalle</a>
+        </div>
       </div>
     </div>
   </div>
