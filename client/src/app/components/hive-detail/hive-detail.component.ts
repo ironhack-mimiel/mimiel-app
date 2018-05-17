@@ -18,6 +18,8 @@ export class HiveDetailComponent implements OnInit {
   temperatureData: any;
   error: any;
 
+  showStream: boolean = false;
+
   sensorAData: Array<number> = [];
   dateData: Array<any> = [];
   dataAverage: Array<any> = [];
@@ -41,6 +43,10 @@ export class HiveDetailComponent implements OnInit {
 
   goBack() {
     this.location.back(); // <-- go back to previous location on cancel
+  }
+
+  toggleStream () {
+    this.sho
   }
   ngOnInit() {
     this.route.params.subscribe(params => {
