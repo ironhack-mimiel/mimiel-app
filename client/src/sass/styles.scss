@@ -97,6 +97,7 @@ input.ng-valid {
     line-height: 1.6;
 }
 
+
 //Titles
 h2 {
     font-size: 2em;
@@ -105,7 +106,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: $font-title;
 }
 
@@ -125,7 +126,7 @@ h5 {
 .section-title {
     width: 100%;
     text-align: center;
-    padding-bottom: 56px;
+    margin-bottom: 32px;
 }
 
 // Button
@@ -134,20 +135,24 @@ h5 {
     font-size: 1.25rem;
 }
 
-.btn-brown {
+.btn-yellow {
     background-color: $yellow;
-    border: 1px solid $brown;
     border-radius: 4px;
     color: $brown;
     font-weight: bolder;
 }
 
-.btn-yellow {
+.btn-brown {
     background-color: $brown;
-    border: 1px solid $yellow;
     border-radius: 4px;
     color: $yellow;
     font-weight: bolder;
+}
+
+.icon {
+    height: 32px;
+    margin: 0;
+    padding: 0;
 }
 
 // others

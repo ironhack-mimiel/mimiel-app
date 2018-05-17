@@ -18,9 +18,11 @@ export class HoneyDetailComponent implements OnInit {
   lng: number;
   honey: Honey;
   showForm: boolean = false;
+  beekeeper: Object;
 
   constructor(
     public honeyService: HoneyInfoService,
+    public hiveService: HiveInfoService,
     public route: ActivatedRoute,
     public router: Router,
     public isPatronService: IsPatronService,
@@ -34,6 +36,8 @@ export class HoneyDetailComponent implements OnInit {
         this.honey = honey;
         this.lat = parseFloat(honey.hive.location.coordinates[0].toFixed(4));
         this.lng = parseFloat(honey.hive.location.coordinates[1].toFixed(4));
+        this.hiveService.getOne(honey.hive._id).subscribe(hive =>  {
+          this.beekeeper = hive.beekeeper})
       });
     });
   }

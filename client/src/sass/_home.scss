@@ -16,16 +16,16 @@
     }
     .learn-more-button {
         text-align: center;
-        padding-top: 350px;
+        padding-top: 264px;
         .learn-more-arrow {
-            width: 3em;
+            width: 56px;
             cursor: pointer;
         }
     }
 }
 
 .info {
-    border-bottom: 1px solid $brown;
+    border-bottom: 1px solid $brown-trans;
     img {
         display: block;
         height: 124px;
@@ -34,8 +34,8 @@
     text-align: center;
     color: $brown;
     .home-steps {
-        border-left: 3px solid $yellow;
-        border-right: 3px solid $yellow;
+        border-left: 3px solid $yellow-trans;
+        border-right: 3px solid $yellow-trans;
     }
 }
 

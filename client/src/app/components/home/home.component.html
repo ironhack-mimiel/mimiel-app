@@ -2,7 +2,7 @@
   <div class="hero-title">
     <p class="padding-16 text-center">Miel natural.</p>
     <p class="padding-16 subtitle text-center">De la colmena a tu hogar.</p>
-    <!-- <button [routerLink]="['/honey']" class="btn btn-brown btn-large">Ver mieles</button> -->
+    <button class="btn btn-yellow btn-large" [routerLink]="['/honey']" id="show-more">Ver las mieles</button>
     <div class="learn-more-button">
       <a (click)="navigateTo()">
         <img class="learn-more-arrow" src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526499481/down-arrow.png" alt="Learn more">
@@ -12,7 +12,7 @@
 </div>
 <section>
   <div class="row info padding-56">
-    <div class="section-title">
+    <div class="section-title padding-32">
       <h3>Tu colmena, tu cliente y tú, siempre juntos</h3>
     </div>
     <div class="col-4">
@@ -34,8 +34,8 @@
     <h3>Nuestras mieles más vendidas</h3>
   </div>
   <div class="row" *ngIf="honeys">
-    <div *ngFor="let honey of honeys; let i=index" class="col-4" id="best-honeys">
-      <div *ngIf="i<3" class="card">
+    <div *ngFor="let honey of honeys; let i=index" class="col-3" id="best-honeys">
+      <div *ngIf="i<4" class="card">
         <img class="card-img" [src]="honey.pictureURL">
         <div class="card-content">
           <div class="title padding-8">
@@ -54,5 +54,5 @@
       </div>
     </div>
   </div>
-  <button class="btn btn-yellow" [routerLink]="['/honey']" id="show-more">Ver más mieles</button>
+  <button class="btn btn-brown btn-large" [routerLink]="['/honey']" id="show-more">Ver más mieles</button>
 </div>

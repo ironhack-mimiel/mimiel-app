@@ -19,6 +19,6 @@ export class HomeComponent implements OnInit {
   }
 
   navigateTo(): void {
-    window.scrollTo({ left: 0, top: 1000, behavior: 'smooth' });
+    window.scrollTo({ left: 0, top: 900, behavior: 'smooth' });
   }
 }
