@@ -1,39 +1,40 @@
 <div class="addnewhive-wrapper">
-  <div class="row">
-    <div class="col-6 add-left-panel">
-      <p class="title">Add a new hive</p>
-      <div class="form">
-        <div class="field">
-          <label class="label">Give your hive a name</label>
-          <div class="control">
-            <input class="input" type="text" [(ngModel)]="hiveName" name="hiveName" />
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Add a description</label>
-          <div class="control">
-            <input class="input" type="text" [(ngModel)]="hiveDescription" name="hiveDescription" />
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Where's your hive located at?</label>
-          <small class="label">User's wont see the exact location</small>
-          <div class="control">
-            <app-geocode (onGetFormatedAddress)="getAddressFromChild($event)"></app-geocode>
-          </div>
-        </div>
-        <div *ngIf="message !== ''">
-          <div class="field">
-            <label class="label">{{message}}</label>
-          </div>
-        </div>
-        <div class="field">
-          <button (click)="newHive()" class="button is-warning">Go ahead and upload awesome pictures!</button>
-        </div>
+  <div class="row mt-5">
+    <h2 class="title">Añadir nueva colmena</h2>
+  </div>
+
+  <div class="form">
+    <div class="field">
+      <label class="label">Nombre de la colmena</label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="hiveName" name="hiveName" />
       </div>
     </div>
-    <div class="col-6 add-right-panel">
-      <app-addnewhive-pics></app-addnewhive-pics>
+    <div class="field">
+      <label class="label">Añade una descripción</label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="hiveDescription" name="hiveDescription" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">¿Dónde esta tu colmena?</label>
+      <small class="label">Tranquilo, los usuarios no podrán ver su ubicación exacta</small>
+      <div class="control">
+        <app-geocode (onGetFormatedAddress)="getAddressFromChild($event)"></app-geocode>
+      </div>
+    </div>
+    <div *ngIf="message !== ''">
+      <div class="field">
+        <label class="label">{{message}}</label>
+      </div>
+    </div>
+    <div class="field">
+      <button (click)="newHive()" class="button is-warning">Go ahead and upload awesome pictures!</button>
     </div>
   </div>
+
+  <div class="col-6 add-right-panel">
+    <app-addnewhive-pics></app-addnewhive-pics>
+  </div>
+
 </div>

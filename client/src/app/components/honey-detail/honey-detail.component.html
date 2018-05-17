@@ -14,6 +14,10 @@
     </div>
   </div>
 
+  <div [hidden]="!showForm" *ngIf="honey" class="row mt-3">
+    <app-send-message (onToggleForm)="toggleContactForm($event)" [hiveInfo]="honey.hive" [toWho]="honey.hive.beekeeper" [isRequest]="true"></app-send-message>
+  </div>
+
   <div class="row mt-5">
     <div class="col d-flex justify-content-center">
       <h4>Origen y tipo de miel</h4>
@@ -41,9 +45,5 @@
 
   <div class="map">
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10"></agm-map>
-  </div>
-
-  <div [hidden]="!showForm" *ngIf="honey">
-    <app-send-message (onToggleForm)="toggleContactForm($event)" [hiveInfo]="honey.hive" [toWho]="honey.hive.beekeeper" [isRequest]="true"></app-send-message>
   </div>
 </div>

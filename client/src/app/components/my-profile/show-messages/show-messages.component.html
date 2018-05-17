@@ -1,23 +1,81 @@
-<p>
-  show-messages works!
-</p>
+<div class="container">
+  <div class="row padding-32">
+    <h2> Recibidos</h2>
+  </div>
+  <div class="row message msg-head padding-16">
+    <div class="col-2">
+      <p>De</p>
+    </div>
+    <div class="col-6">
+      <p>Asunto</p>
+    </div>
+    <div class="col-1">
+      <p>
+        Fecha
+      </p>
+    </div>
+    <div class="col-3">
+      <p>Acciones</p>
+    </div>
+  </div>
+  <div *ngFor="let message of receivedMessages">
+    <div class="row padding-16">
+      <div class="col-2 align-items-center">
+        <p>{{message.from.email}}</p>
+      </div>
+      <div class="col-6 align-items-center">
+        <p>{{message.message}}</p>
+      </div>
+      <div class="col-1 align-items-center">
+        {{message.created_at | date:'shortDate'}}
+      </div>
+      <div class="col-1 align-items-center">
+        <button *ngIf="!message.isRead" (click)="readMessage(message._id)" class="msg-btn msg-check">
+          <i class="fas fa-check"></i>
+        </button>
+      </div>
+      <div class="col-1">
+        <button (click)="toggleReply()" class="msg-btn msg-reply">
+          <i class="fas fa-reply"></i>
+        </button>
+      </div>
+      <div class="col-1">
+        <button *ngIf="message.isRequest" (click)="activatePatron(message.hive._id, message.from._id, message._id)" class="msg-btn msg-validate">
+          <i class="fas fa-user-plus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="row" *ngIf="showReply">
+      <app-send-message [hiveInfo]="message.hive" [toWho]="message.from" (onToggleForm)="toggleReply($event)"></app-send-message>
+    </div>
+  </div>
 
-<h1> Received messages</h1>
-<div *ngFor="let message of receivedMessages">
-  De: {{message.from.name}} {{message.from.surname}}, Email: {{message.from.email}}
-  Mensaje:{{message.message}}
-  Fecha: {{message.created_at | date:'medium'}}
-  <p *ngIf="!message.isRead">Mensaje sin leer</p>
-  <button *ngIf="!message.isRead" (click)="readMessage(message._id)">Marcar como leido</button>
-  <button (click)="toggleReply()">Responder al mensaje</button>
-  <button *ngIf="message.isRequest && !message.isRead" (click)="activatePatron(message.hive._id, message.from._id, message._id)">Dar de alta al usuario en la colmena</button>
-  <app-send-message *ngIf="showReply" [hiveInfo]="message.hive" [toWho]="message.from" (onToggleForm)="toggleReply($event)"></app-send-message>
-</div>
 
-
-<h1> Sent messages</h1>
-<div *ngFor="let message of sentMessages">
-  Para: {{message.to.name}} {{message.to.surname}}, Email: {{message.to.email}}
-  {{message.message}}
-  Fecha: {{message.created_at | date:'medium'}}
+  <div class="row padding-32">
+    <h2> Enviados</h2>
+  </div>
+  <div class="row message msg-head padding-16">
+    <div class="col-2">
+      <p>Para</p>
+    </div>
+    <div class="col-6">
+      <p>Asunto</p>
+    </div>
+    <div class="col-1">
+      <p>
+        Fecha
+      </p>
+    </div>
+  </div>
+  <div *ngFor="let message of sentMessages" class="row padding-16">
+    <div class="col-2 align-items-center">
+      <p>{{message.to.email}}</p>
+    </div>
+    <div class="col-6 align-items-center">
+      <p>{{message.message}}</p>
+    </div>
+    <div class="col-1 align-items-center">
+      {{message.created_at | date:'shortDate'}}
+    </div>
+  </div>
 </div>

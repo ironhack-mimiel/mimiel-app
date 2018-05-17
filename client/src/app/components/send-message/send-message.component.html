@@ -1,18 +1,19 @@
-<p>
-  send-message works!
-</p>
+<div class="row">
+  <div class="col login-title-wrapper">
+    <h4> Envia un mensaje sobre la colmena {{hiveInfo.name}} </h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="login-form">
+          <mat-form-field>
+            <mat-label>Tu mensaje</mat-label>
+            <input matInput type="text" [(ngModel)]="message" name="message" id="message-text">
+          </mat-form-field>
+          <div class="field">
+            <p (click)="sendMessage()" class="login-button"> Send Message </p>
+          </div>
+    </div>
 
-<div *ngIf="hiveInfo">
-  <div class="form">
-    <h2> Send a message </h2>
-    <div class="field">
-      <label class="label"> Mensaje a la colmena {{hiveInfo.name}}, Apicultor {{toWho.name}} </label>
-      <div class="control">
-        <input class="input" type="text" [(ngModel)]="message" name="message" />
-      </div>
-    </div>
-    <div class="field">
-      <button (click)="sendMessage()" class="button"> Send Message </button>
-    </div>
   </div>
 </div>

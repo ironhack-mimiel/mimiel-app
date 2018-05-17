@@ -23,9 +23,12 @@
               <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/c_scale,h_40/v1526504789/progressbar.png" id="progressbar" class="padding-32">
             </div>
           </div>
-          <div class="col-6">
-            <div id="placeholder">
-              <p> Soy el placeholder para el video</p>
+          <div class="col-6" (click)="toggleStream()">
+            <div *ngIf="showStream === false" class="stream">
+              	<i class="far fa-play-circle" id="play"></i>
+            </div>
+            <div *ngIf="showStream === true" class="stream">
+              <img src="https://e38c783f.ngrok.io/image.jpg">
             </div>
             <p class="mt-2 text-center"> Video en tiempo real</p>
           </div>
