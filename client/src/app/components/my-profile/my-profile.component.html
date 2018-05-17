@@ -11,8 +11,6 @@
               <li (click)="rightComponent='editProfile'">Edit profile</li>
               <li (click)="rightComponent='deleteProfile'">Delete profile</li>
               <li (click)="rightComponent='hives'">Sponsored hives</li>
-              <li (click)="rightComponent='payments'">Payments</li>
-              <li (click)="rightComponent='billing'">Billing</li>
             </ul>
           </div>
           <div *ngIf="sessionService.user.isApicultor">
@@ -23,8 +21,6 @@
               <li (click)="rightComponent='hives'">Hives</li>
               <li (click)="rightComponent='addNewHive'">Add new hive</li>
               <li (click)="rightComponent='addNewHoney'">Add new honey</li>
-              <li (click)="rightComponent='payments'">Payments</li>
-              <li (click)="rightComponent='billing'">Billing</li>
             </ul>
           </div>
         </div>
@@ -47,12 +43,6 @@
           </div>
           <div *ngIf="rightComponent == 'addNewHoney' && pictureUploadService.showPanelComponent">
             <app-my-profile-addnewhoney></app-my-profile-addnewhoney>
-          </div>
-          <div *ngIf="rightComponent == 'payments' && pictureUploadService.showPanelComponent">
-            <app-my-profile-payments></app-my-profile-payments>
-          </div>
-          <div *ngIf="rightComponent == 'billing' && pictureUploadService.showPanelComponent">
-            <app-my-profile-billing></app-my-profile-billing>
           </div>
           <div *ngIf="pictureUploadService.showAddImageComponent === true">
             <app-addnewhive-pics [(ngModel)]="rightComponent" (ngModelChange)="toggleRightComponent()" ngDefaultControl></app-addnewhive-pics>

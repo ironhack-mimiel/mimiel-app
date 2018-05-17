@@ -1,0 +1,11 @@
+.delete-form-wrapper {
+    padding-top: 24px;
+    max-width: 1208px;
+    margin: 0 auto;
+    .delete-form-title {
+        color: $brown;
+    }
+    .delete-form-subtitle {
+        padding-bottom: 16px;
+    }
+}

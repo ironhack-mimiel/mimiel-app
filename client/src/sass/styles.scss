@@ -1,11 +1,11 @@
-@import './_reset';
+@import './reset';
 @import './variables';
 @import './mixins';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import './cards';
 @import './navbar';
-@import './_signup_form';
+@import './signup_form';
 @import './login_form';
 @import './_custom_theme';
 @import './home';
@@ -14,8 +14,10 @@
 @import './menu';
 @import './add';
 @import './error';
-@import './_hive_detail';
-@import './_messages';
+@import './hive_detail';
+@import './messages';
+@import './edit_profile';
+@import './_delete_profile';
 
 
 * {

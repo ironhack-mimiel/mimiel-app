@@ -26,8 +26,6 @@ import { MyProfileEditComponent } from './components/my-profile/my-profile-edit/
 import { MyProfileDeleteComponent } from './components/my-profile/my-profile-edit/my-profile-delete/my-profile-delete.component';
 import { MyProfileHivesComponent } from './components/my-profile/my-profile-hives/my-profile-hives.component';
 import { MyProfileAddnewhiveComponent } from './components/my-profile/my-profile-addnewhive/my-profile-addnewhive.component';
-import { MyProfilePaymentsComponent } from './components/my-profile/my-profile-payments/my-profile-payments.component';
-import { MyProfileBillingComponent } from './components/my-profile/my-profile-billing/my-profile-billing.component';
 import { IsPatronService } from './services/is-patron.service';
 import { ShowMessagesComponent } from './components//my-profile/show-messages/show-messages.component';
 import { MessagingService } from './services/messaging.service';
@@ -48,6 +46,7 @@ import { MyProfileMenuComponent } from './components/my-profile-menu/my-profile-
 import { MatMenuModule } from '@angular/material/menu';
 import { ErrorComponent } from './components/error/error.component';
 import { ErrorService } from './services/error.service';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -65,8 +64,6 @@ import { ErrorService } from './services/error.service';
     MyProfileDeleteComponent,
     MyProfileHivesComponent,
     MyProfileAddnewhiveComponent,
-    MyProfilePaymentsComponent,
-    MyProfileBillingComponent,
     ShowMessagesComponent,
     SendMessageComponent,
     AddnewhivePicsComponent,
@@ -77,7 +74,7 @@ import { ErrorService } from './services/error.service';
     MyProfileAddnewhoneyPicsComponent,
     HomeBeekeeperComponent,
     MyProfileMenuComponent,
-    ErrorComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +90,8 @@ import { ErrorService } from './services/error.service';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSelectModule
   ],
   providers: [
     SessionService,
