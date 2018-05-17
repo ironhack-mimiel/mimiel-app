@@ -12,13 +12,14 @@
 
 .mat-menu-item:hover {
     color: green;
-    border: 1px solid red;
+    border: 3px solid $brown;
 }
 
-.mat-menu-item:active {
+/* .mat-menu-item:active {
     border: 1px solid red;
 }
 
 .mat-menu-item:focus {
     border: 1px solid red;
 }
+ */

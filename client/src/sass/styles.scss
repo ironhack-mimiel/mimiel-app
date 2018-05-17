@@ -11,14 +11,11 @@
 @import './home';
 @import './home_beekeeper';
 @import './honeylist';
-<<<<<<< HEAD
 @import './menu';
 @import './add';
 @import './error';
-=======
 @import './_hive_detail';
 
->>>>>>> alvaro
 
 * {
     font-family: $font-stack;
@@ -92,13 +89,8 @@ input.ng-valid {
 }
 
 .row {
-<<<<<<< HEAD
-    max-width: 1240px;
-    margin: 0 auto;
-=======
   max-width: 1256px;
   margin: 0 auto;
->>>>>>> alvaro
 }
 
 .text-block {
@@ -136,16 +128,6 @@ h5 {
     padding-bottom: 56px;
 }
 
-<<<<<<< HEAD
-//Map
-.map {
-    height: 500px;
-    max-width: 1208px;
-    margin: 0 auto;
-}
-
-=======
->>>>>>> alvaro
 // Button
 .btn-large {
     padding: 0.5rem 1rem;

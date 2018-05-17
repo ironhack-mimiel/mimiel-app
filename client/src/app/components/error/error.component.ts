@@ -35,8 +35,8 @@ export class ErrorComponent implements OnInit, AfterViewInit {
     this.ctx = canvasEl.getContext('2d');
 
     // set the width and height
-    canvasEl.width = window.innerWidth;
-    canvasEl.height = window.innerHeight;
+    canvasEl.width = 1000;
+    canvasEl.height = 700;
 
     // set some default properties about the line
     this.ctx.lineWidth = 13;
@@ -66,6 +66,8 @@ export class ErrorComponent implements OnInit, AfterViewInit {
       })
       .subscribe((res: [MouseEvent, MouseEvent]) => {
         const rect = canvasEl.getBoundingClientRect();
+        const scaleX = canvasEl.width / rect.width;    // relationship bitmap vs. element for X
+        const scaleY = canvasEl.height / rect.height;
 
         // previous and current position with the offset
         const prevPos = {
