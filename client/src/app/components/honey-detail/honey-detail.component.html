@@ -8,17 +8,34 @@
       <p class="padding-8">España ({{honey.hive.location.city}})</p>
       <h3 class="padding-8"> Precio: {{honey.price | number:'1.2-2'}}€/kg</h3>
       <p class="padding-8">Miel de: {{honey.type}}</p>
-      <p class="padding-8 text-block">{{honey.description}}</p>
-      <button class="btn btn-brown" (click)="toggleContactForm()">Contactar con la colmena</button>
+      <p class="padding-16 text-block">{{honey.description}}</p>
+      <button class="btn btn-brown" (click)="toggleContactForm()" id="contact-button">Contactar con la colmena</button>
+      <button class="btn btn-yellow" (click)="goToHive()" id="to-hive">Ir a la colmena</button>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-6 text-center">
-      <p class="padding-16">{{honey.hive.location.city}}, España</p>
+  <div class="row mt-5">
+    <div class="col d-flex justify-content-center">
+      <h4>Origen y tipo de miel</h4>
     </div>
-    <div class="col-6 text-center">
-      <p class="padding-16">{{honey.type}}</p>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-4 d-flex align-items-center justify-content-center">
+      <p>
+        <span>
+          <i class="fas fa-map-marker-alt icon"></i>
+        </span>{{honey.hive.location.city}}, España</p>
+    </div>
+    <div class="col-4 d-flex align-items-center justify-content-center">
+      <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526488188/info2.png" class="icon">
+      <p class="fl-left padding-16">{{honey.type}}</p>
+    </div>
+    <div *ngIf="beekeeper" class="col-4 d-flex align-items-center justify-content-center">
+        <p>
+            <span>
+              <i class="fas fa-user icon"></i>
+            </span>{{beekeeper.name}} {{beekeeper.surname}}</p>
     </div>
   </div>
 
@@ -29,5 +46,4 @@
   <div [hidden]="!showForm" *ngIf="honey">
     <app-send-message (onToggleForm)="toggleContactForm($event)" [hiveInfo]="honey.hive" [toWho]="honey.hive.beekeeper" [isRequest]="true"></app-send-message>
   </div>
-  <button class="btn btn-yellow" (click)="goToHive()">Ir a la colmena</button>
 </div>

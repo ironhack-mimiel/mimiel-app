@@ -19,7 +19,8 @@
             </div>
             <div class="padding-8">
               <h5>Evolución de la colmena</h5>
-              <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/c_scale,h_40/v1526504789/progressbar.png" id="progressbar" class="padding-16">
+              <p class="text-block padding-8">Actualmente la miel de esta colmena está en fase de recogida.</p>
+              <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/c_scale,h_40/v1526504789/progressbar.png" id="progressbar" class="padding-32">
             </div>
           </div>
           <div class="col-6">
@@ -29,13 +30,12 @@
           </div>
 
         </div>
-        <div class="row padding-56">
+        <div class="row padding-32">
           <h5> Información de los sensores en tiempo real</h5>
         </div>
         <div class="row" *ngIf="hive" class="padding-16">
           <canvas baseChart id="graph" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [legend]="lineChartLegend"
             [chartType]="lineChartType" [colors]="lineChartColors"></canvas>
-
         </div>
       </div>
 </div>

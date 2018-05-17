@@ -20,6 +20,7 @@ router.get('/', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   Hive.findById(req.params.id)
     .populate('rpi')
+    .populate('beekeeper')
     .exec((err, hive) => {
       if (err) {
         return res.status(500).json(err);
