@@ -46,7 +46,7 @@ export class HiveDetailComponent implements OnInit {
   }
 
   toggleStream () {
-    this.sho
+    this.showStream = !this.showStream
   }
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -85,7 +85,7 @@ export class HiveDetailComponent implements OnInit {
           },
           ticks: {
             min: 20,
-            max: 30,
+            max: 35,
             stepSize: 2
           }
         }
