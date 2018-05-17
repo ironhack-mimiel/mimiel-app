@@ -41,6 +41,7 @@ export class HiveDetailComponent implements OnInit {
     private location: Location
   ) {}
 
+
   goBack() {
     this.location.back(); // <-- go back to previous location on cancel
   }

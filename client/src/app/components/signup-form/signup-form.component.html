@@ -1,7 +1,7 @@
 <div class="container signup-wrapper">
   <div class="row">
     <div class="col signup-title-wrapper">
-      <h2 class="signup-title"> Be bee! </h2>
+      <h2 class="signup-title"> Registrate en Mi Miel </h2>
     </div>
   </div>
   <div class="row">
@@ -26,7 +26,7 @@
 
           <div>
             <mat-form-field>
-              <mat-label>Name</mat-label>
+              <mat-label>Nombre</mat-label>
               <input matInput placeholder="John Doe" type="text" [(ngModel)]="name" name="name" #myName="ngModel" required>
               <!-- <mat-hint>Hint</mat-hint> -->
             </mat-form-field>
@@ -34,25 +34,13 @@
 
           <div>
             <mat-form-field>
-              <mat-label>Address</mat-label>
+              <mat-label>Dirección</mat-label>
               <input matInput placeholder="13 Rue del percebe" type="text" [(ngModel)]="address" name="address" #myAddress="ngModel" required>
               <!-- <mat-hint>Hint</mat-hint> -->
             </mat-form-field>
           </div>
-          <!-- <div class="field">
-            <mat-form-field>
-              <input matInput class="form-control" [(ngModel)]="email" name="email" #myEmail="ngModel" required />
-              <span *ngIf="!myEmail.valid && myEmail.touched">The email is required.</span>
-            </mat-form-field>
-          </div> -->
-          <!-- <div class="field">
-            <label class="label"> Is apicultor </label>
-            No
-            <input type="radio" [(ngModel)]="isApicultor" name="isApicultor" value="false"> Yes
-            <input type="radio" [(ngModel)]="isApicultor" name="isApicultor" value="true">
-          </div> -->
           <div class="field">
-            <p (click)="signup()" class="signup-button"> Sign Up! </p>
+            <p (click)="signup()" class="signup-button"> Regístrame!</p>
           </div>
         </form>
       </div>

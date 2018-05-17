@@ -1,7 +1,7 @@
 <div class="edit-profile-wrapper">
   <div class="row edit-profile-title-wrapper">
     <div class="col ">
-      <h2 class="edit-profile-title">Update your profile</h2>
+      <h2 class="edit-profile-title">Actualiza tu perfil</h2>
     </div>
   </div>
   <div>
@@ -29,7 +29,7 @@
       </div>
       <div class="col">
         <mat-form-field>
-          <mat-label>Direccion</mat-label>
+          <mat-label>Dirección</mat-label>
           <input matInput [placeholder]="sessionService.user.address" type="text" [(ngModel)]="address" name="address">
         </mat-form-field>
       </div>
@@ -64,10 +64,10 @@
       <div class="col">
         <div class="row edit-profile-form-wrapper">
           <div class="col">
-            <button (click)="updateProfile()" class="btn btn-yellow">Update your profile</button>
+            <button (click)="updateProfile()" class="btn btn-yellow">Actualizar perfil</button>
           </div>
           <div class="col">
-            <button (click)="toggleDeleteForm()" class="btn btn-brown">Delete your profile</button>
+            <button (click)="toggleDeleteForm()" class="btn btn-brown">Borrar tu perfil</button>
           </div>
         </div>
       </div>

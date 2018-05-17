@@ -12,9 +12,9 @@
         <!-- NAVBAR BUTTONS IF USER IS NOT LOGGED IN -->
         <div *ngIf="!sessionService.user">
           <div class="navbar-button-wrapper">
-            <p [routerLink]="['/beekeeper']" class="navbar-button">Become a beekeeper</p>
-            <p (click)="sessionService.toggleSignupForm()" class="navbar-button">Sign Up</p>
-            <p (click)="sessionService.toggleLoginForm()" class="navbar-button">Log in</p>
+            <p [routerLink]="['/beekeeper']" class="navbar-button">Hazte apicultor</p>
+            <p (click)="sessionService.toggleSignupForm()" class="navbar-button">Registro</p>
+            <p (click)="sessionService.toggleLoginForm()" class="navbar-button">Iniciar sesión</p>
           </div>
         </div>
         <!-- NAVBAR BUTTONS IF USER IS LOGGED IN -->
@@ -27,7 +27,7 @@
               <img class="notification-bell" src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526516629/bell-red.png" alt="No notifications">
             </div>
             <app-my-profile-menu></app-my-profile-menu>
-            <p (click)="logout()" class="navbar-button"> Logout </p>
+            <p (click)="logout()" class="navbar-button"> Cerrar sesión </p>
           </div>
         </div>
       </div>

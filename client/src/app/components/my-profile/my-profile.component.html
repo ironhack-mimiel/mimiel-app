@@ -1,5 +1,5 @@
 <div *ngIf="sessionService.user">
-  <h1>Wellcome {{sessionService.user.email}}</h1>
+  <h1>Bienvenido {{sessionService.user.email}}</h1>
   <section class="section">
     <div class="container">
       <div class="columns">
@@ -7,20 +7,20 @@
           <!-- Change left pannel depending of user type -->
           <div *ngIf="!sessionService.user.isApicultor">
             <ul>
-              <li (click)="rightComponent='messages'">Messages</li>
-              <li (click)="rightComponent='editProfile'">Edit profile</li>
-              <li (click)="rightComponent='deleteProfile'">Delete profile</li>
-              <li (click)="rightComponent='hives'">Sponsored hives</li>
+              <li (click)="rightComponent='messages'">Mensajes</li>
+              <li (click)="rightComponent='editProfile'">Editar perfil</li>
+              <li (click)="rightComponent='deleteProfile'">Eliminar perfil</li>
+              <li (click)="rightComponent='hives'">Colmenas apadrinadas</li>
             </ul>
           </div>
           <div *ngIf="sessionService.user.isApicultor">
             <ul>
-              <li (click)="rightComponent='messages'">Messages</li>
-              <li (click)="rightComponent='editProfile'">Edit profile</li>
-              <li (click)="rightComponent='deleteProfile'">Delete profile</li>
-              <li (click)="rightComponent='hives'">Hives</li>
-              <li (click)="rightComponent='addNewHive'">Add new hive</li>
-              <li (click)="rightComponent='addNewHoney'">Add new honey</li>
+              <li (click)="rightComponent='messages'">Mensajes</li>
+              <li (click)="rightComponent='editProfile'">Editar perfil</li>
+              <li (click)="rightComponent='deleteProfile'">Eliminar perfil</li>
+              <li (click)="rightComponent='hives'">Colmenas</li>
+              <li (click)="rightComponent='addNewHive'">Añadir nueva colmena</li>
+              <li (click)="rightComponent='addNewHoney'">Añadir nueva miel</li>
             </ul>
           </div>
         </div>

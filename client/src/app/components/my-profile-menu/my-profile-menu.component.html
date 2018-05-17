@@ -1,9 +1,9 @@
-<p mat-button [matMenuTriggerFor]="profile" class="navbar-button">My profile</p>
+<p mat-button [matMenuTriggerFor]="profile" class="navbar-button">Mi perfil</p>
 <mat-menu #profile="matMenu" yPosition="above" xPosition="before" FocusOrigin='' class="profile-menu">
-  <button mat-menu-item [routerLink]="['/messages']">Messages</button>
-  <button mat-menu-item [routerLink]="['/editprofile']">Edit profile</button>
-  <button mat-menu-item [routerLink]="['/hives']">Hives</button>
-  <button mat-menu-item [routerLink]="['/addnewhive']">Add new hive</button>
-  <button mat-menu-item [routerLink]="['/addnewhoney']">Add new honey</button>
+  <button mat-menu-item [routerLink]="['/messages']">Mensajes</button>
+  <button mat-menu-item [routerLink]="['/editprofile']">Editar perfil</button>
+  <button mat-menu-item [routerLink]="['/hives']">Mis colmenas</button>
+  <button mat-menu-item [routerLink]="['/addnewhive']">Añadir colmena</button>
+  <button mat-menu-item [routerLink]="['/addnewhoney']">Añadir miel</button>
   <button mat-menu-item [routerLink]="['/error']">Error</button>
 </mat-menu>

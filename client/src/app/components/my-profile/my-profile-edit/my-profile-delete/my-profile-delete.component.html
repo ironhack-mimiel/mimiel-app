@@ -1,29 +1,29 @@
 <div class="delete-form-wrapper">
   <div class="row edit-profile-form-wrapper">
     <div class="col">
-      <h3 >Delete your account</h3>
+      <h3 >Eliminar tu cuenta</h3>
     </div>
   </div>
   <div class="row edit-profile-form-wrapper">
     <div class="col delete-form-subtitle">
-      <h5>Please, give us feedback</h5>
+      <h5>Danos tu opinión para que podamos mejorar</h5>
     </div>
   </div>
   <div class="row">
     <div class="col py-2">
-      <p>Why are you leaving?</p>
+      <p>¿Por qué quieres elminar tu cuenta?</p>
     </div>
   </div>
   <div class="row edit-profile-form-wrapper">
     <div class="col">
       <input type="radio" name="action" id="delete-option1" value="delete-option1" [(ngModel)]="option" class="py-1"/>
-      <label for="delete-option1">I began to produce my own honey</label>
+      <label for="delete-option1">He empezado a hacer mi propia miel</label>
       <br />
       <input type="radio" name="action" id="delete-option2" value="delete-option2" [(ngModel)]="option"/>
-      <label for="delete-option2">I'm not selling honey anymore</label>
+      <label for="delete-option2">Ya no vendo miel</label>
       <br />
       <input type="radio" name="action" id="delete-option3" value="delete-option3" [(ngModel)]="option"/>
-      <label for="delete-option3">Other (provide additional feedback)</label>
+      <label for="delete-option3">Otros (por favor comenta tus motivos)</label>
       <br />
       <div *ngIf="option==='delete-option3'">
         <input type="text" name="action" id="delete-option3-reason" value="delete-option3-reason" [(ngModel)]="deleteReason" />
@@ -32,7 +32,7 @@
   </div>
   <div class="row">
     <div class="col py-2">
-      <button (click)="deleteAccount()" class="btn btn-brown">Delete your account</button>
+      <button (click)="deleteAccount()" class="btn btn-brown">Eliminar cuenta</button>
     </div>
   </div>
 </div>
