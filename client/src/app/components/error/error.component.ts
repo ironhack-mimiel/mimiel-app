@@ -23,7 +23,7 @@ export class ErrorComponent implements OnInit, AfterViewInit {
   private ctx: CanvasRenderingContext2D;
 
   color: any = '#880909';
-  pointer: string = 'skin';
+  pointer: string = 'red';
 
   constructor(public errorService: ErrorService) {
     document.addEventListener('keyup', function () {
