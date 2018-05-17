@@ -48,6 +48,7 @@ import { MyProfileMenuComponent } from './components/my-profile-menu/my-profile-
 import { MatMenuModule } from '@angular/material/menu';
 import { ErrorComponent } from './components/error/error.component';
 import { ErrorService } from './services/error.service';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,7 @@ import { ErrorService } from './services/error.service';
     MyProfileAddnewhoneyPicsComponent,
     HomeBeekeeperComponent,
     MyProfileMenuComponent,
-    ErrorComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +94,8 @@ import { ErrorService } from './services/error.service';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSelectModule
   ],
   providers: [
     SessionService,

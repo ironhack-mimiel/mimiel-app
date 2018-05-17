@@ -1,22 +1,22 @@
-<div class="container">
-  <div class="row">
+<div class="delete-form-wrapper">
+  <div class="row edit-profile-form-wrapper">
     <div class="col">
-      <h3>Delete your account</h3>
+      <h3 >Delete your account</h3>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
+  <div class="row edit-profile-form-wrapper">
+    <div class="col delete-form-subtitle">
       <h5>Please, give us feedback</h5>
     </div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col py-2">
       <p>Why are you leaving?</p>
     </div>
   </div>
-  <div class="row">
+  <div class="row edit-profile-form-wrapper">
     <div class="col">
-      <input type="radio" name="action" id="delete-option1" value="delete-option1" [(ngModel)]="option"/>
+      <input type="radio" name="action" id="delete-option1" value="delete-option1" [(ngModel)]="option" class="py-1"/>
       <label for="delete-option1">I began to produce my own honey</label>
       <br />
       <input type="radio" name="action" id="delete-option2" value="delete-option2" [(ngModel)]="option"/>
@@ -31,8 +31,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col">
-      <button (click)="deleteAccount()">Delete your account</button>
+    <div class="col py-2">
+      <button (click)="deleteAccount()" class="btn btn-brown">Delete your account</button>
     </div>
   </div>
 </div>

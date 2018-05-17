@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../services/session.service';
 import { MyProfileDeleteComponent } from './my-profile-delete/my-profile-delete.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-my-profile-edit',
@@ -17,6 +18,8 @@ export class MyProfileEditComponent implements OnInit {
   password: string = "";
   message: string;
   id: string = this.sessionService.user._id;
+
+  showDeleteForm: boolean = false;
 
   constructor(public sessionService: SessionService) {}
 
@@ -44,6 +47,10 @@ export class MyProfileEditComponent implements OnInit {
     } else {
       this.message = 'Your need to provide your password';
     }
+  }
+
+  toggleDeleteForm() {
+    this.showDeleteForm = !this.showDeleteForm;
   }
 
 }

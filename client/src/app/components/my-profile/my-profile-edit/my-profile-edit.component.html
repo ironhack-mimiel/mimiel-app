@@ -1,66 +1,80 @@
-<div class="container">
-  <p class="title">Update your profile</p>
-  <div class="form">
-    <form id="fillform">
-      <div class="field">
-        <label class="label"> Email </label>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="email" name="email" />
+<div class="edit-profile-wrapper">
+  <div class="row edit-profile-title-wrapper">
+    <div class="col ">
+      <h2 class="edit-profile-title">Update your profile</h2>
+    </div>
+  </div>
+  <div>
+    <div class="row edit-profile-form-wrapper">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput [placeholder]="sessionService.user.email" type="email" [(ngModel)]="email" name="email" class="email">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput [placeholder]="sessionService.user.name" type="text" [(ngModel)]="name" name="name">
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="row edit-profile-form-wrapper">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Apellidos</mat-label>
+          <input matInput [placeholder]="sessionService.user.surname" type="text" [(ngModel)]="surname" name="surname">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Direccion</mat-label>
+          <input matInput [placeholder]="sessionService.user.address" type="text" [(ngModel)]="address" name="address">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row edit-profile-form-wrapper">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Teléfono</mat-label>
+          <input matInput [placeholder]="sessionService.user.phoneNumber" type="text" [(ngModel)]="phoneNumber" name="phoneNumber">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <div *ngIf="sessionService.user.isApicultor === true">
+          <mat-form-field>
+            <mat-select [(ngModel)]="paymentMethod" name="paymentMethod" placeholder="Método de pago">
+              <mat-option value="creditCard">Tarjeta de crédito</mat-option>
+              <mat-option value="paypal">Paypal</mat-option>
+              <mat-option value="cashOnDelivery">Contrareembolso</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
       </div>
-      <div class="field">
-        <label class="label">Nombre</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Pepe" [(ngModel)]="name" name="name" />
-        </div>
+    </div>
+
+    <div class="row edit-profile-form-wrapper">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Por seguridad, escribe tu contraseña</mat-label>
+          <input matInput type="password" [(ngModel)]="password" name="phoneNumber" required>
+        </mat-form-field>
       </div>
-      <div class="field">
-        <label class="label">Apellidos</label>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="surname" name="surname" />
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Dirección</label>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="address" name="address" />
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Número de teléfono</label>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="phoneNumber" name="phoneNumber" />
-        </div>
-      </div>
-      <div *ngIf="sessionService.user.isApicultor === true">
-        <div class="field">
-          <label class="label">How would you want to get paid?</label>
-          <div class="control">
-            <select name="payMethod" id="payMethod" [(ngModel)]="payMethod">
-              <option value="creditCard">Credit Card</option>
-              <option value="paypal">Paypal</option>
-              <option value="cashOnDelivery">Cash on delivery</option>
-            </select>
+      <div class="col">
+        <div class="row edit-profile-form-wrapper">
+          <div class="col">
+            <button (click)="updateProfile()" class="btn btn-yellow">Update your profile</button>
+          </div>
+          <div class="col">
+            <button (click)="toggleDeleteForm()" class="btn btn-brown">Delete your profile</button>
           </div>
         </div>
       </div>
-      <div class="field">
-        <label class="label">Please, type your password</label>
-        <div class="control">
-          <input class="input" type="text" [(ngModel)]="password" name="password" />
-        </div>
-      </div>
-      <div *ngIf="message !== ''">
-        <div class="field">
-          <label class="label">{{message}}</label>
-        </div>
-      </div>
-      <div class="field">
-        <button (click)="updateProfile()" class="button is-warning">Update your profile</button>
-      </div>
-    </form>
+    </div>
   </div>
-  <p class="error"> {{ error }} </p>
 </div>
 
-<app-my-profile-delete></app-my-profile-delete>
+<div *ngIf="showDeleteForm">
+  <app-my-profile-delete></app-my-profile-delete>
+</div>

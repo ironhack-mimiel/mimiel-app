@@ -1,0 +1,19 @@
+.edit-profile-wrapper {
+    padding-top: 96px;
+    max-width: 1208px;
+    margin: 0 auto;
+    .edit-profile-title-wrapper {
+        width: 100%;
+        padding: 16px;
+        .edit-profile-title {
+            color: $brown;
+        }
+    }
+    .edit-profile-form-wrapper {
+        width: 100%;
+        padding: 16px;
+        .mat-input-wrapper {
+            width: 450px !important;
+        }
+    }
+}
