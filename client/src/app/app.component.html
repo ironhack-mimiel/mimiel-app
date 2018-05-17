@@ -20,12 +20,12 @@
         <!-- NAVBAR BUTTONS IF USER IS LOGGED IN -->
         <div *ngIf="sessionService.user">
           <div class="navbar-button-wrapper">
-            <div class="notification-bell-wrapper">
+            <!-- <div class="notification-bell-wrapper">
               <img class="notification-bell" src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526517142/bell-brown.png" alt="No notifications">
             </div>
             <div class="notification-bell-wrapper">
               <img class="notification-bell" src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526516629/bell-red.png" alt="No notifications">
-            </div>
+            </div> -->
             <app-my-profile-menu></app-my-profile-menu>
             <p (click)="logout()" class="navbar-button"> Cerrar sesión </p>
           </div>
