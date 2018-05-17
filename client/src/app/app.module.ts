@@ -48,8 +48,6 @@ import { MyProfileMenuComponent } from './components/my-profile-menu/my-profile-
 import { MatMenuModule } from '@angular/material/menu';
 import { ErrorComponent } from './components/error/error.component';
 import { ErrorService } from './services/error.service';
-import { ErrorMessageComponent } from './components/error/error-message/error-message.component';
-
 
 @NgModule({
   declarations: [

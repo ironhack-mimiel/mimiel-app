@@ -30,8 +30,10 @@
           </div>
 
         </div>
-        <div class="row padding-32">
-          <h5> Información de los sensores en tiempo real</h5>
+        <div class="row my-2">
+          <div class="col d-flex justify-content-center">
+            <h4 id="sensor-text"> Información de los sensores en tiempo real</h4>
+          </div>
         </div>
         <div class="row" *ngIf="hive" class="padding-16">
           <canvas baseChart id="graph" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [legend]="lineChartLegend"
