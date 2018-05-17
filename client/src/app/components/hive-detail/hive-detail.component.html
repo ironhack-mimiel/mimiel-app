@@ -29,13 +29,19 @@
           </div>
 
         </div>
-        <div class="row">
+        <div class="row padding-56">
           <h5> Información de los sensores en tiempo real</h5>
         </div>
+        <div class="row" *ngIf="hive" class="padding-16">
+          <canvas baseChart id="graph" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [legend]="lineChartLegend"
+            [chartType]="lineChartType" [colors]="lineChartColors"></canvas>
 
+        </div>
       </div>
 </div>
-<app-chart-test [temperatureData]="temperatureData" [averageTemperature]="average"></app-chart-test>
+
+
+
 <!-- 
 
 
