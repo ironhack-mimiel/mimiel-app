@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col section-title padding-56">
       <h3>Tus colmenas apadrinadas</h3>
     </div>
   </div>
-  <div class="row">
-    <div *ngFor="let hive of hives">
+  <div *ngIf="hives" class="row">
+    <div *ngFor="let hive of hives" class="col-4">
       <div class="card">
         <img class="card-img" [src]="hive.picturesURL">
         <div class="card-content">
@@ -21,28 +21,6 @@
           <div class="card-button">
             <a [routerLink]="['/hive', hive._id]">Ir a la colmena</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row" *ngIf="honeys">
-  <div *ngFor="let honey of honeys | filter : searchText">
-    <div class="card">
-      <img class="card-img" [src]="honey.pictureURL">
-      <div class="card-content">
-        <div class="title padding-8">
-          <p>{{honey.name}}</p>
-        </div>
-        <div class="text padding-8">
-          Tipo: {{honey.type}}
-        </div>
-        <div class="text padding-8">
-          <span>{{honey.price | number:'1.2-2'}} €/kg</span>
-        </div>
-        <div class="card-button">
-          <a [routerLink]="['/honey',honey._id]">Ver detalle</a>
         </div>
       </div>
     </div>
