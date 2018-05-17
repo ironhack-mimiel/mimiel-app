@@ -1,13 +1,46 @@
+ .pointer-red {
+     cursor: url(http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526554144/finger-red.png), pointer;
+ }
+
+ .pointer-skin {
+     cursor: url(http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526554144/finger-skin.png), pointer;
+ }
+
+ .pointer-honey {
+     cursor: url(http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526554144/finger-honey.png), pointer;
+ }
+
+ .pointer-pot-outside {
+     cursor: url(http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526554144/finger-pot-outside.png), pointer;
+ }
+
+ .pointer-pot-inside {
+     cursor: url(http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526554144/finger-pot-inside.png), pointer;
+ }
+
+ .pointer-rubber {
+     cursor: url(http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526554145/finger-rubber.png), pointer;
+ }
+
+ .error-toggler {
+     width: 48px;
+     height: 48px;
+     background-image: url('http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526556861/exclamation.jpg');
+     background-size: 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
  .error-wrapper {
      overflow: hidden;
      .hero-error {
          width: 100%;
          height: calc(100vh - 80px);
          background-image: url('http://res.cloudinary.com/dxsy5lr4t/image/upload/v1526547565/winnie-pooh.jpg');
-         background-size: 50%;
+         background-size: 40%;
          background-position: center;
          background-repeat: no-repeat;
-         z-index: 1;
+         z-index: 100;
          .hero-error-title {
              padding: 10px 108px;
              font-size: 64px;
@@ -20,8 +53,6 @@
              }
          }
          .canvas-error {
-             cursor: url(), pointer;
-             border: 10px solid black;
              position: absolute;
              margin: auto;
              top: 50%;
@@ -29,6 +60,62 @@
              -webkit-transform: translate(-50%, -70%);
              -ms-transform: translate(-50%, -50%);
              transform: translate(-50%, -50%);
+             z-index: 1;
+         }
+         .canvas-tools {
+             position: absolute;
+             bottom: 5%;
+             left: 50%;
+             -webkit-transform: translate(-50%, -70%);
+             -ms-transform: translate(-50%, -50%);
+             transform: translate(-50%, -50%);
+             .tools-wrapper {
+                 padding: 20px;
+                 ul {
+                     list-style-type: none;
+                     li {
+                         display: inline-block;
+                         padding: 10px;
+                         .red-tool {
+                             height: 48px;
+                             width: 48px;
+                             background-color: #880909;
+                             border-radius: 50%;
+                         }
+                         .skin-tool {
+                             height: 48px;
+                             width: 48px;
+                             background-color: #FCCD33;
+                             border-radius: 50%;
+                         }
+                         .honey-tool {
+                             height: 48px;
+                             width: 48px;
+                             background-color: #5D250D;
+                             border-radius: 50%;
+                         }
+                         .pot-outside-tool {
+                             height: 48px;
+                             width: 48px;
+                             background-color: #708FE0;
+                             border-radius: 50%;
+                         }
+                         .pot-inside-tool {
+                             height: 48px;
+                             width: 48px;
+                             background-color: #234BDF;
+                             border-radius: 50%;
+                         }
+                         .rubber-tool {
+                             height: 48px;
+                             width: 48px;
+                             background-color: #FFFFFF;
+                             border-radius: 50%;
+                             border: .5px solid black;
+                         }
+                     }
+                 }
+             }
          }
      }
  }

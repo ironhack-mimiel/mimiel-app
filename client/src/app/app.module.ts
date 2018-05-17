@@ -47,6 +47,8 @@ import { HomeBeekeeperComponent } from './components/home-beekeeper/home-beekeep
 import { MyProfileMenuComponent } from './components/my-profile-menu/my-profile-menu.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { ErrorComponent } from './components/error/error.component';
+import { ErrorService } from './services/error.service';
+import { ErrorMessageComponent } from './components/error/error-message/error-message.component';
 
 
 @NgModule({
@@ -77,7 +79,7 @@ import { ErrorComponent } from './components/error/error.component';
     MyProfileAddnewhoneyPicsComponent,
     HomeBeekeeperComponent,
     MyProfileMenuComponent,
-    ErrorComponent
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,7 +95,7 @@ import { ErrorComponent } from './components/error/error.component';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatMenuModule,
+    MatMenuModule
   ],
   providers: [
     SessionService,
@@ -102,7 +104,8 @@ import { ErrorComponent } from './components/error/error.component';
     IsPatronService,
     MessagingService,
     FileUploadModule,
-    PictureUploadService
+    PictureUploadService,
+    ErrorService
   ],
   bootstrap: [AppComponent]
 })

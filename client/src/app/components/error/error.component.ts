@@ -7,6 +7,7 @@ import {
   Input
 } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ErrorService } from '../../services/error.service';
 
 @Component({
   selector: 'app-error',
@@ -21,10 +22,22 @@ export class ErrorComponent implements OnInit, AfterViewInit {
 
   private ctx: CanvasRenderingContext2D;
 
-  constructor() {
+  color: any = '#880909';
+  pointer: string = 'skin';
+
+  constructor(public errorService: ErrorService) {
     document.addEventListener('keyup', function () {
       console.log('keys pressed');
     });
+  }
+
+  changeTool(color, pointer){
+    this.ctx.strokeStyle = color;
+    this.pointer = pointer;
+  }
+
+  toggleErrorMessage() {
+    this.errorService.showErrorMessageComponent = !this.errorService.showErrorMessageComponent;
   }
 
   ngOnInit() { }
@@ -36,12 +49,12 @@ export class ErrorComponent implements OnInit, AfterViewInit {
 
     // set the width and height
     canvasEl.width = 1000;
-    canvasEl.height = 700;
+    canvasEl.height = 600;
 
     // set some default properties about the line
     this.ctx.lineWidth = 13;
     this.ctx.lineCap = 'round';
-    this.ctx.strokeStyle = '#F00';
+    this.ctx.strokeStyle = this.color;
 
     // we'll implement this method to start capturing mouse events
     this.captureEvents(canvasEl);
@@ -80,8 +93,6 @@ export class ErrorComponent implements OnInit, AfterViewInit {
           y: res[1].clientY - rect.top + window.pageYOffset
         };
 
-        console.log("prevPos: " + prevPos);
-        console.log('currentPos: ' + currentPos);
         // this method we'll implement soon to do the actual drawing
         this.drawOnCanvas(prevPos, currentPos);
       });

@@ -1,9 +1,61 @@
-<div class="error-wrapper">
-  <div class="hero-error">
-    <canvas #canvasError class="canvas-error"></canvas>
-    <div class="hero-error-title">
-      <p class="padding-16 text-center">Ha habido un error recuperando tu página.</p>
-      <p class="padding-16 subtitle text-center">¡Rápido! ¡Dibuja el contorno de esta abeja!</p>
+<div *ngIf="errorService.showErrorMessageComponent">
+  <div class="container error-message-wrapper">
+    <div class="row mt-5">
+      <div class="col">
+        <h1>ERROR</h1>
+        <p>{{errorService.error}}</p>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col justify-content-center">
+        <div (click)="toggleErrorMessage()" class="error-toggler"></div>
+      </div>
     </div>
   </div>
 </div>
+
+<div *ngIf="!errorService.showErrorMessageComponent">
+  <div class="error-wrapper">
+    <div class="hero-error">
+      <canvas #canvasError class="canvas-error" [ngClass]="pointer === 'red' ? 'pointer-red'
+                    : pointer === 'skin' ? 'pointer-skin'
+                      : pointer === 'honey' ? 'pointer-honey'
+                        : pointer === 'pot-outside' ? 'pointer-pot-outside'
+                          : pointer === 'pot-inside' ? 'pointer-pot-inside'
+                            : pointer === 'rubber' ? 'pointer-rubber'
+                              : 'red'"></canvas>
+      <div class="hero-error-title">
+        <p class="padding-16 text-center">Ha habido un error recuperando tu página.</p>
+        <p class="padding-16 subtitle text-center">¿Coloreamos a Winnie mientras la encontramos?</p>
+      </div>
+      <div class="canvas-tools">
+        <div class="tools-wrapper">
+          <ul>
+            <li>
+              <div (click)="changeTool('#880909', 'red')" class="red-tool"></div>
+            </li>
+            <li>
+              <div (click)="changeTool('#FCCD33', 'skin')" class="skin-tool"></div>
+            </li>
+            <li>
+              <div (click)="changeTool('#5D250D', 'honey')" class="honey-tool"></div>
+            </li>
+            <li>
+              <div (click)="changeTool('#708FE0', 'pot-outside')" class="pot-outside-tool"></div>
+            </li>
+            <li>
+              <div (click)="changeTool('#234BDF', 'pot-inside')" class="pot-inside-tool"></div>
+            </li>
+            <li>
+              <div (click)="changeTool('#FFFFFF', 'rubber')" class="rubber-tool"></div>
+            </li>
+            <li>
+              <div (click)="toggleErrorMessage()" class="error-toggler"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
