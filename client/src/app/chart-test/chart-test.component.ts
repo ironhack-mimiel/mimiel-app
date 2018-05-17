@@ -22,6 +22,7 @@ export class ChartTestComponent implements OnInit {
       this.dateData.push(moment(register.date).format('MMMM Do YYYY, h:mm:ss a'));
       this.dataAverage.push(this.averageTemperature);
     });
+    console.log(this.lineChartData)
   }
 
   // lineChart

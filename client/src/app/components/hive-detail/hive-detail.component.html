@@ -1,34 +1,64 @@
-<div *ngIf="hive">
-  {{hive.name}}
-  <div class="columns">
-    <div class="column">
-      <table>
-        <tr>
-          <td>Temperature1</td>
-          <td>Date</td>
-        </tr>
-        <tr *ngFor="let temperature of hive.rpi.temperature">
-          <td>
-            {{temperature.temperature1}}
-          </td>
-          <td>
-            {{temperature.date | date: "medium"}}
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="column">
-      <div class="card">
-        <div class="title-4">La temperatura media del dia es: {{average}} </div>
+<div class="container">
+  <p (click)="goBack()" class="row padding-32" id="go-back">
+    < Ir atrás</p>
+      <div *ngIf="hive">
+        <h3 class="padding-16">{{hive.name}}</h3>
+        <div *ngIf="hive" class="row">
+          <div class="col-6">
+            <div class="padding-16">
+              <div class="padding-8">
+                <h4>
+                  <i class="fas fa-map-marker-alt"></i>{{hive.location.city}}</h4>
+              </div>
+              <div class="padding-16">
+                <h4>
+                  <i class="fas fa-user"></i>{{hive.beekeeper.name}}</h4>
+              </div>
+              <h5 class="padding-8">Descripción</h5>
+              <p class="text-block padding-16">{{hive.description}}</p>
+            </div>
+            <div class="padding-8">
+              <h5>Evolución de la colmena</h5>
+              <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/c_scale,h_40/v1526504789/progressbar.png" id="progressbar" class="padding-16">
+            </div>
+          </div>
+          <div class="col-6">
+            <div id="placeholder">
+              <p> Soy el placeholder para el video</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="row padding-56">
+          <h5> Información de los sensores en tiempo real</h5>
+        </div>
+        <div class="row" *ngIf="hive" class="padding-16">
+          <canvas baseChart id="graph" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [legend]="lineChartLegend"
+            [chartType]="lineChartType" [colors]="lineChartColors"></canvas>
+
+        </div>
       </div>
-    </div>
-  </div>
-
-  <app-chart-test [temperatureData]="temperatureData" [averageTemperature]="average"></app-chart-test>
-
-  <div id="map">
-    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-    </agm-map>
-  </div>
 </div>
+
+
+
+<!-- 
+
+
+      <tr *ngFor="let temperature of hive.rpi.temperature">
+        <td>
+          {{temperature.temperature1}}
+        </td>
+        <td>
+          {{temperature.date | date: "medium"}}
+        </td>
+      </tr>
+
+       -->
+
+<!-- 
+      <div id="map">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+      </div> -->

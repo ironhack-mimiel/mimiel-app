@@ -11,9 +11,14 @@
 @import './home';
 @import './home_beekeeper';
 @import './honeylist';
+<<<<<<< HEAD
 @import './menu';
 @import './add';
 @import './error';
+=======
+@import './_hive_detail';
+
+>>>>>>> alvaro
 
 * {
     font-family: $font-stack;
@@ -25,10 +30,6 @@ body {
     color: $font-text;
 }
 
-// general classes:
-.padding-8 {
-    padding: 8px 0;
-}
 
 // popup tool
 .popup {
@@ -66,6 +67,10 @@ input.ng-valid {
     padding: 8px 0;
 }
 
+.padding-8 {
+  padding: 8px 0;
+}
+
 .padding-16 {
     padding: 16px 0;
 }
@@ -87,8 +92,13 @@ input.ng-valid {
 }
 
 .row {
+<<<<<<< HEAD
     max-width: 1240px;
     margin: 0 auto;
+=======
+  max-width: 1256px;
+  margin: 0 auto;
+>>>>>>> alvaro
 }
 
 .text-block {
@@ -107,6 +117,15 @@ h3 {
     color: $font-title;
 }
 
+h4 {
+  font-size: 1.3em;
+  color: $font-block-text
+}
+
+h5 {
+  color: $font-title;
+}
+
 .text-block {
     color: $font-block-text;
 }
@@ -117,6 +136,7 @@ h3 {
     padding-bottom: 56px;
 }
 
+<<<<<<< HEAD
 //Map
 .map {
     height: 500px;
@@ -124,6 +144,8 @@ h3 {
     margin: 0 auto;
 }
 
+=======
+>>>>>>> alvaro
 // Button
 .btn-large {
     padding: 0.5rem 1rem;
@@ -147,15 +169,6 @@ h3 {
 }
 
 // others
-canvas {
-    max-height: 600px;
-}
-
-#fillform {
-    width: 50%;
-    margin: 0 auto;
-}
-
 #map {
     height: 500px;
     width: 50%;
@@ -182,7 +195,5 @@ agm-map {
     border: dotted 3px green;
 }
 
-.row {
-    max-width: 1256px;
-    margin: 0 auto;
-}
+
+
