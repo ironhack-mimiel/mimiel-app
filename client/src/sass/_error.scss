@@ -7,15 +7,13 @@
          background-size: 50%;
          background-position: center;
          background-repeat: no-repeat;
-         opacity: 0.5;
          z-index: 1;
          .hero-error-title {
              padding: 10px 108px;
              font-size: 64px;
-             color: black;
              font-weight: bold;
              p {
-                 color: black;
+                 color: $brown;
              }
              .subtitle {
                  font-size: 48px;
