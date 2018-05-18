@@ -189,5 +189,12 @@ agm-map {
     border: dotted 3px green;
 }
 
+#autocomplete {
+    border: none;
+}
+
+#autocomplete.focus {
+    border: none;
+}
 
 

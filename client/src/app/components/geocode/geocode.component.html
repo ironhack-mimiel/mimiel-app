@@ -1,8 +1,4 @@
-<p>
-  geocode works!
-</p>
-
-<input name="location" type="text" [(ngModel)] = "address"
+<input id="geocode" name="location" type="text" [(ngModel)] = "address"
 [options]='options'
 (FormatAddress)="getFormattedAddress($event)"
 (street_number) = 'street_number=$event'

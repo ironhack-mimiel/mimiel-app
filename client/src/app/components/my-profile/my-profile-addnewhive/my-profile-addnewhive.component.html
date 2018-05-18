@@ -1,40 +1,37 @@
-<div class="addnewhive-wrapper">
-  <div class="row mt-5">
-    <h2 class="title">Añadir nueva colmena</h2>
-  </div>
-
-  <div class="form">
-    <div class="field">
-      <label class="label">Nombre de la colmena</label>
-      <div class="control">
-        <input class="input" type="text" [(ngModel)]="hiveName" name="hiveName" />
-      </div>
-    </div>
-    <div class="field">
-      <label class="label">Añade una descripción</label>
-      <div class="control">
-        <input class="input" type="text" [(ngModel)]="hiveDescription" name="hiveDescription" />
-      </div>
-    </div>
-    <div class="field">
-      <label class="label">¿Dónde esta tu colmena?</label>
-      <small class="label">Tranquilo, los usuarios no podrán ver su ubicación exacta</small>
-      <div class="control">
-        <app-geocode (onGetFormatedAddress)="getAddressFromChild($event)"></app-geocode>
-      </div>
-    </div>
-    <div *ngIf="message !== ''">
-      <div class="field">
-        <label class="label">{{message}}</label>
-      </div>
-    </div>
-    <div class="field">
-      <button (click)="newHive()" class="button is-warning">Sube una foto de tu colmena</button>
+<div class="edit-profile-wrapper">
+  <div class="row edit-profile-title-wrapper">
+    <div class="col">
+      <h2 class="title">Añadir nueva colmena</h2>
     </div>
   </div>
-
-  <div class="col-6 add-right-panel">
-    <app-addnewhive-pics></app-addnewhive-pics>
+  <div>
+    <div class="row edit-profile-form-wrapper">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Nombre de la colmena</mat-label>
+          <input matInput placeholder="Nombre de la colmena" type="email" [(ngModel)]="hiveName" name="hiveName">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Añade una descripción</mat-label>
+          <input matInput placeholder="Una colmena bonita" type="text" [(ngModel)]="hiveDescription" name="hiveDescription">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row edit-profile-form-wrapper">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Ubicación de tu colmena</mat-label>
+          <app-geocode (onGetFormatedAddress)="getAddressFromChild($event)"></app-geocode>
+        </mat-form-field>
+      </div>
+      <div *ngIf="message !== ''" class="col">
+        <mat-label>{{message}}</mat-label>
+        <button (click)="newHive()" class="btn btn-yellow">Sube una foto de tu colmena</button>
+      </div>
+    </div>
+    <div class="row edit-profile-form-wrapper">
+      <app-addnewhive-pics></app-addnewhive-pics>
+    </div>
   </div>
-
-</div>
