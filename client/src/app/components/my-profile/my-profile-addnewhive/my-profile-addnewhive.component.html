@@ -31,7 +31,7 @@
         <button (click)="newHive()" class="btn btn-yellow">Sube una foto de tu colmena</button>
       </div>
     </div>
-    <div class="row edit-profile-form-wrapper">
+    <div *ngIf="pictureUploadService.showAddImageComponent" class="row edit-profile-form-wrapper">
       <app-addnewhive-pics></app-addnewhive-pics>
     </div>
   </div>
