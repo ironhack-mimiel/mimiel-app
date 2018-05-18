@@ -107,4 +107,12 @@ export class SessionService {
   toggleSignupForm() {
     this.showSignupForm = !this.showSignupForm;
   }
+
+  closeLoginForm() {
+    this.showLoginForm = !this.showLoginForm;
+
+  }
+  closeSignUpForm () {
+    this.showSignupForm = !this.showSignupForm;
+  }
 }
