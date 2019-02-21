@@ -9,6 +9,7 @@ const _ = require('lodash')
 
 const handlers = require('../handlers')
 const logInPromise = require('./logInPromise')
+
 const logger = require('../logger/logger')
 
 router.post('/signup', async (req, res, next) => {
